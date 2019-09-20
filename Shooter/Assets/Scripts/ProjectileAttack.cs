@@ -13,6 +13,7 @@ public class ProjectileAttack : MonoBehaviour {
 	[SerializeField] Rigidbody2D rb;
 
 	string fire = null;
+    static float player;
 	
 	Vector2 direction;
 	void Start () {
@@ -87,22 +88,18 @@ public class ProjectileAttack : MonoBehaviour {
 
 
 		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-		
+
+        player = PlayerState.player;
 		
 		//transform.rotation = direction;
-		if(transform.parent.tag("Player1")){
+		if(player == 1){
 			Debug.Log("works");
 			if(Input.GetButton("P1fire1")){
 				Instantiate(projectile, projectileSpawn.position, projectileSpawn.rotation);
 			}
-		}
 		
-		else if(gameObject.tag == "Player2"){
-			if(Input.GetButton("P2fire1")){
-				Instantiate(projectile, projectileSpawn.position, projectileSpawn.rotation);
-			}
 		}else{
-			Debug.Log(gameObject.CompareTag("Player1"));
+			Debug.Log("still not working");
 		}
 		
 	}
