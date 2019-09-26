@@ -56,10 +56,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\IState.cs" />
+     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\PlayerMovementState.cs" />
      <Compile Include="Assets\Scripts\PlayerState.cs" />
      <Compile Include="Assets\Scripts\PlayerState2.cs" />
+     <Compile Include="Assets\Scripts\ProjectileActions.cs" />
      <Compile Include="Assets\Scripts\ProjectileAttack.cs" />
      <Compile Include="Assets\Scripts\ProjectileAttack2.cs" />
      <Compile Include="Assets\Scripts\ProjectileMovement.cs" />

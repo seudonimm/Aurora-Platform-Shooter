@@ -93,7 +93,7 @@ public class ProjectileAttack : MonoBehaviour {
 		
 		//transform.rotation = direction;
 		if(player == 1){
-			Debug.Log("works");
+			//.3142Debug.Log("works");
 			if(Input.GetButton("P1fire1")){
 				Instantiate(projectile, projectileSpawn.position, projectileSpawn.rotation);
 			}
@@ -103,4 +103,6 @@ public class ProjectileAttack : MonoBehaviour {
 		}
 		
 	}
+	
+
 }

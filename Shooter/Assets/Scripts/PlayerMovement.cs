@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
 		//float moveHorizontal = Input.GetAxis("Horizontal");
 		//Vector2 move = new Vector2(moveHorizontal, 0);
-		if (Input.GetAxis("Horizontal_p2") == 1 || Input.GetAxis("Horizontal_p2") == -1)
+		if (Input.GetAxis("Horizontal_p2") ==+ 1 || Input.GetAxis("Horizontal_p2") == -1)
 		{
 			Debug.Log("right leftds;lkdfj");
 			p2.transform.position += Input.GetAxis("Horizontal_p2") * transform.right * moveSpeed * Time.deltaTime;

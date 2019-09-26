@@ -95,7 +95,7 @@ public class ProjectileAttack2 : MonoBehaviour
 
         //transform.rotation = direction;
         if (player2 == 2){
-            Debug.Log("22222222222222222222222222");
+            //Debug.Log("22222222222222222222222222");
             if (Input.GetButton("P2fire1"))
             {
                 Debug.Log("works2");
@@ -105,6 +105,15 @@ public class ProjectileAttack2 : MonoBehaviour
         else
         {
             Debug.Log("still not working222" + player2);
+        }
+
+    }
+	
+	public void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Player1") || col.gameObject.CompareTag("Enemy2"))
+        {
+            Destroy(gameObject);
         }
 
     }
