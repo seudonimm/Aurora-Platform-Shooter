@@ -7,7 +7,8 @@ public class ProjectileAttack : MonoBehaviour {
     // Use this for initialization
     [SerializeField] float speed;
 	
-	[SerializeField] GameObject projectile;
+	[SerializeField] GameObject projectile1;
+	[SerializeField] GameObject projectile2;
     [SerializeField] Transform projectileSpawn;
 	
 	[SerializeField] Rigidbody2D rb;
@@ -95,7 +96,10 @@ public class ProjectileAttack : MonoBehaviour {
 		if(player == 1){
 			//.3142Debug.Log("works");
 			if(Input.GetButton("P1fire1")){
-				Instantiate(projectile, projectileSpawn.position, projectileSpawn.rotation);
+				Instantiate(projectile1, projectileSpawn.position, projectileSpawn.rotation);
+			}
+			if(Input.GetButton("P1fire2")){
+				Instantiate(projectile2, projectileSpawn.position, projectileSpawn.rotation);
 			}
 		
 		}else{

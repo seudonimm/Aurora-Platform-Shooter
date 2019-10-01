@@ -6,7 +6,7 @@ public class ProjectileActions : MonoBehaviour
 {
 	[SerializeField] float damageValue = 20f;
 	
-	public stat
+
 	
     // Start is called before the first frame update
     void Start()

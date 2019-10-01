@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-	[SerializeField] float maxHealthValue = 50f;
-	[SerializeField] static float currentHealthValue = 50f;
+	[SerializeField] static float chargeVal = 10;
+	[SerializeField] static float healthVal = 100;
+	[SerializeField] float defaultChargeVal;
+	[SerializeField] float defaultHealthVal;
 	
 
     // Start is called before the first frame update

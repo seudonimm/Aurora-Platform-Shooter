@@ -8,6 +8,8 @@ TagManager:
   - Projectile
   - Player1
   - Player2
+  - Charge Shot
+  - Damage Shot
   layers:
   - Default
   - TransparentFX
