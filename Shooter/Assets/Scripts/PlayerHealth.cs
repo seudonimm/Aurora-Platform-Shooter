@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-	[SerializeField] static float chargeVal = 10;
-	[SerializeField] static float healthVal = 100;
+	[SerializeField] public float chargeVal = 10;
+	[SerializeField] public float healthVal = 100;
 	[SerializeField] float defaultChargeVal;
 	[SerializeField] float defaultHealthVal;
 	

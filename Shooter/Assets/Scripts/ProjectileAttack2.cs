@@ -7,7 +7,8 @@ public class ProjectileAttack2 : MonoBehaviour
     // Use this for initialization
     [SerializeField] float speed;
 
-    [SerializeField] GameObject projectile2;
+	[SerializeField] GameObject projectile1;
+	[SerializeField] GameObject projectile2;
     [SerializeField] Transform projectileSpawn2;
 
     [SerializeField] Rigidbody2D rb;
@@ -94,27 +95,27 @@ public class ProjectileAttack2 : MonoBehaviour
         player2 = PlayerState2.player;
 
         //transform.rotation = direction;
-        if (player2 == 2){
-            //Debug.Log("22222222222222222222222222");
-            if (Input.GetButton("P2fire1"))
-            {
-                Debug.Log("works2");
-                Instantiate(projectile2, projectileSpawn2.position, projectileSpawn2.rotation);
-            }
-        }
-        else
-        {
-            Debug.Log("still not working222" + player2);
-        }
+		if(player2 == 2){
+			//.3142Debug.Log("works");
+			if(Input.GetButton("P2fire1")){
+				Instantiate(projectile1, projectileSpawn2.position, projectileSpawn2.rotation);
+			}
+			if(Input.GetButton("P2fire2")){
+				Instantiate(projectile2, projectileSpawn2.position, projectileSpawn2.rotation);
+			}
+		
+		}else{
+			Debug.Log("still not working");
+		}
 
     }
 	
-	public void OnCollisionEnter2D(Collision2D col)
+	/*public void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Player1") || col.gameObject.CompareTag("Enemy2"))
         {
             Destroy(gameObject);
         }
 
-    }
+    }*/
 }

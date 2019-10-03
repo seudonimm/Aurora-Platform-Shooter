@@ -9,10 +9,11 @@ public class DamageSystem : MonoBehaviour
 	//[SerializeField] float defaultChargeVal;
 	//[SerializeField] float defaultHealthVal;
 	
-	[SerializeField] GameObject p1;
-	[SerializeField] GameObject p2;
+	//[SerializeField] GameObject p1;
+	//[SerializeField] GameObject p2;
 	
 	public PlayerHealth p1;
+	public PlayerHealth p2;
 		
 	static float player;
 
@@ -21,8 +22,8 @@ public class DamageSystem : MonoBehaviour
 	// Start is called before the first frame update
     void Start()
     {
-        p1 = GameObject.FindGameObjectWithTag("Player 1").GetComponent&lt;PlayerHealth&gt;
-		//p2 = GameObject.FindGameObjectsWithTag("Player 2");
+        p1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerHealth>();
+		p2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerHealth>();
 		
     }
 
@@ -36,7 +37,9 @@ public class DamageSystem : MonoBehaviour
 	
 	void OnCollisionEnter2D(Collision2D col){
 		if(player == 1){
+			Debug.Log("p1 hit");
 			if(col.gameObject.CompareTag("Charge Shot")){
+				Debug.Log("1 with charge");
 				p1.chargeVal -= 5;
 				p2.chargeVal += 10;
 			}
@@ -44,8 +47,10 @@ public class DamageSystem : MonoBehaviour
 				p1.healthVal -= p2.chargeVal;
 			}
 		}
-		else if(player == 2){
+		else if(player2 == 2){
+			Debug.Log("p2 hit");
 			if(col.gameObject.CompareTag("Charge Shot")){
+				Debug.Log("2 with charge");
 				p2.chargeVal -= 5;
 				p1.chargeVal += 10;
 			}

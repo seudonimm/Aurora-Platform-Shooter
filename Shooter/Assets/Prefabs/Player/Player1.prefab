@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  projectile: {fileID: 8640361381792612088, guid: 8fc92e532ff051d43bd2e9557e5a7d5e,
-    type: 3}
+  projectile1: {fileID: 0}
+  projectile2: {fileID: 0}
   projectileSpawn: {fileID: 5899739171035028340}
   rb: {fileID: 0}
 --- !u!212 &5899739171035028338
@@ -129,7 +129,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5899739172790299568}
   - component: {fileID: 5899739172790299569}
+  - component: {fileID: 4465531405638388000}
   - component: {fileID: 5899739172790299570}
+  - component: {fileID: 3206180642852891409}
   - component: {fileID: 5899739172790299582}
   - component: {fileID: 5899739172790299583}
   m_Layer: 0
@@ -202,6 +204,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4465531405638388000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5899739172790299571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd9da8d1c332a645927ae88a0430604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chargeVal: 10
+  healthVal: 100
+  defaultChargeVal: 0
+  defaultHealthVal: 0
 --- !u!114 &5899739172790299570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,8 +234,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 55
   jump: 55
-  rb: {fileID: 0}
+  rb1: {fileID: 0}
+  rb2: {fileID: 0}
   faceRight: 0
+  p1: {fileID: 0}
+  p2: {fileID: 0}
+--- !u!114 &3206180642852891409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5899739172790299571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5c0b1a503ffcf4b81f7be89c699310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p1: {fileID: 0}
+  p2: {fileID: 0}
 --- !u!61 &5899739172790299582
 BoxCollider2D:
   m_ObjectHideFlags: 0
