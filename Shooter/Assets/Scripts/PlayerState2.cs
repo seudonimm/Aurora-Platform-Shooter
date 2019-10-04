@@ -9,11 +9,12 @@ public class PlayerState2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (gameObject.CompareTag("Player1"))
+        /*if (gameObject.CompareTag("Player1"))
         {
             player = 1;
         }
-        else if (gameObject.CompareTag("Player2"))
+        else*/
+        if (gameObject.CompareTag("Player2"))
         {
             player = 2;
         }

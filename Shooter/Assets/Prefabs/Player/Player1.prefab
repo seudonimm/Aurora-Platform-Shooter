@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5899739171035028339}
   - component: {fileID: 5899739171035028338}
   - component: {fileID: 5899739171035028337}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Projectile Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,10 +131,10 @@ GameObject:
   - component: {fileID: 5899739172790299569}
   - component: {fileID: 4465531405638388000}
   - component: {fileID: 5899739172790299570}
-  - component: {fileID: 3206180642852891409}
+  - component: {fileID: 2873426739485883770}
   - component: {fileID: 5899739172790299582}
   - component: {fileID: 5899739172790299583}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player1
   m_TagString: Player1
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ MonoBehaviour:
   faceRight: 0
   p1: {fileID: 0}
   p2: {fileID: 0}
---- !u!114 &3206180642852891409
+--- !u!114 &2873426739485883770
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5899739172790299571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a5c0b1a503ffcf4b81f7be89c699310, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c5a223bf1c1cea49b09727cf57ea78a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   p1: {fileID: 0}

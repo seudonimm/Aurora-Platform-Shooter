@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject p1;
     [SerializeField] GameObject p2;
 
+    [SerializeField] bool onGround;
+
     static float player;
 
     static float player2;
@@ -53,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 				faceRight = false;
 			}
 		}
-		if (Input.GetButton("Jump_p1"))
+		if (Input.GetButton("Jump_p1") && onGround)
 		{
 			rb1.AddForce(Vector2.up * jump);
 		}
@@ -62,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
 		//float moveHorizontal = Input.GetAxis("Horizontal");
 		//Vector2 move = new Vector2(moveHorizontal, 0);
-		if (Input.GetAxis("Horizontal_p2") == 1 || Input.GetAxis("Horizontal_p2") == -1)
+		if (Input.GetAxis("Horizontal_p2") == 1 || Input.GetAxis("Horizontal_p2") == -1 || Input.GetButton("Horizontal_p2"))
 		{
 			Debug.Log("right leftds;lkdfj");
 			p2.transform.position += Input.GetAxis("Horizontal_p2") * transform.right * moveSpeed * Time.deltaTime;
@@ -79,10 +81,29 @@ public class PlayerMovement : MonoBehaviour
 				faceRight = false;
 			}
 		}
-		if (Input.GetButton("Jump_p2"))
+		if (Input.GetButton("Jump_p2") && onGround)
 		{
 			rb2.AddForce(Vector2.up * jump);
 		}
         
     }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Ground"))
+        {
+            onGround = true;
+        }
+
+    }
+
+    private void OnCollisionExit2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Ground"))
+        {
+            onGround = false;
+        }
+
+    }
+
 }

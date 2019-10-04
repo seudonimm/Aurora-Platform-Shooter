@@ -37,25 +37,25 @@ public class DamageSystem : MonoBehaviour
 	
 	void OnCollisionEnter2D(Collision2D col){
 		if(player == 1){
-			Debug.Log("p1 hit");
+			//Debug.Log("p1 hit");
 			if(col.gameObject.CompareTag("Charge Shot")){
 				Debug.Log("1 with charge");
-				p1.chargeVal -= 5;
-				p2.chargeVal += 10;
+				p1.chargeVal += 10;
+				p2.chargeVal -= 10;
 			}
 			if(col.gameObject.CompareTag("Damage Shot")){
-				p1.healthVal -= p2.chargeVal;
+				p2.healthVal -= p1.chargeVal;
 			}
 		}
 		else if(player2 == 2){
 			Debug.Log("p2 hit");
 			if(col.gameObject.CompareTag("Charge Shot")){
 				Debug.Log("2 with charge");
-				p2.chargeVal -= 5;
-				p1.chargeVal += 10;
+				p2.chargeVal += 10;
+				p1.chargeVal -= 10;
 			}
 			if(col.gameObject.CompareTag("Damage Shot")){
-				p2.healthVal -= p1.chargeVal;
+				p1.healthVal -= p2.chargeVal;
 			}
 		}
 	}
