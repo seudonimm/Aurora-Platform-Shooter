@@ -1327,6 +1327,21 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7104469100011734042, guid: 191e8881077aeaf4fa3b90ef9d765a11,
+        type: 3}
+      propertyPath: p1Collider
+      value: 
+      objectReference: {fileID: 5899739172347360139}
+    - target: {fileID: 7104469100011734042, guid: 191e8881077aeaf4fa3b90ef9d765a11,
+        type: 3}
+      propertyPath: p2Collider
+      value: 
+      objectReference: {fileID: 3708767643871479211}
+    - target: {fileID: 7104469100011734042, guid: 191e8881077aeaf4fa3b90ef9d765a11,
+        type: 3}
+      propertyPath: dodgeCooldownInc
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7104469100011734039, guid: 191e8881077aeaf4fa3b90ef9d765a11,
         type: 3}
       propertyPath: m_SleepingMode
@@ -1426,6 +1441,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3242022654559900844, guid: 191e8881077aeaf4fa3b90ef9d765a11, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 191e8881077aeaf4fa3b90ef9d765a11, type: 3}
+--- !u!61 &3708767643871479211 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7104469100011734038, guid: 191e8881077aeaf4fa3b90ef9d765a11,
+    type: 3}
+  m_PrefabInstance: {fileID: 3708767643871479210}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5175226617324390537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1526,6 +1547,8 @@ MonoBehaviour:
     type: 3}
   projectileSpawn2: {fileID: 5899739171085562230}
   rb: {fileID: 0}
+  cooldownMax: 0
+  coolddownInc: 0
 --- !u!1001 &5899739172347360135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1628,6 +1651,16 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5899739172790299570, guid: b67281b26aed14b45b7c2f8c2afc70c5,
+        type: 3}
+      propertyPath: p1Collider
+      value: 
+      objectReference: {fileID: 5899739172347360139}
+    - target: {fileID: 5899739172790299570, guid: b67281b26aed14b45b7c2f8c2afc70c5,
+        type: 3}
+      propertyPath: p2Collider
+      value: 
+      objectReference: {fileID: 3708767643871479211}
     - target: {fileID: 5899739171035028339, guid: b67281b26aed14b45b7c2f8c2afc70c5,
         type: 3}
       propertyPath: projectile1
@@ -1740,6 +1773,12 @@ MonoBehaviour:
 --- !u!50 &5899739172347360138 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 5899739172790299583, guid: b67281b26aed14b45b7c2f8c2afc70c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 5899739172347360135}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &5899739172347360139 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5899739172790299582, guid: b67281b26aed14b45b7c2f8c2afc70c5,
     type: 3}
   m_PrefabInstance: {fileID: 5899739172347360135}
   m_PrefabAsset: {fileID: 0}

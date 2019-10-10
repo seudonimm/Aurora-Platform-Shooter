@@ -12,6 +12,9 @@ public class ProjectileAttack : MonoBehaviour {
     [SerializeField] Transform projectileSpawn;
 	
 	[SerializeField] Rigidbody2D rb;
+	
+	[SerializeField] float cooldownMax;
+	[SerializeField] float coolddownInc;
 
 	string fire = null;
     static float player;
@@ -39,6 +42,8 @@ public class ProjectileAttack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
+		coolddownInc++;
 		
 		Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         direction = (Vector2)((worldMousePos - transform.position));
@@ -95,13 +100,18 @@ public class ProjectileAttack : MonoBehaviour {
 		//transform.rotation = direction;
 		if(player == 1){
 			//.3142Debug.Log("works");
-			if(Input.GetButton("P1fire1")){
-				Instantiate(projectile1, projectileSpawn.position, projectileSpawn.rotation);
+			if(coolddownInc >= cooldownMax){
+				if(Input.GetButton("P1fire1")){
+					Instantiate(projectile1, projectileSpawn.position, projectileSpawn.rotation);
+					coolddownInc = 0;
+
+				}
+				if(Input.GetButton("P1fire2")){
+					Instantiate(projectile2, projectileSpawn.position, projectileSpawn.rotation);
+					coolddownInc = 0;
+
+				}
 			}
-			if(Input.GetButton("P1fire2")){
-				Instantiate(projectile2, projectileSpawn.position, projectileSpawn.rotation);
-			}
-		
 		}else{
 			Debug.Log("still not working");
 		}

@@ -16,6 +16,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject p2;
 
     [SerializeField] bool onGround;
+	
+	[SerializeField] Collider2D p1Collider;
+	[SerializeField] Collider2D p2Collider;
+	
+	[SerializeField] float dodgeCooldownMax;
+	[SerializeField] float dodgeCooldownInc;
 
     static float player;
 
@@ -31,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		dodgeCooldownInc++;
+		
         player = PlayerState.player;
 
         player2 = PlayerState2.player;
@@ -58,6 +66,17 @@ public class PlayerMovement : MonoBehaviour
 		if (Input.GetButton("Jump_p1") && onGround)
 		{
 			rb1.AddForce(Vector2.up * jump);
+		}
+		if(Input.GetButton("Dodge")){
+			//p1Collider.enabled = false;
+			
+			Physics2D.IgnoreLayerCollision(8, 11, true);
+			Debug.Log("Dodging");
+		
+			if(dodgeCooldownInc >= dodgeCooldownMax){
+				Physics2D.IgnoreLayerCollision(8, 11, false);
+				dodgeCooldownInc = 0;
+			}
 		}
 	
    

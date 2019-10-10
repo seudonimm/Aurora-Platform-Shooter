@@ -17,6 +17,10 @@ public class ProjectileAttack2 : MonoBehaviour
     private static float player2;
 
     Vector2 direction;
+	
+	[SerializeField] float cooldownMax;
+	[SerializeField] float coolddownInc;
+	
     void Start()
     {
         //Debug.Log();
@@ -42,6 +46,8 @@ public class ProjectileAttack2 : MonoBehaviour
     void Update()
     {
 
+		coolddownInc++;
+		
         Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         direction = (Vector2)((worldMousePos - transform.position));
         direction.Normalize();
@@ -97,13 +103,18 @@ public class ProjectileAttack2 : MonoBehaviour
         //transform.rotation = direction;
 		if(player2 == 2){
 			//.3142Debug.Log("works");
-			if(Input.GetButton("P2fire1")){
-				Instantiate(projectile1, projectileSpawn2.position, projectileSpawn2.rotation);
+			if(coolddownInc >= cooldownMax){
+				if(Input.GetButton("P2fire1")){
+					Instantiate(projectile1, projectileSpawn2.position, projectileSpawn2.rotation);
+					coolddownInc = 0;
+
+				}
+				if(Input.GetButton("P2fire2")){
+					Instantiate(projectile2, projectileSpawn2.position, projectileSpawn2.rotation);
+					coolddownInc = 0;
+
+				}
 			}
-			if(Input.GetButton("P2fire2")){
-				Instantiate(projectile2, projectileSpawn2.position, projectileSpawn2.rotation);
-			}
-		
 		}else{
 			Debug.Log("still not working");
 		}
