@@ -20,8 +20,8 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] Collider2D p1Collider;
 	[SerializeField] Collider2D p2Collider;
 	
-	[SerializeField] float dodgeCooldownMax;
-	[SerializeField] float dodgeCooldownInc;
+	float dodgeCooldownMax = 100;
+	float dodgeCooldownInc = 0;
 
     static float player;
 
@@ -71,21 +71,26 @@ public class PlayerMovement : MonoBehaviour
 			//p1Collider.enabled = false;
 			
 			Physics2D.IgnoreLayerCollision(8, 11, true);
+			
 			Debug.Log("Dodging");
-		
-			if(dodgeCooldownInc >= dodgeCooldownMax){
-				Physics2D.IgnoreLayerCollision(8, 11, false);
-				dodgeCooldownInc = 0;
-			}
 		}
-	
-   
+		
+		if(dodgeCooldownInc > dodgeCooldownMax ){
+			//p1Collider.enabled = false;
+			
+			Debug.Log(dodgeCooldownInc);
+			Debug.Log(dodgeCooldownMax);
 
-		//float moveHorizontal = Input.GetAxis("Horizontal");
-		//Vector2 move = new Vector2(moveHorizontal, 0);
+			Physics2D.IgnoreLayerCollision(8, 11, false);
+
+			dodgeCooldownInc = 0;
+		}
+
+		
+
 		if (Input.GetAxis("Horizontal_p2") == 1 || Input.GetAxis("Horizontal_p2") == -1 || Input.GetButton("Horizontal_p2"))
 		{
-			Debug.Log("right leftds;lkdfj");
+			//Debug.Log("right leftds;lkdfj");
 			p2.transform.position += Input.GetAxis("Horizontal_p2") * transform.right * moveSpeed * Time.deltaTime;
 			//rb.AddForce(move * moveSpeed);
 

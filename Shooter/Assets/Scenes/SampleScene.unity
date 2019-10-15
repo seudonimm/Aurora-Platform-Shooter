@@ -907,7 +907,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 97.5}
+  m_Size: {x: 1.5, y: 120.53}
   m_EdgeRadius: 0
 --- !u!61 &1781963049
 BoxCollider2D:
@@ -933,7 +933,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 71.2}
+  m_Size: {x: 1.5, y: 150}
   m_EdgeRadius: 0
 --- !u!4 &1781963050
 Transform:
@@ -1340,8 +1340,18 @@ PrefabInstance:
     - target: {fileID: 7104469100011734042, guid: 191e8881077aeaf4fa3b90ef9d765a11,
         type: 3}
       propertyPath: dodgeCooldownInc
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104469100011734042, guid: 191e8881077aeaf4fa3b90ef9d765a11,
+        type: 3}
+      propertyPath: dodgeCooldownMax
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 7104469100011734042, guid: 191e8881077aeaf4fa3b90ef9d765a11,
+        type: 3}
+      propertyPath: rb1
+      value: 
+      objectReference: {fileID: 5899739172347360138}
     - target: {fileID: 7104469100011734039, guid: 191e8881077aeaf4fa3b90ef9d765a11,
         type: 3}
       propertyPath: m_SleepingMode
@@ -1661,6 +1671,11 @@ PrefabInstance:
       propertyPath: p2Collider
       value: 
       objectReference: {fileID: 3708767643871479211}
+    - target: {fileID: 5899739172790299570, guid: b67281b26aed14b45b7c2f8c2afc70c5,
+        type: 3}
+      propertyPath: dodgeCooldownMax
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5899739171035028339, guid: b67281b26aed14b45b7c2f8c2afc70c5,
         type: 3}
       propertyPath: projectile1
