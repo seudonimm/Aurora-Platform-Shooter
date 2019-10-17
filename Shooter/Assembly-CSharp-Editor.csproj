@@ -289,6 +289,15 @@
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="Rewired_Editor">
+ <HintPath>C:/Users/jusman1/Documents/Aurora-Platform-Shooter/Shooter/Assets/Rewired/Internal/Libraries/Editor/Rewired_Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Rewired_Core">
+ <HintPath>C:/Users/jusman1/Documents/Aurora-Platform-Shooter/Shooter/Assets/Rewired/Internal/Libraries/Runtime/Rewired_Core.dll</HintPath>
+ </Reference>
+ <Reference Include="Rewired_Windows">
+ <HintPath>C:/Users/jusman1/Documents/Aurora-Platform-Shooter/Shooter/Assets/Rewired/Internal/Libraries/Runtime/Rewired_Windows.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Users/jusman1/Documents/Aurora-Platform-Shooter/Shooter/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -303,15 +312,6 @@
  </Reference>
  <Reference Include="UnityEditor.Purchasing">
  <HintPath>C:/Users/jusman1/Documents/Aurora-Platform-Shooter/Shooter/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
- </Reference>
- <Reference Include="Rewired_Core">
- <HintPath>C:/Users/jusman1/Documents/Aurora-Platform-Shooter/Shooter/Assets/Rewired/Internal/Libraries/Runtime/Rewired_Core.dll</HintPath>
- </Reference>
- <Reference Include="Rewired_Windows">
- <HintPath>C:/Users/jusman1/Documents/Aurora-Platform-Shooter/Shooter/Assets/Rewired/Internal/Libraries/Runtime/Rewired_Windows.dll</HintPath>
- </Reference>
- <Reference Include="Rewired_Editor">
- <HintPath>C:/Users/jusman1/Documents/Aurora-Platform-Shooter/Shooter/Assets/Rewired/Internal/Libraries/Editor/Rewired_Editor.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
