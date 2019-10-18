@@ -8,91 +8,70 @@ public class ProjectileAttack : MonoBehaviour {
 
     // Use this for initialization
     [SerializeField] float speed;
-	
-	[SerializeField] GameObject projectile1;
-	[SerializeField] GameObject projectile2;
+
+    [SerializeField] GameObject projectile1;
+    [SerializeField] GameObject projectile2;
     [SerializeField] Transform projectileSpawn;
-	
-	[SerializeField] Rigidbody2D rb;
-	
-	[SerializeField] float cooldownMax;
-	[SerializeField] float coolddownInc;
 
-	string fire = null;
+    [SerializeField] Rigidbody2D rb;
+
+    [SerializeField] float cooldownMax;
+    [SerializeField] float coolddownInc;
+
+    string fire = null;
     static float player;
-	
-	Vector2 direction;
-	void Start () {
-		//Debug.Log();
 
-        /*bool projDir = GameObject.Find("Player").GetComponent<PlayerMovement>().faceRight;
+    Vector2 direction;
 
-        if (projDir)
-        {
-            GetComponent<Rigidbody2D>().velocity = transform.right * speed;
-        }
-        else {
-            GetComponent<Rigidbody2D>().velocity = transform.right * speed * -1;
-        }*/
-		
-		
-		//GetComponent<Rigidbody2D>().velocity = transform.right * speed;
+    private Player player1;
+    public Vector2 aimVector;
+
+
+    void Start() {
+        player1 = ReInput.players.GetPlayer(0);
+
     }
 
 
-	void Fire(){
+    void Fire() {
 
-		if(coolddownInc >= cooldownMax){
-			if(player1.GetButton("Charge Shot")){
-				Instantiate(projectile1, projectileSpawn.position, projectileSpawn.rotation);
-				coolddownInc = 0;
+        if (coolddownInc >= cooldownMax) {
+            if (player1.GetButton("Charge Shot")) {
+                Instantiate(projectile1, projectileSpawn.position, projectileSpawn.rotation);
+                coolddownInc = 0;
 
-			}
-			if(player1.GetButton("HP Shot")){
-				Instantiate(projectile2, projectileSpawn.position, projectileSpawn.rotation);
-				coolddownInc = 0;
-			}
-		}
-		
-	}		
-	
-	void Fire2(){
+            }
+            if (player1.GetButton("HP Shot")) {
+                Instantiate(projectile2, projectileSpawn.position, projectileSpawn.rotation);
+                coolddownInc = 0;
+            }
+        }
 
-		if(coolddownInc >= cooldownMax){
-			if(player2.GetButton("Charge Shot")){
-				Instantiate(projectile1, projectileSpawn.position, projectileSpawn.rotation);
-				coolddownInc = 0;
-
-			}
-			if(player2.GetButton("HP Shot")){
-				Instantiate(projectile2, projectileSpawn.position, projectileSpawn.rotation);
-				coolddownInc = 0;
-			}
-		}
-		
-	}		
-
-	
-	// Update is called once per frame
-	void Update () {
-		
-		coolddownInc++;
-		
-		Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        direction = (Vector2)((worldMousePos - transform.position));
-        direction.Normalize();
-		
-		
-		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    }
 
 
-		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    // Update is called once per frame
+    void Update() {
+        Fire();
+        GetInput();
+        ProcessInput();
 
-		
-		//transform.rotation = direction;
-		
-		
-	}
-	
+        coolddownInc++;
 
+    }
+
+    void GetInput()
+    {
+        aimVector.x = player1.GetAxis("Aim Horizontal");
+
+        aimVector.y = player1.GetAxis("Aim Vertical");
+
+    }
+    void ProcessInput()
+    {
+        float joyAngle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg;
+        projectileSpawn.rotation = Quaternion.AngleAxis(joyAngle, Vector3.forward);
+
+
+    }
 }

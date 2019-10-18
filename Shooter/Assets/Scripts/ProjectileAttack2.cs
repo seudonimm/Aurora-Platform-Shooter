@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Rewired;
 public class ProjectileAttack2 : MonoBehaviour
 {
     // Use this for initialization
@@ -14,119 +14,70 @@ public class ProjectileAttack2 : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
 
     string fire = null;
-    private static float player2;
+
 
     Vector2 direction;
 	
 	[SerializeField] float cooldownMax;
 	[SerializeField] float coolddownInc;
+
+    private Player player2;
+    Vector3 aimVector;
 	
     void Start()
     {
-        //Debug.Log();
-
-        /*bool projDir = GameObject.Find("Player").GetComponent<PlayerMovement>().faceRight;
-
-        if (projDir)
-        {
-            GetComponent<Rigidbody2D>().velocity = transform.right * speed;
-        }
-        else {
-            GetComponent<Rigidbody2D>().velocity = transform.right * speed * -1;
-        }*/
+        player2 = ReInput.players.GetPlayer(1);
 
 
-        //GetComponent<Rigidbody2D>().velocity = transform.right * speed;
     }
 
+
+    void Fire()
+    {
+
+        if (coolddownInc >= cooldownMax)
+        {
+            if (player2.GetButton("Charge Shot"))
+            {
+                Instantiate(projectile1, projectileSpawn2.position, projectileSpawn2.rotation);
+                coolddownInc = 0;
+
+            }
+            if (player2.GetButton("HP Shot"))
+            {
+                Instantiate(projectile2, projectileSpawn2.position, projectileSpawn2.rotation);
+                coolddownInc = 0;
+            }
+        }
+
+    }
+    void GetInput()
+    {
+        aimVector.x = player2.GetAxis("Aim Horizontal");
+
+        aimVector.y = player2.GetAxis("Aim Vertical");
+
+    }
+    void ProcessInput()
+    {
+        float joyAngle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg;
+        projectileSpawn2.rotation = Quaternion.AngleAxis(joyAngle, Vector3.forward);
+
+
+    }
 
 
 
     // Update is called once per frame
     void Update()
     {
-
-		coolddownInc++;
-		
-        Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        direction = (Vector2)((worldMousePos - transform.position));
-        direction.Normalize();
+        Fire();
+        GetInput();
+        ProcessInput();
 
 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        //Debug.Log(angle);
-
-        /*omni directional setup
-		//0 degree
-		if(angle > - 22.5  && angle <= 22.5){
-			angle = 0;
-		}
-		//45 degree
-		else if(angle > 22.5  && angle <= 67.5){
-			angle = 45;
-		}
-		//90 degree		
-		else if(angle > 67.5  && angle <= 112.5){
-			angle = 90;
-		}
-		//135 degree
-		else if(angle > 112.5  && angle <= 157.5){
-			angle = 135;
-		}
-		//180 degree
-		//if(angle > 157.5  && angle <= -157.5){
-			//angle = 90;
-		//}
-		//225 degree
-		else if(angle > -157.5  && angle <= -112.5){
-			angle = -135;
-		}
-		//270 degree
-		else if(angle > -112.5  && angle <= -67.5){
-			angle = -90;
-		}
-		//315 degree
-		else if(angle > -67.5  && angle <= -22.5){
-			angle = -45;
-		}
-		else{
-			angle = 180;
-		}
-		*/
-
-
-
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-        player2 = PlayerState2.player;
-
-        //transform.rotation = direction;
-		if(player2 == 2){
-			//.3142Debug.Log("works");
-			if(coolddownInc >= cooldownMax){
-				if(Input.GetButton("P2fire1")){
-					Instantiate(projectile1, projectileSpawn2.position, projectileSpawn2.rotation);
-					coolddownInc = 0;
-
-				}
-				if(Input.GetButton("P2fire2")){
-					Instantiate(projectile2, projectileSpawn2.position, projectileSpawn2.rotation);
-					coolddownInc = 0;
-
-				}
-			}
-		}else{
-			Debug.Log("still not working");
-		}
-
+        coolddownInc++;
     }
 	
-	/*public void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.CompareTag("Player1") || col.gameObject.CompareTag("Enemy2"))
-        {
-            Destroy(gameObject);
-        }
 
-    }*/
 }

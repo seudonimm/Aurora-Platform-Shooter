@@ -97,6 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   rb: {fileID: 0}
+  playerID: 1
+  aimVector: {x: 0, y: 0}
 --- !u!114 &-7762606834389879453
 MonoBehaviour:
   m_ObjectHideFlags: 0

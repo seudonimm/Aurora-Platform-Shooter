@@ -31,18 +31,9 @@ public class PlayerMovement : MonoBehaviour
 	
 	private Player player1;
 	private Player player2;
-	private CharacterController cc;
 	private Vector3 moveVector;
 	[SerializeField] Vector3 moveVector2;
 	
-	[SerializeField] float shotSpeed;
-	
-	[SerializeField] GameObject projectile1;
-	[SerializeField] GameObject projectile2;
-    [SerializeField] Transform projectileSpawn;
-	
-	[SerializeField] float cooldownMax;
-	[SerializeField] float coolddownInc;
 
 
 
@@ -69,37 +60,6 @@ public class PlayerMovement : MonoBehaviour
 	}
 			
 		
-	void Fire(){
-
-		if(coolddownInc >= cooldownMax){
-			if(player1.GetButton("Charge Shot")){
-				Instantiate(projectile1, projectileSpawn.position, projectileSpawn.rotation);
-				coolddownInc = 0;
-
-			}
-			if(player1.GetButton("HP Shot")){
-				Instantiate(projectile2, projectileSpawn.position, projectileSpawn.rotation);
-				coolddownInc = 0;
-			}
-		}
-		
-	}		
-	
-	void Fire2(){
-
-		if(coolddownInc >= cooldownMax){
-			if(player2.GetButton("Charge Shot")){
-				Instantiate(projectile1, projectileSpawn.position, projectileSpawn.rotation);
-				coolddownInc = 0;
-
-			}
-			if(player2.GetButton("HP Shot")){
-				Instantiate(projectile2, projectileSpawn.position, projectileSpawn.rotation);
-				coolddownInc = 0;
-			}
-		}
-		
-	}		
 
 	
 	void ProcessInput2(){
@@ -137,11 +97,7 @@ public class PlayerMovement : MonoBehaviour
 		GetInput();
 		ProcessInput();
 		ProcessInput2();
-		Fire();
-		Fire2();
-		
-		coolddownInc++;
-
+	
 		
 		/*dodgeCooldownInc++;
 		
