@@ -22,8 +22,8 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] Collider2D p1Collider;
 	[SerializeField] Collider2D p2Collider;
 	
-	float dodgeCooldownMax = 100;
-	float dodgeCooldownInc = 0;
+	[SerializeField] float dodgeCooldownMax = 100;
+	[SerializeField] float dodgeCooldownInc = 0;
 
     //static float player;
 
@@ -54,8 +54,6 @@ public class PlayerMovement : MonoBehaviour
 		
 		moveVector2.x = player2.GetAxis("Move Horizontal");
 		
-		
-		//moveVector.x = player2.GetAxis("Move Horizontal");	
 
 	}
 			
@@ -73,11 +71,35 @@ public class PlayerMovement : MonoBehaviour
 		if(player2.GetButtonDown("Jump") && onGround == true){
 			rb2.AddForce(Vector2.up * jump);
 		}
-		
-	}
 
-	
-	void ProcessInput(){
+        if (player2.GetButtonDown("Dodge"))
+        {
+            //p1Collider.enabled = false;
+
+            Physics2D.IgnoreLayerCollision(8, 11, true);
+
+            Debug.Log("Dodging");
+
+            if (dodgeCooldownInc > dodgeCooldownMax)
+            {
+                //p1Collider.enabled = false;
+
+                Debug.Log(dodgeCooldownInc);
+                Debug.Log(dodgeCooldownMax);
+
+                Physics2D.IgnoreLayerCollision(8, 11, false);
+
+                dodgeCooldownInc = 0;
+            }
+        }
+
+
+
+
+    }
+
+
+    void ProcessInput(){
 		if(moveVector.x > 0){
 			p1.transform.position += transform.right * moveSpeed * Time.deltaTime;
 		}
@@ -88,8 +110,29 @@ public class PlayerMovement : MonoBehaviour
 			rb1.AddForce(Vector2.up * jump);
 		}
 
-		
-	}
+        if (player1.GetButtonDown("Dodge"))
+        {
+            //p1Collider.enabled = false;
+
+            Physics2D.IgnoreLayerCollision(8, 11, true);
+
+            Debug.Log("Dodging");
+        }
+
+        if (dodgeCooldownInc > dodgeCooldownMax)
+        {
+            //p1Collider.enabled = false;
+
+            Debug.Log(dodgeCooldownInc);
+            Debug.Log(dodgeCooldownMax);
+
+            Physics2D.IgnoreLayerCollision(8, 11, false);
+
+            dodgeCooldownInc = 0;
+        }
+
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -97,9 +140,11 @@ public class PlayerMovement : MonoBehaviour
 		GetInput();
 		ProcessInput();
 		ProcessInput2();
-	
-		
-		/*dodgeCooldownInc++;
+
+        dodgeCooldownInc++;
+
+        /*
+         
 		
         //player = PlayerState.player;
 
