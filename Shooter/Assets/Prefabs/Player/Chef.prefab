@@ -54,6 +54,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   cooldownMax: 0
   coolddownInc: 0
+  aimVector: {x: 0, y: 0}
 --- !u!212 &2209128381652756722
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -79,6 +80,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -138,7 +140,9 @@ GameObject:
   - component: {fileID: 7541283548881178362}
   - component: {fileID: 2209128383390554174}
   - component: {fileID: 2209128383390554175}
+  - component: {fileID: 4329939568736411735}
   - component: {fileID: 5712942620928734094}
+  - component: {fileID: 2153987561278865495}
   m_Layer: 8
   m_Name: Chef
   m_TagString: Player1
@@ -186,6 +190,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -234,7 +239,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2209128383390554163}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcb529ad35273d948bb1c09fbc0cfa54, type: 3}
   m_Name: 
@@ -249,13 +254,9 @@ MonoBehaviour:
   onGround: 0
   p1Collider: {fileID: 2209128383390554174}
   p2Collider: {fileID: 0}
+  dodgeCooldownMax: 100
+  dodgeCooldownInc: 0
   moveVector2: {x: 0, y: 0, z: 0}
-  shotSpeed: 0
-  projectile1: {fileID: 0}
-  projectile2: {fileID: 0}
-  projectileSpawn: {fileID: 0}
-  cooldownMax: 0
-  coolddownInc: 0
 --- !u!114 &7541283548881178362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,7 +318,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5712942620928734094
+--- !u!114 &4329939568736411735
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -326,7 +327,68 @@ MonoBehaviour:
   m_GameObject: {fileID: 2209128383390554163}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e967b6d3918129439cf775e314e1983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpHeight: 1000
+  rb: {fileID: 0}
+--- !u!114 &5712942620928734094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2209128383390554163}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6cf1e4a067221e74fa4d06e111e41a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerNum: 0
+--- !u!114 &2153987561278865495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2209128383390554163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: dee0429feb9206044bb3dd221a50dc3e,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4329939568736411735}
+        m_MethodName: Jump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1111957f-15f9-4ec2-ae67-5d107b7477b6
+    m_ActionName: Player/Jump[/Keyboard/space,/DualShock4GamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: edef1c8b-73da-4849-9e55-d888c2db1c3c
+    m_ActionName: Player/Movement[/DualShock4GamepadHID/dpad/up,/DualShock4GamepadHID/dpad/down,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/right,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 0e900899-da2f-4d05-9a7f-0d6b02e981b9
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
