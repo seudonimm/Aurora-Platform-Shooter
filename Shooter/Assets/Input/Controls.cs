@@ -38,7 +38,23 @@ public class Controls : IInputActionCollection, IDisposable
                     ""name"": ""Aim"",
                     ""type"": ""Value"",
                     ""id"": ""e1a66270-ffaf-4298-b0d0-6549bed2bb47"",
-                    ""expectedControlType"": ""Axis"",
+                    ""expectedControlType"": ""Stick"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Charge Shot"",
+                    ""type"": ""Button"",
+                    ""id"": ""f871b5b8-5b72-467b-8fb1-83eede67508c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""HP Shot"",
+                    ""type"": ""Button"",
+                    ""id"": ""a3cb383b-12f7-4203-8ad5-e3a836c039da"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -178,12 +194,34 @@ public class Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""21ee9cef-890f-447f-b54b-012fcd202cf0"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""id"": ""8ddefdef-837a-4fd3-b81b-18744f82e397"",
+                    ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""116f0da7-c4a3-4be8-be87-6fb848b391f8"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Charge Shot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1500f30c-253f-4dc2-afa7-4d2e8e064140"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HP Shot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -197,6 +235,8 @@ public class Controls : IInputActionCollection, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
+        m_Player_ChargeShot = m_Player.FindAction("Charge Shot", throwIfNotFound: true);
+        m_Player_HPShot = m_Player.FindAction("HP Shot", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -249,6 +289,8 @@ public class Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Aim;
+    private readonly InputAction m_Player_ChargeShot;
+    private readonly InputAction m_Player_HPShot;
     public struct PlayerActions
     {
         private Controls m_Wrapper;
@@ -256,6 +298,8 @@ public class Controls : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Aim => m_Wrapper.m_Player_Aim;
+        public InputAction @ChargeShot => m_Wrapper.m_Player_ChargeShot;
+        public InputAction @HPShot => m_Wrapper.m_Player_HPShot;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -274,6 +318,12 @@ public class Controls : IInputActionCollection, IDisposable
                 Aim.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
                 Aim.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
                 Aim.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                ChargeShot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChargeShot;
+                ChargeShot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChargeShot;
+                ChargeShot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChargeShot;
+                HPShot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHPShot;
+                HPShot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHPShot;
+                HPShot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHPShot;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -287,6 +337,12 @@ public class Controls : IInputActionCollection, IDisposable
                 Aim.started += instance.OnAim;
                 Aim.performed += instance.OnAim;
                 Aim.canceled += instance.OnAim;
+                ChargeShot.started += instance.OnChargeShot;
+                ChargeShot.performed += instance.OnChargeShot;
+                ChargeShot.canceled += instance.OnChargeShot;
+                HPShot.started += instance.OnHPShot;
+                HPShot.performed += instance.OnHPShot;
+                HPShot.canceled += instance.OnHPShot;
             }
         }
     }
@@ -296,5 +352,7 @@ public class Controls : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
+        void OnChargeShot(InputAction.CallbackContext context);
+        void OnHPShot(InputAction.CallbackContext context);
     }
 }

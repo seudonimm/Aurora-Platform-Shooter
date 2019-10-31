@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 594}
+  m_MinSize: {x: 950, y: 544}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -44,10 +44,10 @@ MonoBehaviour:
     y: 30
     width: 2048
     height: 1019
-  m_MinSize: {x: 879, y: 544}
-  m_MaxSize: {x: 12008, y: 8044}
+  m_MinSize: {x: 679, y: 494}
+  m_MaxSize: {x: 14002, y: 14044}
   vertical: 0
-  controlID: 64
+  controlID: 194
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -67,8 +67,8 @@ MonoBehaviour:
     y: 0
     width: 559
     height: 1019
-  m_MinSize: {x: 277, y: 72}
-  m_MaxSize: {x: 4002, y: 4022}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -120,15 +120,15 @@ MonoBehaviour:
     y: 537
     width: 1489
     height: 482
-  m_MinSize: {x: 600, y: 300}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 12}
+  m_MinSize: {x: 232, y: 272}
+  m_MaxSize: {x: 10002, y: 10022}
+  m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
   - {fileID: 21}
   - {fileID: 14}
   - {fileID: 12}
-  m_Selected: 3
+  m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &6
 MonoBehaviour:
@@ -218,8 +218,8 @@ MonoBehaviour:
     y: 0
     width: 1489
     height: 1019
-  m_MinSize: {x: 602, y: 544}
-  m_MaxSize: {x: 8006, y: 8044}
+  m_MinSize: {x: 404, y: 494}
+  m_MaxSize: {x: 10002, y: 14044}
   vertical: 1
   controlID: 65
 --- !u!114 &10
@@ -243,8 +243,8 @@ MonoBehaviour:
     y: 0
     width: 1489
     height: 537
-  m_MinSize: {x: 406, y: 222}
-  m_MaxSize: {x: 8006, y: 4022}
+  m_MinSize: {x: 404, y: 222}
+  m_MaxSize: {x: 8004, y: 4022}
   vertical: 0
   controlID: 66
 --- !u!114 &11
@@ -324,9 +324,9 @@ MonoBehaviour:
     m_SearchString: 
   m_ActionsTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 60d8e1a9
-    m_LastClickedID: -1444816800
-    m_ExpandedIDs: d7d33dc62545bfd964ecce34fe5435460bdbe859af20097b
+    m_SelectedIDs: 4ff30320
+    m_LastClickedID: 537129807
+    m_ExpandedIDs: d7d33dc6037ae9c62545bfd94ff3032064ecce34fe543546e27a3c520bdbe85984cf5c65af20097b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -354,11 +354,11 @@ MonoBehaviour:
         selectedIndex: -1
         scroll: {x: 0, y: 0}
       - itemId: 656259478
-        selectedIndex: 0
-        scroll: {x: 0, y: 0}
+        selectedIndex: 15
+        scroll: {x: 0, y: 69}
       - itemId: 1275948795
-        selectedIndex: 30
-        scroll: {x: 0, y: 300.5}
+        selectedIndex: 21
+        scroll: {x: 0, y: 240}
       - itemId: -1184024587
         selectedIndex: -1
         scroll: {x: 0, y: 0}
@@ -395,6 +395,18 @@ MonoBehaviour:
       - itemId: 998472819
         selectedIndex: -1
         scroll: {x: 0, y: 0}
+      - itemId: -1019278396
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: 1381809351
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: -1347074004
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: 378383742
+        selectedIndex: 0
+        scroll: {x: 0, y: 0}
     m_ManualPathEditMode: 0
   m_ActionAssetManager:
     m_AssetObjectForEditing: {fileID: 0}
@@ -414,10 +426,17 @@ MonoBehaviour:
       \"Button\",\n                    \"processors\": \"\",\n                    \"interactions\":
       \"\"\n                },\n                {\n                    \"name\": \"Aim\",\n
       \                   \"type\": \"Value\",\n                    \"id\": \"e1a66270-ffaf-4298-b0d0-6549bed2bb47\",\n
-      \                   \"expectedControlType\": \"Axis\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\"\n                }\n            ],\n
-      \           \"bindings\": [\n                {\n                    \"name\":
-      \"\",\n                    \"id\": \"4e7d5077-ebcd-436a-807a-0e5ac61e33ef\",\n
+      \                   \"expectedControlType\": \"Stick\",\n                    \"processors\":
+      \"\",\n                    \"interactions\": \"\"\n                },\n                {\n
+      \                   \"name\": \"Charge Shot\",\n                    \"type\":
+      \"Button\",\n                    \"id\": \"f871b5b8-5b72-467b-8fb1-83eede67508c\",\n
+      \                   \"expectedControlType\": \"\",\n                    \"processors\":
+      \"\",\n                    \"interactions\": \"\"\n                },\n                {\n
+      \                   \"name\": \"HP Shot\",\n                    \"type\": \"Button\",\n
+      \                   \"id\": \"a3cb383b-12f7-4203-8ad5-e3a836c039da\",\n                    \"expectedControlType\":
+      \"\",\n                    \"processors\": \"\",\n                    \"interactions\":
+      \"\"\n                }\n            ],\n            \"bindings\": [\n                {\n
+      \                   \"name\": \"\",\n                    \"id\": \"4e7d5077-ebcd-436a-807a-0e5ac61e33ef\",\n
       \                   \"path\": \"<Keyboard>/space\",\n                    \"interactions\":
       \"\",\n                    \"processors\": \"\",\n                    \"groups\":
       \"\",\n                    \"action\": \"Jump\",\n                    \"isComposite\":
@@ -480,10 +499,21 @@ MonoBehaviour:
       \"\",\n                    \"groups\": \"\",\n                    \"action\":
       \"Movement\",\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
       true\n                },\n                {\n                    \"name\": \"\",\n
-      \                   \"id\": \"21ee9cef-890f-447f-b54b-012fcd202cf0\",\n                    \"path\":
-      \"<Gamepad>/rightTrigger\",\n                    \"interactions\": \"\",\n                    \"processors\":
+      \                   \"id\": \"8ddefdef-837a-4fd3-b81b-18744f82e397\",\n                    \"path\":
+      \"<Gamepad>/rightStick\",\n                    \"interactions\": \"\",\n                    \"processors\":
       \"\",\n                    \"groups\": \"\",\n                    \"action\":
       \"Aim\",\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
+      false\n                },\n                {\n                    \"name\":
+      \"\",\n                    \"id\": \"116f0da7-c4a3-4be8-be87-6fb848b391f8\",\n
+      \                   \"path\": \"<Gamepad>/rightTrigger\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"\",\n                    \"action\": \"Charge Shot\",\n                    \"isComposite\":
+      false,\n                    \"isPartOfComposite\": false\n                },\n
+      \               {\n                    \"name\": \"\",\n                    \"id\":
+      \"1500f30c-253f-4dc2-afa7-4d2e8e064140\",\n                    \"path\": \"<Gamepad>/rightShoulder\",\n
+      \                   \"interactions\": \"\",\n                    \"processors\":
+      \"\",\n                    \"groups\": \"\",\n                    \"action\":
+      \"HP Shot\",\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
       false\n                }\n            ]\n        }\n    ],\n    \"controlSchemes\":
       []\n}"
     m_IsDirty: 0
@@ -609,10 +639,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 52
-    y: 599.2
-    width: 1396
-    height: 429
+    x: 0
+    y: 610.4
+    width: 1489
+    height: 463
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -627,34 +657,34 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Input
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Input
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\jusman1\Documents\GitHub\Aurora-Platform-Shooter\Shooter
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 40400000
-    m_LastClickedID: 16448
-    m_ExpandedIDs: 00000000fa3100001c370000123c0000
+    m_SelectedIDs: e83b0000
+    m_LastClickedID: 15336
+    m_ExpandedIDs: 00000000d0310000f2360000e83b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Rewired
+      m_OriginalName: Rewired
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 14086
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
@@ -668,7 +698,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fa3100001c370000123c0000
+    m_ExpandedIDs: 00000000d0310000f2360000e83b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -693,8 +723,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: b43e0000
-    m_LastClickedInstanceID: 16052
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000262c0000e62d0000302a0000182f00001c2f00002c2f0000
     m_RenameOverlay:
@@ -761,7 +791,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 100
+  m_LastVerticalScrollValue: 0
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -791,9 +821,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: dc3e0000
-      m_LastClickedID: 16092
-      m_ExpandedIDs: 4efbffff
+      m_SelectedIDs: c4bcffff
+      m_LastClickedID: -17212
+      m_ExpandedIDs: 66fbffffc43e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -853,9 +883,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -4.39, y: -810.4228, z: 0}
+    m_Target: {x: -4.555, y: -3.5310678, z: 0}
     speed: 2
-    m_Value: {x: -4.39, y: -810.4228, z: 0}
+    m_Value: {x: -4.555, y: -3.5310678, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -888,9 +918,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.611155
+    m_Target: 1.2459155
     speed: 2
-    m_Value: 5.611155
+    m_Value: 1.2459155
   m_Ortho:
     m_Target: 1
     speed: 2

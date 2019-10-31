@@ -13,7 +13,6 @@ public class ProjectileAttack : MonoBehaviour {
     [SerializeField] GameObject projectile2;
     [SerializeField] Transform projectileSpawn;
 
-    [SerializeField] Rigidbody2D rb;
 
     [SerializeField] float cooldownMax;
     [SerializeField] float coolddownInc;

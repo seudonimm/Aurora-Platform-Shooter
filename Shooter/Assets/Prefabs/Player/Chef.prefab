@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2209128381652756723}
   - component: {fileID: 2209128381652756722}
   - component: {fileID: 2209128381652756721}
+  - component: {fileID: 692045002155258243}
   m_Layer: 8
   m_Name: Projectile Spawn
   m_TagString: Untagged
@@ -40,7 +41,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2209128381652756725}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dde7e50d15102b4c92eca81cf55ac3a, type: 3}
   m_Name: 
@@ -51,7 +52,6 @@ MonoBehaviour:
   projectile2: {fileID: 2764417330234963691, guid: b75d8bf389c670f43b726f2523bc76cd,
     type: 3}
   projectileSpawn: {fileID: 2209128381652756724}
-  rb: {fileID: 0}
   cooldownMax: 0
   coolddownInc: 0
   aimVector: {x: 0, y: 0}
@@ -125,6 +125,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &692045002155258243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2209128381652756725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 881bbd7cbc6e76d428a9e841d87e7289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile1: {fileID: 1451804196705862926, guid: eb89e343bf011e24a858b3e2987a2d66,
+    type: 3}
+  projectile2: {fileID: 2764417330234963691, guid: b75d8bf389c670f43b726f2523bc76cd,
+    type: 3}
+  projectileSpawn: {fileID: 2209128381652756724}
+  cooldownMax: 0
+  coolddownInc: 0
+  aimVector: {x: 0, y: 0}
 --- !u!1 &2209128383390554163
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,6 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e967b6d3918129439cf775e314e1983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 15
   jumpHeight: 1000
   rb: {fileID: 0}
 --- !u!114 &5712942620928734094

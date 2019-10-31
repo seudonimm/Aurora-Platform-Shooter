@@ -142,6 +142,7 @@
     <Compile Include="Assets\Scripts\ProjectileAttack.cs" />
     <Compile Include="Assets\Scripts\ProjectileAttack2.cs" />
     <Compile Include="Assets\Scripts\ProjectileMovement.cs" />
+    <Compile Include="Assets\Scripts\ProjectileShooter.cs" />
     <Compile Include="Assets\Scripts\StateMachine.cs" />
     <None Include="Assets\Rewired\Documentation\licences.txt" />
     <None Include="Assets\Rewired\Documentation\ReadMe.txt" />

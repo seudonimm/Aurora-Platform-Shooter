@@ -16,6 +16,7 @@ public class ProjectileMovement : MonoBehaviour
     private Player player;
     public Vector2 aimVector;
 
+    private Controls controls = null;
 
 
     // Start is called before the first frame update
@@ -34,11 +35,29 @@ public class ProjectileMovement : MonoBehaviour
         //direction = (Vector2)((worldMousePos - transform.position));
         //direction.Normalize();
     }
+    private void Awake()
+    {
+        controls = new Controls();
+
+        GetInput();
+
+    }
+    private void OnEnable()
+    {
+        controls.Player.Enable();
+    }
+    private void OnDisable()
+    {
+        controls.Player.Disable();
+    }
+
+
 
     // Update is called once per frame
     void Update()
     {
-
+        //GetInput();
+        //ProcessInput();
 		 
         rb.velocity = aimVector * speed;
 
@@ -48,9 +67,8 @@ public class ProjectileMovement : MonoBehaviour
 
     void GetInput()
     {
-        aimVector.x = player.GetAxis("Aim Horizontal");
-
-        aimVector.y = player.GetAxis("Aim Vertical");
+        var movementInput = controls.Player.Aim.ReadValue<Vector2>();
+        aimVector = movementInput;
 
     }
     void ProcessInput()

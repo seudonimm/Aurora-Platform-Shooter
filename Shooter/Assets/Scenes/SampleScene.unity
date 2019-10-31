@@ -2052,7 +2052,7 @@ PrefabInstance:
     - target: {fileID: 2209128381652756723, guid: 5688f4300db3efc40a196c9c7bbb01e9,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2209128381652756723, guid: 5688f4300db3efc40a196c9c7bbb01e9,
         type: 3}
@@ -2083,7 +2083,7 @@ PrefabInstance:
     - target: {fileID: 2209128381652756725, guid: 5688f4300db3efc40a196c9c7bbb01e9,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4329939568736411735, guid: 5688f4300db3efc40a196c9c7bbb01e9,
         type: 3}
@@ -2094,6 +2094,11 @@ PrefabInstance:
         type: 3}
       propertyPath: jumpHeight
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 692045002155258243, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: cooldownMax
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5688f4300db3efc40a196c9c7bbb01e9, type: 3}
