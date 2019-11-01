@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2209128381652756725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.452, y: 0.001, z: 0}
-  m_LocalScale: {x: 1, y: 0.1, z: 1}
+  m_LocalPosition: {x: -0.033, y: -0.039, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2209128383390554160}
   m_RootOrder: 0
@@ -52,7 +52,7 @@ MonoBehaviour:
   projectile2: {fileID: 2764417330234963691, guid: b75d8bf389c670f43b726f2523bc76cd,
     type: 3}
   projectileSpawn: {fileID: 2209128381652756724}
-  cooldownMax: 0
+  cooldownMax: 10
   coolddownInc: 0
   aimVector: {x: 0, y: 0}
 --- !u!212 &2209128381652756722
@@ -93,7 +93,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 90d3686ed5691354e874775c307ca283, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 36a1fe1417783a146b5105689b58801d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
   projectile2: {fileID: 2764417330234963691, guid: b75d8bf389c670f43b726f2523bc76cd,
     type: 3}
   projectileSpawn: {fileID: 2209128381652756724}
-  cooldownMax: 0
+  cooldownMax: 10
   coolddownInc: 0
   aimVector: {x: 0, y: 0}
 --- !u!1 &2209128383390554163
@@ -332,7 +332,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -408,6 +408,18 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: edef1c8b-73da-4849-9e55-d888c2db1c3c
     m_ActionName: Player/Movement[/DualShock4GamepadHID/dpad/up,/DualShock4GamepadHID/dpad/down,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/right,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e1a66270-ffaf-4298-b0d0-6549bed2bb47
+    m_ActionName: Player/Aim[/DualShock4GamepadHID/rightStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f871b5b8-5b72-467b-8fb1-83eede67508c
+    m_ActionName: Player/Charge Shot[/DualShock4GamepadHID/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a3cb383b-12f7-4203-8ad5-e3a836c039da
+    m_ActionName: Player/HP Shot[/DualShock4GamepadHID/rightShoulder]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 0e900899-da2f-4d05-9a7f-0d6b02e981b9

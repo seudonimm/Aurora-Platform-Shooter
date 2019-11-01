@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Rewired;
+//using Rewired;
 
 
 public class ProjectileMovement : MonoBehaviour
@@ -11,18 +11,26 @@ public class ProjectileMovement : MonoBehaviour
 	
 	Vector2 direction;
 
-    [SerializeField] int playerID;
+    //[SerializeField] int playerID;
 
-    private Player player;
+    //private Player player;
+
     public Vector2 aimVector;
 
     private Controls controls = null;
 
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        controls = new Controls();
+
+        //GetInput();
+
+    }
     void Start()
     {
-        player = ReInput.players.GetPlayer(playerID);
+        //player = ReInput.players.GetPlayer(playerID);
 
         rb = GetComponent<Rigidbody2D>();
 
@@ -30,17 +38,13 @@ public class ProjectileMovement : MonoBehaviour
 
         direction = aimVector;
 
+        //rb.velocity = aimVector * speed;
+
+
 
         //Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //direction = (Vector2)((worldMousePos - transform.position));
         //direction.Normalize();
-    }
-    private void Awake()
-    {
-        controls = new Controls();
-
-        GetInput();
-
     }
     private void OnEnable()
     {
@@ -59,7 +63,7 @@ public class ProjectileMovement : MonoBehaviour
         //GetInput();
         //ProcessInput();
 		 
-        rb.velocity = aimVector * speed;
+        rb.velocity = transform.right * speed;
 
 		
 		
@@ -67,8 +71,8 @@ public class ProjectileMovement : MonoBehaviour
 
     void GetInput()
     {
-        var movementInput = controls.Player.Aim.ReadValue<Vector2>();
-        aimVector = movementInput;
+        aimVector = controls.Player.Aim.ReadValue<Vector2>();
+     
 
     }
     void ProcessInput()
