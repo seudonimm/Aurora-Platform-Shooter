@@ -34,7 +34,7 @@ public class ProjectileMovement : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
 
-        GetInput();
+        //GetInput();
 
         direction = aimVector;
 

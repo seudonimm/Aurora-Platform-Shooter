@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 544}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -44,10 +44,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 683, y: 494}
-  m_MaxSize: {x: 14004, y: 14044}
+  m_MinSize: {x: 681, y: 494}
+  m_MaxSize: {x: 14002, y: 14044}
   vertical: 0
-  controlID: 129
+  controlID: 132
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -67,8 +67,8 @@ MonoBehaviour:
     y: 0
     width: 524
     height: 947
-  m_MinSize: {x: 277, y: 72}
-  m_MaxSize: {x: 4002, y: 4022}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -152,7 +152,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 544}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 494}
   m_MaxSize: {x: 10002, y: 14044}
   vertical: 1
-  controlID: 65
+  controlID: 88
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -302,8 +302,8 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_ActionMapsTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 436c80ee
-    m_LastClickedID: -293573565
+    m_SelectedIDs: 2545bfd9
+    m_LastClickedID: -641776347
     m_ExpandedIDs: 00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -323,10 +323,10 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
   m_ActionsTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7a57b19a
-    m_LastClickedID: -1699653766
-    m_ExpandedIDs: 7a57b19a3b1951a0d7d33dc6037ae9c6ccd6baca2077d2ca5dcaa9cc2545bfd9ef34b6e7436c80ee4ff3032064ecce34c564953ffe54354681e5cf4fe27a3c52e526b9570bdbe85984cf5c65af20097b
+    scrollPos: {x: 0, y: 19}
+    m_SelectedIDs: 0bdbe859
+    m_LastClickedID: 1508432651
+    m_ExpandedIDs: 812b90867a57b19a3b1951a0d7d33dc6037ae9c6ccd6baca2077d2ca5dcaa9cc2545bfd9ef34b6e7436c80ee2c7a01054ff3032064ecce34c564953ffe54354681e5cf4fe27a3c52e526b9570bdbe85984cf5c65af20097b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -357,8 +357,8 @@ MonoBehaviour:
         selectedIndex: 15
         scroll: {x: 0, y: 69}
       - itemId: 1275948795
-        selectedIndex: 21
-        scroll: {x: 0, y: 240}
+        selectedIndex: 11
+        scroll: {x: 0, y: 60.5}
       - itemId: -1184024587
         selectedIndex: -1
         scroll: {x: 0, y: 0}
@@ -407,6 +407,12 @@ MonoBehaviour:
       - itemId: 378383742
         selectedIndex: 0
         scroll: {x: 0, y: 0}
+      - itemId: 1581240744
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: -206068285
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
     m_ManualPathEditMode: 0
   m_ActionAssetManager:
     m_AssetObjectForEditing: {fileID: 0}
@@ -435,31 +441,36 @@ MonoBehaviour:
       \                   \"name\": \"HP Shot\",\n                    \"type\": \"Button\",\n
       \                   \"id\": \"a3cb383b-12f7-4203-8ad5-e3a836c039da\",\n                    \"expectedControlType\":
       \"\",\n                    \"processors\": \"\",\n                    \"interactions\":
-      \"\"\n                }\n            ],\n            \"bindings\": [\n                {\n
-      \                   \"name\": \"\",\n                    \"id\": \"4e7d5077-ebcd-436a-807a-0e5ac61e33ef\",\n
-      \                   \"path\": \"<Keyboard>/space\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Jump\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": false\n                },\n
+      \"\"\n                },\n                {\n                    \"name\": \"Movement
+      Special\",\n                    \"type\": \"Button\",\n                    \"id\":
+      \"ab4a650b-a3da-4edf-8af0-8ec567ea1155\",\n                    \"expectedControlType\":
+      \"\",\n                    \"processors\": \"\",\n                    \"interactions\":
+      \"Press\"\n                }\n            ],\n            \"bindings\": [\n
       \               {\n                    \"name\": \"\",\n                    \"id\":
-      \"2e722a77-3639-48a9-a9a2-e3690ce669fb\",\n                    \"path\": \"<Gamepad>/buttonEast\",\n
+      \"4e7d5077-ebcd-436a-807a-0e5ac61e33ef\",\n                    \"path\": \"<Keyboard>/space\",\n
       \                   \"interactions\": \"\",\n                    \"processors\":
       \"\",\n                    \"groups\": \"\",\n                    \"action\":
       \"Jump\",\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
       false\n                },\n                {\n                    \"name\":
-      \"D-Pad\",\n                    \"id\": \"f6fe9354-72c3-40d0-8591-42195292fe53\",\n
-      \                   \"path\": \"2DVector\",\n                    \"interactions\":
+      \"\",\n                    \"id\": \"2e722a77-3639-48a9-a9a2-e3690ce669fb\",\n
+      \                   \"path\": \"<Gamepad>/buttonEast\",\n                    \"interactions\":
       \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Movement\",\n                    \"isComposite\":
-      true,\n                    \"isPartOfComposite\": false\n                },\n
-      \               {\n                    \"name\": \"Up\",\n                    \"id\":
-      \"7d96db96-e63f-4799-943a-6989bd814d70\",\n                    \"path\": \"<Gamepad>/dpad/up\",\n
+      \"\",\n                    \"action\": \"Jump\",\n                    \"isComposite\":
+      false,\n                    \"isPartOfComposite\": false\n                },\n
+      \               {\n                    \"name\": \"D-Pad\",\n                    \"id\":
+      \"f6fe9354-72c3-40d0-8591-42195292fe53\",\n                    \"path\": \"2DVector\",\n
       \                   \"interactions\": \"\",\n                    \"processors\":
       \"\",\n                    \"groups\": \"\",\n                    \"action\":
-      \"Movement\",\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
-      true\n                },\n                {\n                    \"name\": \"Down\",\n
-      \                   \"id\": \"d4fcc8f4-6d5f-4e84-8dba-66da5a6cb722\",\n                    \"path\":
-      \"<Gamepad>/dpad/down\",\n                    \"interactions\": \"\",\n                    \"processors\":
+      \"Movement\",\n                    \"isComposite\": true,\n                    \"isPartOfComposite\":
+      false\n                },\n                {\n                    \"name\":
+      \"Up\",\n                    \"id\": \"7d96db96-e63f-4799-943a-6989bd814d70\",\n
+      \                   \"path\": \"<Gamepad>/dpad/up\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"\",\n                    \"action\": \"Movement\",\n                    \"isComposite\":
+      false,\n                    \"isPartOfComposite\": true\n                },\n
+      \               {\n                    \"name\": \"Down\",\n                    \"id\":
+      \"d4fcc8f4-6d5f-4e84-8dba-66da5a6cb722\",\n                    \"path\": \"<Gamepad>/dpad/down\",\n
+      \                   \"interactions\": \"\",\n                    \"processors\":
       \"\",\n                    \"groups\": \"\",\n                    \"action\":
       \"Movement\",\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
       true\n                },\n                {\n                    \"name\": \"Left\",\n
@@ -514,119 +525,13 @@ MonoBehaviour:
       \                   \"interactions\": \"\",\n                    \"processors\":
       \"\",\n                    \"groups\": \"\",\n                    \"action\":
       \"HP Shot\",\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
-      false\n                }\n            ]\n        },\n        {\n            \"name\":
-      \"New action map\",\n            \"id\": \"d076538c-2727-4ae4-ad8f-57cf9f9f8a53\",\n
-      \           \"actions\": [\n                {\n                    \"name\":
-      \"New action\",\n                    \"type\": \"Button\",\n                    \"id\":
-      \"bbc3a8d7-de0c-4db1-aaa6-2af5efd0fce7\",\n                    \"expectedControlType\":
-      \"\",\n                    \"processors\": \"\",\n                    \"interactions\":
-      \"\"\n                }\n            ],\n            \"bindings\": [\n                {\n
-      \                   \"name\": \"\",\n                    \"id\": \"27b2bc75-ce92-4085-a1a3-c34392280c24\",\n
-      \                   \"path\": \"\",\n                    \"interactions\": \"\",\n
-      \                   \"processors\": \"\",\n                    \"groups\": \"\",\n
-      \                   \"action\": \"New action\",\n                    \"isComposite\":
+      false\n                },\n                {\n                    \"name\":
+      \"\",\n                    \"id\": \"564ff190-777e-4ee3-8474-93c1a880b848\",\n
+      \                   \"path\": \"<Gamepad>/leftShoulder\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"\",\n                    \"action\": \"Movement Special\",\n                    \"isComposite\":
       false,\n                    \"isPartOfComposite\": false\n                }\n
-      \           ]\n        },\n        {\n            \"name\": \"Player1\",\n            \"id\":
-      \"0f9327ce-4513-4be9-b08f-a4e0852d8e64\",\n            \"actions\": [\n                {\n
-      \                   \"name\": \"Jump\",\n                    \"type\": \"Button\",\n
-      \                   \"id\": \"b7061d98-bbb7-4a6a-8b97-967ae9a55988\",\n                    \"expectedControlType\":
-      \"\",\n                    \"processors\": \"\",\n                    \"interactions\":
-      \"Press\"\n                },\n                {\n                    \"name\":
-      \"Movement\",\n                    \"type\": \"Button\",\n                    \"id\":
-      \"1bf335e3-4621-4255-adaf-9798bfa20d96\",\n                    \"expectedControlType\":
-      \"Button\",\n                    \"processors\": \"\",\n                    \"interactions\":
-      \"\"\n                },\n                {\n                    \"name\": \"Aim\",\n
-      \                   \"type\": \"Value\",\n                    \"id\": \"2f698219-83c0-4892-8a33-6091c28338d6\",\n
-      \                   \"expectedControlType\": \"Stick\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\"\n                },\n                {\n
-      \                   \"name\": \"Charge Shot\",\n                    \"type\":
-      \"Button\",\n                    \"id\": \"3f3025ee-11a5-41df-b10d-118b5f1462f4\",\n
-      \                   \"expectedControlType\": \"\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\"\n                },\n                {\n
-      \                   \"name\": \"HP Shot\",\n                    \"type\": \"Button\",\n
-      \                   \"id\": \"cb129bc0-b7a8-4dd3-880f-b678762fdedf\",\n                    \"expectedControlType\":
-      \"\",\n                    \"processors\": \"\",\n                    \"interactions\":
-      \"\"\n                }\n            ],\n            \"bindings\": [\n                {\n
-      \                   \"name\": \"\",\n                    \"id\": \"635f259e-2f1b-4ce2-bd6d-f3071cf53c5a\",\n
-      \                   \"path\": \"<Keyboard>/space\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Jump\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": false\n                },\n
-      \               {\n                    \"name\": \"\",\n                    \"id\":
-      \"e9ad652b-ed3f-4562-87f5-a7bfb9d0ec4f\",\n                    \"path\": \"<Gamepad>/buttonEast\",\n
-      \                   \"interactions\": \"\",\n                    \"processors\":
-      \"\",\n                    \"groups\": \"\",\n                    \"action\":
-      \"Jump\",\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
-      false\n                },\n                {\n                    \"name\":
-      \"D-Pad\",\n                    \"id\": \"3c8e6930-1137-4f05-a420-7a8b435202d0\",\n
-      \                   \"path\": \"2DVector\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Movement\",\n                    \"isComposite\":
-      true,\n                    \"isPartOfComposite\": false\n                },\n
-      \               {\n                    \"name\": \"Up\",\n                    \"id\":
-      \"e52afb16-e86b-413a-9426-751b58f59e3b\",\n                    \"path\": \"<Gamepad>/dpad/up\",\n
-      \                   \"interactions\": \"\",\n                    \"processors\":
-      \"\",\n                    \"groups\": \"\",\n                    \"action\":
-      \"Movement\",\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
-      true\n                },\n                {\n                    \"name\": \"Down\",\n
-      \                   \"id\": \"aea2e9ca-7e37-457f-93f1-c0013d9e7a83\",\n                    \"path\":
-      \"<Gamepad>/dpad/down\",\n                    \"interactions\": \"\",\n                    \"processors\":
-      \"\",\n                    \"groups\": \"\",\n                    \"action\":
-      \"Movement\",\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
-      true\n                },\n                {\n                    \"name\": \"Left\",\n
-      \                   \"id\": \"302e7f2e-f81e-460c-8535-c7ec175ad461\",\n                    \"path\":
-      \"<Gamepad>/dpad/left\",\n                    \"interactions\": \"\",\n                    \"processors\":
-      \"\",\n                    \"groups\": \"\",\n                    \"action\":
-      \"Movement\",\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
-      true\n                },\n                {\n                    \"name\": \"Right\",\n
-      \                   \"id\": \"8605418d-6a2e-4b39-b1e4-eddf936eacff\",\n                    \"path\":
-      \"<Gamepad>/dpad/right\",\n                    \"interactions\": \"\",\n                    \"processors\":
-      \"\",\n                    \"groups\": \"\",\n                    \"action\":
-      \"Movement\",\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
-      true\n                },\n                {\n                    \"name\": \"WASD\",\n
-      \                   \"id\": \"a8347f10-3182-4b70-abf9-7efe5a1e658f\",\n                    \"path\":
-      \"2DVector\",\n                    \"interactions\": \"\",\n                    \"processors\":
-      \"\",\n                    \"groups\": \"\",\n                    \"action\":
-      \"Movement\",\n                    \"isComposite\": true,\n                    \"isPartOfComposite\":
-      false\n                },\n                {\n                    \"name\":
-      \"up\",\n                    \"id\": \"a670b59d-1c11-4469-8d46-cf7dbfac0ea1\",\n
-      \                   \"path\": \"<Keyboard>/w\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Movement\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": true\n                },\n
-      \               {\n                    \"name\": \"down\",\n                    \"id\":
-      \"d36c2dfd-4fce-430d-a085-175f448b41ba\",\n                    \"path\": \"<Keyboard>/s\",\n
-      \                   \"interactions\": \"\",\n                    \"processors\":
-      \"\",\n                    \"groups\": \"\",\n                    \"action\":
-      \"Movement\",\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
-      true\n                },\n                {\n                    \"name\": \"left\",\n
-      \                   \"id\": \"61698e40-24a2-4961-9202-ad9b1d476932\",\n                    \"path\":
-      \"<Keyboard>/a\",\n                    \"interactions\": \"\",\n                    \"processors\":
-      \"\",\n                    \"groups\": \"\",\n                    \"action\":
-      \"Movement\",\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
-      true\n                },\n                {\n                    \"name\": \"right\",\n
-      \                   \"id\": \"808b25d8-aa75-4054-add1-192d15bbaecc\",\n                    \"path\":
-      \"<Keyboard>/d\",\n                    \"interactions\": \"\",\n                    \"processors\":
-      \"\",\n                    \"groups\": \"\",\n                    \"action\":
-      \"Movement\",\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
-      true\n                },\n                {\n                    \"name\": \"\",\n
-      \                   \"id\": \"81014004-2185-4d21-ab1c-bc4e2bbe820c\",\n                    \"path\":
-      \"<Gamepad>/rightStick\",\n                    \"interactions\": \"\",\n                    \"processors\":
-      \"\",\n                    \"groups\": \"\",\n                    \"action\":
-      \"Aim\",\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
-      false\n                },\n                {\n                    \"name\":
-      \"\",\n                    \"id\": \"c41947e5-fb8a-4354-9799-0ed4b07acc31\",\n
-      \                   \"path\": \"<Gamepad>/rightTrigger\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"Charge Shot\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": false\n                },\n
-      \               {\n                    \"name\": \"\",\n                    \"id\":
-      \"380dba9d-b62f-4291-9c6b-2e394dc1b5a7\",\n                    \"path\": \"<Gamepad>/rightShoulder\",\n
-      \                   \"interactions\": \"\",\n                    \"processors\":
-      \"\",\n                    \"groups\": \"\",\n                    \"action\":
-      \"HP Shot\",\n                    \"isComposite\": false,\n                    \"isPartOfComposite\":
-      false\n                }\n            ]\n        }\n    ],\n    \"controlSchemes\":
-      []\n}"
+      \           ]\n        }\n    ],\n    \"controlSchemes\": []\n}"
     m_IsDirty: 0
   m_Toolbar:
     m_IsDirty: 0
@@ -768,20 +673,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Art/Characters
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Art/Characters
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Jawad Usman\Documents\GitHub\Aurora-Platform-Shooter\Shooter
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 2e3f0000
-    m_LastClickedID: 16174
-    m_ExpandedIDs: 00000000423c00003a4100000446000000ca9a3b
+    m_SelectedIDs: ca360000
+    m_LastClickedID: 14026
+    m_ExpandedIDs: 00000000de3200005a360000e6370000d83c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -809,7 +714,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000423c00003a41000004460000
+    m_ExpandedIDs: 00000000de320000e6370000d83c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -902,7 +807,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 1408
+  m_LastVerticalScrollValue: 1440
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -932,9 +837,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: ca360000
       m_LastClickedID: 0
-      m_ExpandedIDs: b8f0fffffef5ffff3c480000a6480000
+      m_ExpandedIDs: 68faffffcc3f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -994,9 +899,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.39999962, y: -1, z: 9.39}
+    m_Target: {x: -2.3696094, y: 1.1852852, z: -20.59818}
     speed: 2
-    m_Value: {x: 0.39999962, y: -1, z: 9.39}
+    m_Value: {x: -2.295477, y: 1.263938, z: -20.528141}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1029,9 +934,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 113.07365
+    m_Target: 18.572954
     speed: 2
-    m_Value: 113.07365
+    m_Value: 19.44812
   m_Ortho:
     m_Target: 1
     speed: 2

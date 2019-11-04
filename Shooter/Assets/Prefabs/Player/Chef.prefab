@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile1: {fileID: 1451804196705862926, guid: eb89e343bf011e24a858b3e2987a2d66,
     type: 3}
-  projectile2: {fileID: 2764417330234963691, guid: b75d8bf389c670f43b726f2523bc76cd,
+  projectile2: {fileID: 5905080769540936277, guid: 265f39a2830b1ee4ca555e53a329b422,
     type: 3}
   projectileSpawn: {fileID: 2209128381652756724}
   cooldownMax: 10
@@ -420,6 +420,41 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: a3cb383b-12f7-4203-8ad5-e3a836c039da
     m_ActionName: Player/HP Shot[/DualShock4GamepadHID/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bbc3a8d7-de0c-4db1-aaa6-2af5efd0fce7
+    m_ActionName: New action map/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b7061d98-bbb7-4a6a-8b97-967ae9a55988
+    m_ActionName: Player1/Jump[/Keyboard/space,/DualShock4GamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1bf335e3-4621-4255-adaf-9798bfa20d96
+    m_ActionName: Player1/Movement[/DualShock4GamepadHID/dpad/up,/DualShock4GamepadHID/dpad/down,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/right,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2f698219-83c0-4892-8a33-6091c28338d6
+    m_ActionName: Player1/Aim[/DualShock4GamepadHID/rightStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3f3025ee-11a5-41df-b10d-118b5f1462f4
+    m_ActionName: Player1/Charge Shot[/DualShock4GamepadHID/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cb129bc0-b7a8-4dd3-880f-b678762fdedf
+    m_ActionName: Player1/HP Shot[/DualShock4GamepadHID/rightShoulder]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 0e900899-da2f-4d05-9a7f-0d6b02e981b9

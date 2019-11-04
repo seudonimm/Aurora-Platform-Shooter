@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
 
     private Controls controls = null;
 
-    
+    [SerializeField] Vector2 rightLeft;
+
 
     void Start()
     {
@@ -48,6 +49,8 @@ public class PlayerController : MonoBehaviour
     {
         var movementInput = controls.Player.Movement.ReadValue<Vector2>();
 
+        rightLeft = movementInput;
+
         if (movementInput.x > 0)
         {
             transform.position += transform.right * moveSpeed * Time.deltaTime;
@@ -57,7 +60,7 @@ public class PlayerController : MonoBehaviour
             transform.position += -transform.right * moveSpeed * Time.deltaTime;
         }
 
-        Debug.Log("new moving");
+
     }
     public void Jump()
     {
@@ -65,5 +68,26 @@ public class PlayerController : MonoBehaviour
        
         Debug.Log("new jump");
 
+    }
+
+    public void ChefSpecial()
+    {
+        float slideSpeed = 1000;
+
+        if (rightLeft.x > 0)
+        {
+            rb.AddForce(Vector2.right * slideSpeed);
+        }
+        if (rightLeft.x < 0)
+        {
+            rb.AddForce(-Vector2.right * slideSpeed);
+        }
+
+        Debug.Log("slide");
+    }
+
+    public void WitchSpecial()
+    {
+        rb.gravityScale = 0;
     }
 }

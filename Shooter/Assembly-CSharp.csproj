@@ -125,10 +125,12 @@
     <Compile Include="Assets\Rewired\Internal\Scripts\InputManager.cs" />
     <Compile Include="Assets\Rewired\Internal\Scripts\Misc\ExternalTools.cs" />
     <Compile Include="Assets\Rewired\Internal\Scripts\Platforms\Ouya\OuyaInputSource.cs" />
+    <Compile Include="Assets\Scripts\CharacterMovementSpecials.cs" />
     <Compile Include="Assets\Scripts\DamageSystem.cs" />
     <Compile Include="Assets\Scripts\DamageSystem1.cs" />
     <Compile Include="Assets\Scripts\DamageSystem2.cs" />
     <Compile Include="Assets\Scripts\DeleteBox.cs" />
+    <Compile Include="Assets\Scripts\FryingPan.cs" />
     <Compile Include="Assets\Scripts\IState.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />

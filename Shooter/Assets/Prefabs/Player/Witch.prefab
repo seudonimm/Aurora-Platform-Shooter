@@ -275,33 +275,9 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: a3cb383b-12f7-4203-8ad5-e3a836c039da
     m_ActionName: Player/HP Shot[/DualShock4GamepadHID/rightShoulder]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: bbc3a8d7-de0c-4db1-aaa6-2af5efd0fce7
-    m_ActionName: New action map/New action
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b7061d98-bbb7-4a6a-8b97-967ae9a55988
-    m_ActionName: Player1/Jump[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 1bf335e3-4621-4255-adaf-9798bfa20d96
-    m_ActionName: Player1/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 2f698219-83c0-4892-8a33-6091c28338d6
-    m_ActionName: Player1/Aim
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3f3025ee-11a5-41df-b10d-118b5f1462f4
-    m_ActionName: Player1/Charge Shot
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: cb129bc0-b7a8-4dd3-880f-b678762fdedf
-    m_ActionName: Player1/HP Shot
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 0f9327ce-4513-4be9-b08f-a4e0852d8e64
+  m_DefaultActionMap: 0e900899-da2f-4d05-9a7f-0d6b02e981b9
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1087675694258092416
