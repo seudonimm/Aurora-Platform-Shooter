@@ -16,10 +16,25 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Vector2 rightLeft;
 
+    [SerializeField] bool moveWitch = false;
+    [SerializeField] bool moveChef = false;
+
+
+    [SerializeField] float flyCooldownMax;
+    [SerializeField] float flyCooldownInc;
+
+    [SerializeField] float currentGravity;
+
+    [SerializeField] float explosionSpeed;
+    [SerializeField] Transform explosionSpawn;
+    [SerializeField] GameObject explosion;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        currentGravity = rb.gravityScale;
 
     }
 
@@ -43,6 +58,16 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Move();
+
+        flyCooldownInc++;
+
+        if (flyCooldownInc >= flyCooldownMax)
+        {
+            moveWitch = false;
+            rb.gravityScale = currentGravity;
+        }
+
+
     }
 
     public void Move()
@@ -59,7 +84,17 @@ public class PlayerController : MonoBehaviour
         {
             transform.position += -transform.right * moveSpeed * Time.deltaTime;
         }
-
+        if (moveWitch)
+        {
+            if (movementInput.y > 0)
+            {
+                transform.position += transform.up * moveSpeed * Time.deltaTime;
+            }
+            if (movementInput.y < 0)
+            {
+                transform.position += -transform.up * moveSpeed * Time.deltaTime;
+            }
+        }
 
     }
     public void Jump()
@@ -88,6 +123,22 @@ public class PlayerController : MonoBehaviour
 
     public void WitchSpecial()
     {
+        moveWitch = true;
+        
         rb.gravityScale = 0;
+
+        flyCooldownInc = 0;
+       
+    }
+
+    public void PirateSpecial()
+    {
+        Instantiate(explosion, explosionSpawn.position, explosionSpawn.rotation);
+        rb.AddForce(rightLeft * explosionSpeed);
+    }
+
+    public void SpySpecial()
+    {
+
     }
 }

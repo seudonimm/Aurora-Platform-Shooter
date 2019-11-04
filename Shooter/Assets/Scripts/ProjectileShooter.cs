@@ -10,7 +10,7 @@ public class ProjectileShooter : MonoBehaviour
 
 
     [SerializeField] float cooldownMax;
-    [SerializeField] float coolddownInc;
+    [SerializeField] float cooldownInc;
 
     Vector2 direction;
 
@@ -35,7 +35,7 @@ public class ProjectileShooter : MonoBehaviour
 
         Fire();
 
-        coolddownInc++;
+        cooldownInc++;
 
     }
 
@@ -66,13 +66,13 @@ public class ProjectileShooter : MonoBehaviour
     void Fire()
     {
 
-        if (coolddownInc >= cooldownMax)
+        if (cooldownInc >= cooldownMax)
         {
             
             if (controls.Player.ChargeShot.ReadValue<float>() != 0)
             {
                 Instantiate(projectile1, projectileSpawn.position, projectileSpawn.rotation);
-                coolddownInc = 0;
+                cooldownInc = 0;
 
                 Debug.Log("charge shot");
 
@@ -80,7 +80,7 @@ public class ProjectileShooter : MonoBehaviour
             if (controls.Player.HPShot.ReadValue<float>() != 0)
             {
                 Instantiate(projectile2, projectileSpawn.position, projectileSpawn.rotation);
-                coolddownInc = 0;
+                cooldownInc = 0;
 
                 Debug.Log("hp shot");
 

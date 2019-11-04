@@ -143,7 +143,7 @@ MonoBehaviour:
     type: 3}
   projectileSpawn: {fileID: 2209128381652756724}
   cooldownMax: 10
-  coolddownInc: 0
+  cooldownInc: 0
   aimVector: {x: 0, y: 0}
 --- !u!1 &2209128383390554163
 GameObject:
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2209128383390554163}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fd9da8d1c332a645927ae88a0430604, type: 3}
   m_Name: 
@@ -353,6 +353,12 @@ MonoBehaviour:
   moveSpeed: 15
   jumpHeight: 1000
   rb: {fileID: 0}
+  rightLeft: {x: 0, y: 0}
+  moveWitch: 0
+  moveChef: 0
+  flyCooldownMax: 0
+  flyCooldownInc: 0
+  currentGravity: 0
 --- !u!114 &5712942620928734094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,40 +427,20 @@ MonoBehaviour:
     m_ActionId: a3cb383b-12f7-4203-8ad5-e3a836c039da
     m_ActionName: Player/HP Shot[/DualShock4GamepadHID/rightShoulder]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: bbc3a8d7-de0c-4db1-aaa6-2af5efd0fce7
-    m_ActionName: New action map/New action
-  - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 4329939568736411735}
+        m_MethodName: ChefSpecial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: b7061d98-bbb7-4a6a-8b97-967ae9a55988
-    m_ActionName: Player1/Jump[/Keyboard/space,/DualShock4GamepadHID/buttonEast]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 1bf335e3-4621-4255-adaf-9798bfa20d96
-    m_ActionName: Player1/Movement[/DualShock4GamepadHID/dpad/up,/DualShock4GamepadHID/dpad/down,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/right,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 2f698219-83c0-4892-8a33-6091c28338d6
-    m_ActionName: Player1/Aim[/DualShock4GamepadHID/rightStick]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3f3025ee-11a5-41df-b10d-118b5f1462f4
-    m_ActionName: Player1/Charge Shot[/DualShock4GamepadHID/rightTrigger]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: cb129bc0-b7a8-4dd3-880f-b678762fdedf
-    m_ActionName: Player1/HP Shot[/DualShock4GamepadHID/rightShoulder]
+    m_ActionId: ab4a650b-a3da-4edf-8af0-8ec567ea1155
+    m_ActionName: Player/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 0e900899-da2f-4d05-9a7f-0d6b02e981b9

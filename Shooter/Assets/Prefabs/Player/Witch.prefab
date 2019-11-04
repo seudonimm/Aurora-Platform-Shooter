@@ -96,7 +96,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087675692521032006}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fd9da8d1c332a645927ae88a0430604, type: 3}
   m_Name: 
@@ -208,6 +208,12 @@ MonoBehaviour:
   moveSpeed: 15
   jumpHeight: 1000
   rb: {fileID: 0}
+  rightLeft: {x: 0, y: 0}
+  moveWitch: 0
+  moveChef: 0
+  flyCooldownMax: 300
+  flyCooldownInc: 0
+  currentGravity: 0
 --- !u!114 &5932761960987997413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,6 +281,21 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: a3cb383b-12f7-4203-8ad5-e3a836c039da
     m_ActionName: Player/HP Shot[/DualShock4GamepadHID/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5768563774933061712}
+        m_MethodName: WitchSpecial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ab4a650b-a3da-4edf-8af0-8ec567ea1155
+    m_ActionName: Player/Movement Special[/DualShock4GamepadHID/leftShoulder]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 0e900899-da2f-4d05-9a7f-0d6b02e981b9
@@ -423,5 +444,5 @@ MonoBehaviour:
     type: 3}
   projectileSpawn: {fileID: 1087675694258092417}
   cooldownMax: 10
-  coolddownInc: 0
+  cooldownInc: 0
   aimVector: {x: 0, y: 0}

@@ -31,7 +31,7 @@ public class FryingPan : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D col)
     {
         bounce++;
 
@@ -39,6 +39,12 @@ public class FryingPan : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        if (col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("Player1") || col.gameObject.CompareTag("Player2"))
+        {
+            Destroy(this.gameObject);
+        }
+
     }
 
 
