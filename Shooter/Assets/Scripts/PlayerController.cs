@@ -29,6 +29,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform explosionSpawn;
     [SerializeField] GameObject explosion;
 
+    [SerializeField] int playerID;
+
+    [SerializeField] Transform player;
+
+
+
 
     void Start()
     {
@@ -36,13 +42,15 @@ public class PlayerController : MonoBehaviour
 
         currentGravity = rb.gravityScale;
 
+
     }
 
     private void Awake()
     {
         controls = new Controls();
-        controls.Player.Movement.performed += ctx => Move();
 
+        //controls.Player.Movement.performed += ctx => Move();
+        
     }
 
     private void OnEnable()
@@ -57,7 +65,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        //Move();
 
         flyCooldownInc++;
 

@@ -10,6 +10,12 @@ public class MultipleTargetCamera : MonoBehaviour
 
     public Camera camera;
 
+    [SerializeField] GameObject t1;
+    [SerializeField] GameObject t2;
+
+    [SerializeField] Vector2 distanceBtwn;
+
+
     private void LateUpdate()
     {
         if (targets.Count == 0)
@@ -20,7 +26,9 @@ public class MultipleTargetCamera : MonoBehaviour
 
         transform.position = newPosition;
 
-        camera.orthographicSize = 
+        distanceBtwn = t1.transform.position - t2.transform.position;
+
+        camera.orthographicSize = Mathf.Abs(distanceBtwn.x) * 0.5f;
     }
 
     Vector3 GetCenterPoint()
@@ -39,16 +47,16 @@ public class MultipleTargetCamera : MonoBehaviour
         return bounds.center;
     }
 
-    void SetCameraSize()
-    {
-        //horizontal size is based on actual screen ratio
-        float minSizeX = minSizeY * Screen.width / Screen.height;
-        //multiplying by 0.5, because the ortographicSize is actually half the height
-        float width = Mathf.Abs(player1.position.x - player2.position.x) * 0.5f;
-        float height = Mathf.Abs(player1.position.y - player2.position.y) * 0.5f;
-        //computing the size
-        float camSizeX = Mathf.Max(width, minSizeX);
-        camera.orthographicSize = Mathf.Max(height,
-            camSizeX * Screen.height / Screen.width, minSizeY);
-    }
+    //void SetCameraSize()
+    //{
+    //    //horizontal size is based on actual screen ratio
+    //    float minSizeX = minSizeY * Screen.width / Screen.height;
+    //    //multiplying by 0.5, because the ortographicSize is actually half the height
+    //    float width = Mathf.Abs(player1.position.x - player2.position.x) * 0.5f;
+    //    float height = Mathf.Abs(player1.position.y - player2.position.y) * 0.5f;
+    //    //computing the size
+    //    float camSizeX = Mathf.Max(width, minSizeX);
+    //    camera.orthographicSize = Mathf.Max(height,
+    //        camSizeX * Screen.height / Screen.width, minSizeY);
+    //}
 }

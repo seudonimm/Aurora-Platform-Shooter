@@ -15,11 +15,11 @@
                 },
                 {
                     "name": "Movement",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "edef1c8b-73da-4849-9e55-d888c2db1c3c",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Dpad",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Hold(duration=0.1,pressPoint=0.1)"
                 },
                 {
                     "name": "Aim",

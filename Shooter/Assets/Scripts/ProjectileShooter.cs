@@ -30,10 +30,10 @@ public class ProjectileShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetInput();
-        ProcessInput();
+        //GetInput();
+        //ProcessInput();
 
-        Fire();
+        //Fire();
 
         cooldownInc++;
 
@@ -51,19 +51,19 @@ public class ProjectileShooter : MonoBehaviour
 
 
 
-    void GetInput()
+    public void GetInput()
     {
         var movementInput = controls.Player.Aim.ReadValue<Vector2>();
         aimVector = movementInput;
-    }
-    void ProcessInput()
-    {
+    //}
+    //void ProcessInput()
+    //{
         float joyAngle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg;
         projectileSpawn.rotation = Quaternion.AngleAxis(joyAngle, Vector3.forward);
 
     }
 
-    void Fire()
+    public void Fire()
     {
 
         if (cooldownInc >= cooldownMax)
@@ -86,8 +86,5 @@ public class ProjectileShooter : MonoBehaviour
 
             }
         }
-
     }
-
-
 }

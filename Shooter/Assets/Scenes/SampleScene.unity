@@ -264,6 +264,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5899739172571988408, guid: afaee79033a6b0942aff53ab9d1a485f,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899739172571988408, guid: afaee79033a6b0942aff53ab9d1a485f,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899739172571988408, guid: afaee79033a6b0942aff53ab9d1a485f,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899739172571988408, guid: afaee79033a6b0942aff53ab9d1a485f,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1919351499}
+    - target: {fileID: 5899739172571988408, guid: afaee79033a6b0942aff53ab9d1a485f,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Move
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899739172571988408, guid: afaee79033a6b0942aff53ab9d1a485f,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afaee79033a6b0942aff53ab9d1a485f, type: 3}
 --- !u!1001 &402564422
@@ -402,6 +432,146 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_DeviceRegainedEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_DeviceRegainedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_DeviceRegainedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionId
+      value: 55ba050d-4ef4-4434-ab95-fa70c1847a2e
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionName
+      value: Player1/Jump[/Keyboard/space,/DualShock4GamepadHID/buttonEast,/DualShock4GamepadHID/buttonEast]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionId
+      value: 8c28caba-4e49-4f31-9763-d95e21ebb4b8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionName
+      value: Player1/Movement[/DualShock4GamepadHID/dpad/up,/DualShock4GamepadHID/dpad/up,/DualShock4GamepadHID/dpad/down,/DualShock4GamepadHID/dpad/down,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/right,/DualShock4GamepadHID/dpad/right,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionId
+      value: 1dc166f8-4295-482f-a9c0-50fee1b825a5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionName
+      value: Player1/Aim[/DualShock4GamepadHID/rightStick,/DualShock4GamepadHID/rightStick]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_ActionId
+      value: 513726f5-10b9-4c1d-a260-673cd3bec1d1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_ActionName
+      value: Player1/Charge Shot[/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/rightTrigger]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_ActionId
+      value: a4fbfc3d-a936-4973-8910-9623ffe225bc
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_ActionName
+      value: Player1/HP Shot[/DualShock4GamepadHID/rightShoulder,/DualShock4GamepadHID/rightShoulder]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionId
+      value: 3d053db4-af4e-4674-aa16-83911d368020
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionName
+      value: Player1/Movement Special[/DualShock4GamepadHID/leftShoulder,/DualShock4GamepadHID/leftShoulder]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 868935033}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Move
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 868935033}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 868935033}
+    - target: {fileID: 2153987561278865495, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChefSpecial
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5688f4300db3efc40a196c9c7bbb01e9, type: 3}
 --- !u!1 &519420028
@@ -438,7 +608,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d3f6e98b32a0df4eafd77850ec629bb, type: 3}
   m_Name: 
@@ -446,6 +616,10 @@ MonoBehaviour:
   targets:
   - {fileID: 1461618475}
   offset: {x: 0, y: 0, z: -1}
+  camera: {fileID: 519420031}
+  t1: {fileID: 0}
+  t2: {fileID: 0}
+  distanceBtwn: {x: 0, y: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -660,6 +834,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &868935033 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4329939568736411735, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+    type: 3}
+  m_PrefabInstance: {fileID: 498894484}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e967b6d3918129439cf775e314e1983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &879346626
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,7 +957,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 896441367}
-  - component: {fileID: 896441366}
   m_Layer: 0
   m_Name: Player Input Manager
   m_TagString: Untagged
@@ -779,50 +964,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &896441366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896441365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_NotificationBehavior: 0
-  m_MaxPlayerCount: -1
-  m_AllowJoining: 1
-  m_JoinBehavior: 2
-  m_PlayerJoinedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_PlayerLeftEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_JoinAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: 
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-    m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 2209128383390554163, guid: 5688f4300db3efc40a196c9c7bbb01e9,
-    type: 3}
-  m_SplitScreen: 0
-  m_MaintainAspectRatioInSplitScreen: 0
-  m_FixedNumberOfSplitScreens: -1
-  m_SplitScreenRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
 --- !u!4 &896441367
 Transform:
   m_ObjectHideFlags: 0
@@ -991,6 +1132,120 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5f2973d53a51bb41bade00a5246d8a9, type: 3}
+--- !u!1 &1061759953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1087675694258092416, guid: afaee79033a6b0942aff53ab9d1a485f,
+    type: 3}
+  m_PrefabInstance: {fileID: 204979718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1061759955 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5796014503811695869, guid: afaee79033a6b0942aff53ab9d1a485f,
+    type: 3}
+  m_PrefabInstance: {fileID: 204979718}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061759953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 881bbd7cbc6e76d428a9e841d87e7289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1061759959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061759953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: dee0429feb9206044bb3dd221a50dc3e,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1111957f-15f9-4ec2-ae67-5d107b7477b6
+    m_ActionName: Player/Jump[/Keyboard/space,/DualShock4GamepadHID/buttonEast,/DualShock4GamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: edef1c8b-73da-4849-9e55-d888c2db1c3c
+    m_ActionName: Player/Movement[/DualShock4GamepadHID/dpad/up,/DualShock4GamepadHID/dpad/up,/DualShock4GamepadHID/dpad/down,/DualShock4GamepadHID/dpad/down,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/right,/DualShock4GamepadHID/dpad/right,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1061759955}
+        m_MethodName: GetInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e1a66270-ffaf-4298-b0d0-6549bed2bb47
+    m_ActionName: Player/Aim[/DualShock4GamepadHID/rightStick,/DualShock4GamepadHID/rightStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1061759955}
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f871b5b8-5b72-467b-8fb1-83eede67508c
+    m_ActionName: Player/Charge Shot[/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1061759955}
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a3cb383b-12f7-4203-8ad5-e3a836c039da
+    m_ActionName: Player/HP Shot[/DualShock4GamepadHID/rightShoulder,/DualShock4GamepadHID/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ab4a650b-a3da-4edf-8af0-8ec567ea1155
+    m_ActionName: Player/Movement Special[/DualShock4GamepadHID/leftShoulder,/DualShock4GamepadHID/leftShoulder]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 0e900899-da2f-4d05-9a7f-0d6b02e981b9
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1138648524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,6 +2026,109 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbd48015618697a48b9421d836b49494, type: 3}
+--- !u!1 &1643871776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2209128381652756725, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+    type: 3}
+  m_PrefabInstance: {fileID: 498894484}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1643871778 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 692045002155258243, guid: 5688f4300db3efc40a196c9c7bbb01e9,
+    type: 3}
+  m_PrefabInstance: {fileID: 498894484}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643871776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 881bbd7cbc6e76d428a9e841d87e7289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1643871782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643871776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: dee0429feb9206044bb3dd221a50dc3e,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1111957f-15f9-4ec2-ae67-5d107b7477b6
+    m_ActionName: Player/Jump[/Keyboard/space,/DualShock4GamepadHID/buttonEast,/DualShock4GamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: edef1c8b-73da-4849-9e55-d888c2db1c3c
+    m_ActionName: Player/Movement[/DualShock4GamepadHID/dpad/up,/DualShock4GamepadHID/dpad/up,/DualShock4GamepadHID/dpad/down,/DualShock4GamepadHID/dpad/down,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/right,/DualShock4GamepadHID/dpad/right,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1643871778}
+        m_MethodName: GetInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e1a66270-ffaf-4298-b0d0-6549bed2bb47
+    m_ActionName: Player/Aim[/DualShock4GamepadHID/rightStick,/DualShock4GamepadHID/rightStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1643871778}
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f871b5b8-5b72-467b-8fb1-83eede67508c
+    m_ActionName: Player/Charge Shot[/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1643871778}
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a3cb383b-12f7-4203-8ad5-e3a836c039da
+    m_ActionName: Player/HP Shot[/DualShock4GamepadHID/rightShoulder,/DualShock4GamepadHID/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ab4a650b-a3da-4edf-8af0-8ec567ea1155
+    m_ActionName: Player/Movement Special[/DualShock4GamepadHID/leftShoulder,/DualShock4GamepadHID/leftShoulder]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 0e900899-da2f-4d05-9a7f-0d6b02e981b9
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &1742252271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2071,6 +2429,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbd48015618697a48b9421d836b49494, type: 3}
+--- !u!114 &1919351499 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5768563774933061712, guid: afaee79033a6b0942aff53ab9d1a485f,
+    type: 3}
+  m_PrefabInstance: {fileID: 204979718}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e967b6d3918129439cf775e314e1983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2001130281
 GameObject:
   m_ObjectHideFlags: 0
