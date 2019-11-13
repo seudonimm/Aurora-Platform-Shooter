@@ -18,10 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject p2;
 
     [SerializeField] bool onGround;
-	
-	[SerializeField] Collider2D p1Collider;
-	[SerializeField] Collider2D p2Collider;
-	
+		
 	[SerializeField] float dodgeCooldownMax = 100;
 	[SerializeField] float dodgeCooldownInc = 0;
 
@@ -34,14 +31,13 @@ public class PlayerMovement : MonoBehaviour
 	private Vector3 moveVector;
 	[SerializeField] Vector3 moveVector2;
 
-    [SerializeField] int character; // 0 = chef | 1 = witch | 2 = spy | 3 = pirate
+    [SerializeField] int character; // 0 = chef | 1 = spy | 2 = pirate | 3 = witch
 
     //character prefabs
     [SerializeField] GameObject chef;
     [SerializeField] GameObject witch;
     [SerializeField] GameObject spy;
     [SerializeField] GameObject pirate;
-
 	
 
     // Start is called before the first frame update
@@ -56,36 +52,51 @@ public class PlayerMovement : MonoBehaviour
         //P1 Character Select
         if (CharacterSelect.p1Character == 0)
         {
-
+            p1 = chef;
+            rb1 = chef.GetComponent<Rigidbody2D>();
         }
         else if (CharacterSelect.p1Character == 1)
         {
+            p1 = spy;
+            rb1 = spy.GetComponent<Rigidbody2D>();
 
         }
         else if (CharacterSelect.p1Character == 2)
         {
+            p1 = pirate;
+            rb1 = pirate.GetComponent<Rigidbody2D>();
 
         }
         else if (CharacterSelect.p1Character == 3)
         {
+            p1 = witch;
+            rb1 = witch.GetComponent<Rigidbody2D>();
 
         }
 
         //P2 Character Select
         if (CharacterSelect.p2Character == 0)
         {
+            p2 = chef;
+            rb2 = chef.GetComponent<Rigidbody2D>();
 
         }
         else if (CharacterSelect.p2Character == 1)
         {
+            p2 = spy;
+            rb2 = spy.GetComponent<Rigidbody2D>();
 
         }
         else if (CharacterSelect.p2Character == 2)
         {
+            p2 = pirate;
+            rb2 = pirate.GetComponent<Rigidbody2D>();
 
         }
         else if (CharacterSelect.p2Character == 3)
         {
+            p2 = witch;
+            rb2 = witch.GetComponent<Rigidbody2D>();
 
         }
 
@@ -134,10 +145,6 @@ public class PlayerMovement : MonoBehaviour
                 dodgeCooldownInc = 0;
             }
         }
-
-
-
-
     }
 
 

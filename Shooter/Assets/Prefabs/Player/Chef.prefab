@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2209128381652756722}
   - component: {fileID: 2209128381652756721}
   - component: {fileID: 692045002155258243}
+  - component: {fileID: 1643871782}
   m_Layer: 8
   m_Name: Projectile Spawn
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2209128381652756725}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.033, y: -0.039, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -41,7 +42,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2209128381652756725}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dde7e50d15102b4c92eca81cf55ac3a, type: 3}
   m_Name: 
@@ -49,15 +50,21 @@ MonoBehaviour:
   speed: 15
   projectile1: {fileID: 1451804196705862926, guid: eb89e343bf011e24a858b3e2987a2d66,
     type: 3}
-  projectile2: {fileID: 2764417330234963691, guid: b75d8bf389c670f43b726f2523bc76cd,
+  projectile2: {fileID: 5905080769540936277, guid: 265f39a2830b1ee4ca555e53a329b422,
     type: 3}
   projectileSpawn: {fileID: 2209128381652756724}
+  projectileSpawn2: {fileID: 0}
   cooldownMax: 10
   coolddownInc: 0
   aimVector: {x: 0, y: 0}
   aimVector2: {x: 0, y: 0}
-  p1: {fileID: 0}
+  p1: {fileID: 2209128381652756725}
   p2: {fileID: 0}
+  self: {fileID: 0}
+  chef: {fileID: 2209128383390554163}
+  witch: {fileID: 1087675692521032006, guid: afaee79033a6b0942aff53ab9d1a485f, type: 3}
+  spy: {fileID: 372881819780375730, guid: dbdd25135772e554c98db6c1bf8d86f4, type: 3}
+  pirate: {fileID: 7644786498335936538, guid: 96f6f79296118b04a93cc56dc2d24a2b, type: 3}
 --- !u!212 &2209128381652756722
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -148,6 +155,91 @@ MonoBehaviour:
   cooldownMax: 10
   cooldownInc: 0
   aimVector: {x: 0, y: 0}
+--- !u!114 &1643871782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2209128381652756725}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: dee0429feb9206044bb3dd221a50dc3e,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1111957f-15f9-4ec2-ae67-5d107b7477b6
+    m_ActionName: Player/Jump[/Keyboard/space,/DualShock4GamepadHID/buttonEast,/DualShock4GamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: edef1c8b-73da-4849-9e55-d888c2db1c3c
+    m_ActionName: Player/Movement[/DualShock4GamepadHID/dpad/up,/DualShock4GamepadHID/dpad/up,/DualShock4GamepadHID/dpad/down,/DualShock4GamepadHID/dpad/down,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/right,/DualShock4GamepadHID/dpad/right,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 692045002155258243}
+        m_MethodName: GetInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e1a66270-ffaf-4298-b0d0-6549bed2bb47
+    m_ActionName: Player/Aim[/DualShock4GamepadHID/rightStick,/DualShock4GamepadHID/rightStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 692045002155258243}
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f871b5b8-5b72-467b-8fb1-83eede67508c
+    m_ActionName: Player/Charge Shot[/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 692045002155258243}
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a3cb383b-12f7-4203-8ad5-e3a836c039da
+    m_ActionName: Player/HP Shot[/DualShock4GamepadHID/rightShoulder,/DualShock4GamepadHID/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ab4a650b-a3da-4edf-8af0-8ec567ea1155
+    m_ActionName: Player/Movement Special[/DualShock4GamepadHID/leftShoulder,/DualShock4GamepadHID/leftShoulder]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 0e900899-da2f-4d05-9a7f-0d6b02e981b9
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &2209128383390554163
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,9 +255,6 @@ GameObject:
   - component: {fileID: 7541283548881178362}
   - component: {fileID: 2209128383390554174}
   - component: {fileID: 2209128383390554175}
-  - component: {fileID: 4329939568736411735}
-  - component: {fileID: 5712942620928734094}
-  - component: {fileID: 2153987561278865495}
   m_Layer: 8
   m_Name: Chef
   m_TagString: Player1
@@ -181,7 +270,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2209128383390554163}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 94.5132, y: -2.85, z: 0}
+  m_LocalPosition: {x: 111.5696, y: -2.85, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 2209128381652756724}
@@ -244,7 +333,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2209128383390554163}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fd9da8d1c332a645927ae88a0430604, type: 3}
   m_Name: 
@@ -262,7 +351,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2209128383390554163}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcb529ad35273d948bb1c09fbc0cfa54, type: 3}
   m_Name: 
@@ -275,16 +364,14 @@ MonoBehaviour:
   p1: {fileID: 2209128383390554163}
   p2: {fileID: 0}
   onGround: 0
-  p1Collider: {fileID: 2209128383390554174}
-  p2Collider: {fileID: 0}
   dodgeCooldownMax: 100
   dodgeCooldownInc: 0
   moveVector2: {x: 0, y: 0, z: 0}
   character: 0
-  chef: {fileID: 0}
-  witch: {fileID: 0}
-  spy: {fileID: 0}
-  pirate: {fileID: 0}
+  chef: {fileID: 2209128383390554163}
+  witch: {fileID: 1087675692521032006, guid: afaee79033a6b0942aff53ab9d1a485f, type: 3}
+  spy: {fileID: 372881819780375730, guid: dbdd25135772e554c98db6c1bf8d86f4, type: 3}
+  pirate: {fileID: 7644786498335936538, guid: 96f6f79296118b04a93cc56dc2d24a2b, type: 3}
 --- !u!114 &7541283548881178362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,120 +433,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4329939568736411735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2209128383390554163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e967b6d3918129439cf775e314e1983, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 15
-  jumpHeight: 1000
-  rb: {fileID: 0}
-  rightLeft: {x: 0, y: 0}
-  moveWitch: 0
-  moveChef: 0
-  flyCooldownMax: 0
-  flyCooldownInc: 0
-  currentGravity: 0
-  explosionSpeed: 0
-  explosionSpawn: {fileID: 0}
-  explosion: {fileID: 0}
-  playerID: 0
-  player: {fileID: 0}
-  moveRight: 0
-  moveLeft: 0
-  moveUp: 0
-  moveDown: 0
---- !u!114 &5712942620928734094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2209128383390554163}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cf1e4a067221e74fa4d06e111e41a56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerNum: 0
---- !u!114 &2153987561278865495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2209128383390554163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: dee0429feb9206044bb3dd221a50dc3e,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4329939568736411735}
-        m_MethodName: Jump
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 1111957f-15f9-4ec2-ae67-5d107b7477b6
-    m_ActionName: Player/Jump[/Keyboard/space,/DualShock4GamepadHID/buttonSouth]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: edef1c8b-73da-4849-9e55-d888c2db1c3c
-    m_ActionName: Player/Movement[/DualShock4GamepadHID/dpad/up,/DualShock4GamepadHID/dpad/down,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/right,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e1a66270-ffaf-4298-b0d0-6549bed2bb47
-    m_ActionName: Player/Aim[/DualShock4GamepadHID/rightStick]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f871b5b8-5b72-467b-8fb1-83eede67508c
-    m_ActionName: Player/Charge Shot[/DualShock4GamepadHID/rightTrigger]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a3cb383b-12f7-4203-8ad5-e3a836c039da
-    m_ActionName: Player/HP Shot[/DualShock4GamepadHID/rightShoulder]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4329939568736411735}
-        m_MethodName: ChefSpecial
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: ab4a650b-a3da-4edf-8af0-8ec567ea1155
-    m_ActionName: Player/New action
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: 0e900899-da2f-4d05-9a7f-0d6b02e981b9
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}

@@ -12,6 +12,7 @@ public class ProjectileAttack : MonoBehaviour {
     [SerializeField] GameObject projectile1;
     [SerializeField] GameObject projectile2;
     [SerializeField] Transform projectileSpawn;
+    [SerializeField] Transform projectileSpawn2;
 
 
     [SerializeField] float cooldownMax;
@@ -30,35 +31,118 @@ public class ProjectileAttack : MonoBehaviour {
 
     [SerializeField] GameObject p1;
     [SerializeField] GameObject p2;
+    [SerializeField] GameObject self;
+
+    [SerializeField] GameObject chef;
+    [SerializeField] GameObject witch;
+    [SerializeField] GameObject spy;
+    [SerializeField] GameObject pirate;
+
 
     void Start() {
         player1 = ReInput.players.GetPlayer(0);
         player2 = ReInput.players.GetPlayer(1);
 
-        
-    }
+        self = transform.gameObject;
 
+        if (CharacterSelect.p1Character == 0)
+        {
+            p1 = chef.transform.GetChild(0).gameObject;
+        }
+        else if (CharacterSelect.p1Character == 1)
+        {
+            p1 = spy.transform.GetChild(0).gameObject;
 
-    void Fire() {
+        }
+        else if (CharacterSelect.p1Character == 2)
+        {
+            p1 = pirate.transform.GetChild(0).gameObject;
 
-        if (coolddownInc >= cooldownMax) {
-            if (player1.GetButton("Charge Shot")) {
-                Instantiate(projectile1, projectileSpawn.position, projectileSpawn.rotation);
-                coolddownInc = 0;
+        }
+        else if (CharacterSelect.p1Character == 3)
+        {
+            p1 = witch.transform.GetChild(0).gameObject;
 
-            }
-            if (player1.GetButton("HP Shot")) {
-                Instantiate(projectile2, projectileSpawn.position, projectileSpawn.rotation);
-                coolddownInc = 0;
-            }
+        }
+
+        //P2 Character Select
+        if (CharacterSelect.p2Character == 0)
+        {
+            p2 = chef.transform.GetChild(0).gameObject;
+
+        }
+        else if (CharacterSelect.p2Character == 1)
+        {
+            p2 = spy.transform.GetChild(0).gameObject;
+
+        }
+        else if (CharacterSelect.p2Character == 2)
+        {
+            p2 = pirate.transform.GetChild(0).gameObject;
+
+        }
+        else if (CharacterSelect.p2Character == 3)
+        {
+            p2 = witch.transform.GetChild(0).gameObject;
+
         }
 
     }
 
 
+
+
+
+
+    void Fire()
+    {
+        if (p1 == self)
+        {
+            if (coolddownInc >= cooldownMax)
+            {
+                if (player1.GetButton("Charge Shot"))
+                {
+                    Instantiate(projectile1, projectileSpawn.position, projectileSpawn.rotation);
+                    coolddownInc = 0;
+
+                }
+                if (player1.GetButton("HP Shot"))
+                {
+                    Instantiate(projectile2, projectileSpawn.position, projectileSpawn.rotation);
+                    coolddownInc = 0;
+                }
+            }
+
+        }
+    }
+
+    void Fire2()
+    {
+        if (p2 == self)
+        {
+            if (coolddownInc >= cooldownMax)
+            {
+                if (player2.GetButton("Charge Shot"))
+                {
+                    Instantiate(projectile1, projectileSpawn2.position, projectileSpawn2.rotation);
+                    coolddownInc = 0;
+
+                }
+                if (player2.GetButton("HP Shot"))
+                {
+                    Instantiate(projectile2, projectileSpawn2.position, projectileSpawn2.rotation);
+                    coolddownInc = 0;
+                }
+            }
+        }
+    }
+
+
+
     // Update is called once per frame
     void Update() {
         Fire();
+        Fire2();
         GetInput();
         ProcessInput();
         ProcessInput2();
