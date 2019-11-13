@@ -29,6 +29,7 @@ public class MultipleTargetCamera : MonoBehaviour
         distanceBtwn = t1.transform.position - t2.transform.position;
 
         camera.orthographicSize = Mathf.Abs(distanceBtwn.x) * 0.5f;
+
     }
 
     Vector3 GetCenterPoint()

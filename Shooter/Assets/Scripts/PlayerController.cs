@@ -33,6 +33,11 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Transform player;
 
+    [SerializeField] bool moveRight;
+    [SerializeField] bool moveLeft;
+    [SerializeField] bool moveUp;
+    [SerializeField] bool moveDown;
+
 
 
 
@@ -50,7 +55,7 @@ public class PlayerController : MonoBehaviour
         controls = new Controls();
 
         //controls.Player.Movement.performed += ctx => Move();
-        
+
     }
 
     private void OnEnable()
@@ -67,6 +72,10 @@ public class PlayerController : MonoBehaviour
     {
         //Move();
 
+        var movementInput = controls.Player.Movement.ReadValue<Vector2>();
+
+
+
         flyCooldownInc++;
 
         if (flyCooldownInc >= flyCooldownMax)
@@ -75,6 +84,74 @@ public class PlayerController : MonoBehaviour
             rb.gravityScale = currentGravity;
         }
 
+        if (moveRight)
+        {
+            transform.position += transform.right * moveSpeed * Time.deltaTime;
+
+        }
+        if (moveLeft)
+        {
+            transform.position += -transform.right * moveSpeed * Time.deltaTime;
+
+        }
+        if (moveWitch)
+        {
+            if (moveUp)
+            {
+                transform.position += transform.up * moveSpeed * Time.deltaTime;
+            }
+            if (moveDown)
+            {
+                transform.position += -transform.up * moveSpeed * Time.deltaTime;
+            }
+        }
+
+
+    }
+
+    public void allowMovement()
+    {
+        var movementInput = controls.Player.Movement.ReadValue<Vector2>();
+
+        rightLeft = movementInput;
+
+        Debug.Log(movementInput);
+
+        if (movementInput.x > 0)
+        {
+            moveRight = true;
+        }
+        else
+        {
+            moveRight = false;
+        }
+
+        if (movementInput.x < 0)
+        {
+            moveLeft = true;
+        }
+        else
+        {
+            moveLeft = false;
+        }
+
+        if (movementInput.y > 0)
+        {
+            moveUp = true;
+        }
+        else
+        {
+            moveUp = false;
+        }
+
+        if (movementInput.y < 0)
+        {
+            moveDown = true;
+        }
+        else
+        {
+            moveDown = false;
+        }
 
     }
 
@@ -108,7 +185,7 @@ public class PlayerController : MonoBehaviour
     public void Jump()
     {
         rb.AddForce(Vector2.up * jumpHeight);
-       
+
         Debug.Log("new jump");
 
     }
@@ -132,11 +209,11 @@ public class PlayerController : MonoBehaviour
     public void WitchSpecial()
     {
         moveWitch = true;
-        
+
         rb.gravityScale = 0;
 
         flyCooldownInc = 0;
-       
+
     }
 
     public void PirateSpecial()

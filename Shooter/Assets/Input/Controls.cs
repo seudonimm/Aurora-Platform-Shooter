@@ -52,7 +52,7 @@ public class Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""HP Shot"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""a3cb383b-12f7-4203-8ad5-e3a836c039da"",
                     ""expectedControlType"": """",
                     ""processors"": """",

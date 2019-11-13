@@ -33,9 +33,14 @@ public class PlayerMovement : MonoBehaviour
 	private Player player2;
 	private Vector3 moveVector;
 	[SerializeField] Vector3 moveVector2;
-	
 
+    [SerializeField] int character; // 0 = chef | 1 = witch | 2 = spy | 3 = pirate
 
+    //character prefabs
+    [SerializeField] GameObject chef;
+    [SerializeField] GameObject witch;
+    [SerializeField] GameObject spy;
+    [SerializeField] GameObject pirate;
 
 	
 
@@ -47,9 +52,46 @@ public class PlayerMovement : MonoBehaviour
 			
         //rb = GetComponent<Rigidbody2D>();
 		faceRight = true;
+
+        //P1 Character Select
+        if (CharacterSelect.p1Character == 0)
+        {
+
+        }
+        else if (CharacterSelect.p1Character == 1)
+        {
+
+        }
+        else if (CharacterSelect.p1Character == 2)
+        {
+
+        }
+        else if (CharacterSelect.p1Character == 3)
+        {
+
+        }
+
+        //P2 Character Select
+        if (CharacterSelect.p2Character == 0)
+        {
+
+        }
+        else if (CharacterSelect.p2Character == 1)
+        {
+
+        }
+        else if (CharacterSelect.p2Character == 2)
+        {
+
+        }
+        else if (CharacterSelect.p2Character == 3)
+        {
+
+        }
+
     }
-	
-	void GetInput(){
+
+    void GetInput(){
 		moveVector.x = player1.GetAxis("Move Horizontal");	
 		
 		moveVector2.x = player2.GetAxis("Move Horizontal");

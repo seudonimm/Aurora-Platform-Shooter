@@ -55,6 +55,9 @@ MonoBehaviour:
   cooldownMax: 10
   coolddownInc: 0
   aimVector: {x: 0, y: 0}
+  aimVector2: {x: 0, y: 0}
+  p1: {fileID: 0}
+  p2: {fileID: 0}
 --- !u!212 &2209128381652756722
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -178,7 +181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2209128383390554163}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.39, y: -2.85, z: 0}
+  m_LocalPosition: {x: 94.5132, y: -2.85, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 2209128381652756724}
@@ -277,6 +280,11 @@ MonoBehaviour:
   dodgeCooldownMax: 100
   dodgeCooldownInc: 0
   moveVector2: {x: 0, y: 0, z: 0}
+  character: 0
+  chef: {fileID: 0}
+  witch: {fileID: 0}
+  spy: {fileID: 0}
+  pirate: {fileID: 0}
 --- !u!114 &7541283548881178362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,6 +367,15 @@ MonoBehaviour:
   flyCooldownMax: 0
   flyCooldownInc: 0
   currentGravity: 0
+  explosionSpeed: 0
+  explosionSpawn: {fileID: 0}
+  explosion: {fileID: 0}
+  playerID: 0
+  player: {fileID: 0}
+  moveRight: 0
+  moveLeft: 0
+  moveUp: 0
+  moveDown: 0
 --- !u!114 &5712942620928734094
 MonoBehaviour:
   m_ObjectHideFlags: 0
