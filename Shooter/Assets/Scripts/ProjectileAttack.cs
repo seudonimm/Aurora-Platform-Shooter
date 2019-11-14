@@ -39,29 +39,71 @@ public class ProjectileAttack : MonoBehaviour {
     [SerializeField] GameObject pirate;
 
 
+    [SerializeField] GameObject chefProjC1;
+    [SerializeField] GameObject witchProjC1;
+    [SerializeField] GameObject spyProjC1;
+    [SerializeField] GameObject pirateProjC1;
+
+    [SerializeField] GameObject chefProjC2;
+    [SerializeField] GameObject witchProjC2;
+    [SerializeField] GameObject spyProjC2;
+    [SerializeField] GameObject pirateProjC2;
+
+    [SerializeField] GameObject chefProjH1;
+    [SerializeField] GameObject witchProjH1;
+    [SerializeField] GameObject spyProjH1;
+    [SerializeField] GameObject pirateProjH1;
+
+    [SerializeField] GameObject chefProjH2;
+    [SerializeField] GameObject witchProjH2;
+    [SerializeField] GameObject spyProjH2;
+    [SerializeField] GameObject pirateProjH2;
+
+
     void Start() {
         player1 = ReInput.players.GetPlayer(0);
         player2 = ReInput.players.GetPlayer(1);
 
         self = transform.gameObject;
 
-        if (CharacterSelect.p1Character == 0)
+
+
+        if (CharacterSelect.p1Character == 0) // 0 = chef | 1 = spy | 2 = pirate | 3 = witch
         {
             p1 = chef.transform.GetChild(0).gameObject;
+            if(p1 == self)
+            {
+                projectile1 = chefProjC1;
+                projectile2 = chefProjH1;
+            }
         }
         else if (CharacterSelect.p1Character == 1)
         {
             p1 = spy.transform.GetChild(0).gameObject;
-
+            if (p1 == self)
+            {
+                projectile1 = spyProjC1;
+                projectile2 = spyProjH1;
+            }
         }
         else if (CharacterSelect.p1Character == 2)
         {
             p1 = pirate.transform.GetChild(0).gameObject;
+            if (p1 == self)
+            {
+                projectile1 = pirateProjC1;
+                projectile2 = pirateProjH1;
+            }
 
         }
         else if (CharacterSelect.p1Character == 3)
         {
             p1 = witch.transform.GetChild(0).gameObject;
+            if (p1 == self)
+            {
+                projectile1 = witchProjC1;
+                projectile2 = witchProjH1;
+            }
 
         }
 
@@ -69,21 +111,41 @@ public class ProjectileAttack : MonoBehaviour {
         if (CharacterSelect.p2Character == 0)
         {
             p2 = chef.transform.GetChild(0).gameObject;
+            if (p2 == self)
+            {
+                projectile1 = chefProjC2;
+                projectile2 = chefProjH2;
+            }
 
         }
         else if (CharacterSelect.p2Character == 1)
         {
             p2 = spy.transform.GetChild(0).gameObject;
+            if (p2 == self)
+            {
+                projectile1 = spyProjC2;
+                projectile2 = spyProjH2;
+            }
 
         }
         else if (CharacterSelect.p2Character == 2)
         {
             p2 = pirate.transform.GetChild(0).gameObject;
+            if (p2 == self)
+            {
+                projectile1 = pirateProjC2;
+                projectile2 = pirateProjH2;
+            }
 
         }
         else if (CharacterSelect.p2Character == 3)
         {
             p2 = witch.transform.GetChild(0).gameObject;
+            if (p2 == self)
+            {
+                projectile1 = witchProjC2;
+                projectile2 = witchProjH2;
+            }
 
         }
 
@@ -124,13 +186,13 @@ public class ProjectileAttack : MonoBehaviour {
             {
                 if (player2.GetButton("Charge Shot"))
                 {
-                    Instantiate(projectile1, projectileSpawn2.position, projectileSpawn2.rotation);
+                    Instantiate(projectile1, projectileSpawn.position, projectileSpawn.rotation);
                     coolddownInc = 0;
 
                 }
                 if (player2.GetButton("HP Shot"))
                 {
-                    Instantiate(projectile2, projectileSpawn2.position, projectileSpawn2.rotation);
+                    Instantiate(projectile2, projectileSpawn.position, projectileSpawn.rotation);
                     coolddownInc = 0;
                 }
             }

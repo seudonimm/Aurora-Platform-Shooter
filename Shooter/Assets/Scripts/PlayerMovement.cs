@@ -38,7 +38,21 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject witch;
     [SerializeField] GameObject spy;
     [SerializeField] GameObject pirate;
-	
+
+    [SerializeField] GameObject self;
+
+    [SerializeField] float explosionSpeed;
+    [SerializeField] Transform explosionSpawn;
+    [SerializeField] GameObject explosion;
+
+    [SerializeField] bool moveWitch = false;
+    [SerializeField] float flyCooldownMax;
+    [SerializeField] float flyCooldownInc;
+    [SerializeField] float currentGravity;
+
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -100,6 +114,10 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+        self = transform.gameObject;
+
+        currentGravity = rb1.gravityScale;
+
     }
 
     void GetInput(){
@@ -120,8 +138,19 @@ public class PlayerMovement : MonoBehaviour
 		if(moveVector2.x < 0){
 			p2.transform.position += -transform.right * moveSpeed * Time.deltaTime;
 		}
-		
-		if(player2.GetButtonDown("Jump") && onGround == true){
+        if (moveWitch)
+        {
+            if (moveVector2.y > 0)
+            {
+                p2.transform.position += transform.up * moveSpeed * Time.deltaTime;
+            }
+            if (moveVector2.y < 0)
+            {
+                p2.transform.position += -transform.up * moveSpeed * Time.deltaTime;
+            }
+        }
+
+        if (player2.GetButtonDown("Jump") && onGround == true){
 			rb2.AddForce(Vector2.up * jump);
 		}
 
@@ -155,7 +184,20 @@ public class PlayerMovement : MonoBehaviour
 		if(moveVector.x < 0){
 			p1.transform.position += -transform.right * moveSpeed * Time.deltaTime;
 		}
-		if(player1.GetButtonDown("Jump") && onGround == true){
+
+        if (moveWitch)
+        {
+            if (moveVector.y > 0)
+            {
+                p1.transform.position += transform.up * moveSpeed * Time.deltaTime;
+            }
+            if (moveVector.y < 0)
+            {
+                p1.transform.position += -transform.up * moveSpeed * Time.deltaTime;
+            }
+        }
+
+        if (player1.GetButtonDown("Jump") && onGround == true){
 			rb1.AddForce(Vector2.up * jump);
 		}
 
@@ -192,80 +234,125 @@ public class PlayerMovement : MonoBehaviour
 
         dodgeCooldownInc++;
 
-        /*
-         
-		
-        //player = PlayerState.player;
+        if (player1.GetButton("Movement Ability"))
+        {
+            if (p1 = chef)
+            {
+                ChefSpecial();
+            }
+            if (p1 == witch)
+            {
+                WitchSpecial();
+            }
+            if (p1 == pirate)
+            {
+                PirateSpecial();
+            }
+            if (p1 == spy)
+            {
+                SpySpecial();
+            }
+        }
+        if (player2.GetButton("Movement Ability"))
+        {
+            if (p2 = chef)
+            {
+                ChefSpecial();
+            }
+            if (p2 == witch)
+            {
+                WitchSpecial();
+            }
+            if (p2 == pirate)
+            {
+                PirateSpecial();
+            }
+            if (p2 == spy)
+            {
+                SpySpecial();
+            }
+        }
 
-        //player2 = PlayerState2.player;
+
+        flyCooldownInc++;
+
+        if (flyCooldownInc >= flyCooldownMax)
+        {
+            moveWitch = false;
+            rb1.gravityScale = currentGravity;
+        }
 
 
-		//float moveHorizontal = Input.GetAxis("Horizontal");
-		//Vector2 move = new Vector2(moveHorizontal, 0);
-		if (Input.GetButton("Horizontal_p1"))
-		{
-			Debug.Log("aHHHHHHHHHHHHHH");
-			p1.transform.position += Input.GetAxis("Horizontal_p1") * transform.right * moveSpeed * Time.deltaTime;
-			//rb.AddForce(move * moveSpeed);
+    }
 
-			if (p1.transform.position.x > 0 && !faceRight)
-			{
-				p1.transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-				faceRight = true;
-			}
-			if (p1.transform.position.x < 0 && faceRight)
-			{
-				p1.transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-				faceRight = false;
-			}
-		}
-		if (Input.GetButton("Jump_p1") && onGround)
-		{
-			rb1.AddForce(Vector2.up * jump);
-		}
-		if(Input.GetButton("Dodge")){
-			//p1Collider.enabled = false;
-			
-			Physics2D.IgnoreLayerCollision(8, 11, true);
-			
-			Debug.Log("Dodging");
-		}
-		
-		if(dodgeCooldownInc > dodgeCooldownMax ){
-			//p1Collider.enabled = false;
-			
-			Debug.Log(dodgeCooldownInc);
-			Debug.Log(dodgeCooldownMax);
+    public void ChefSpecial()
+    {
+        float slideSpeed = 1000;
+        if (self == p1)
+        {
+            if (moveVector.x > 0)
+            {
+                rb1.AddForce(Vector2.right * slideSpeed);
+            }
+            if (moveVector.x < 0)
+            {
+                rb1.AddForce(-Vector2.right * slideSpeed);
+            }
+        }
 
-			Physics2D.IgnoreLayerCollision(8, 11, false);
+        if (self == p2)
+        {
+            if (moveVector2.x > 0)
+            {
+                rb2.AddForce(Vector2.right * slideSpeed);
+            }
+            if (moveVector2.x < 0)
+            {
+                rb2.AddForce(-Vector2.right * slideSpeed);
+            }
+        }
 
-			dodgeCooldownInc = 0;
-		}
+        Debug.Log("slide");
+    }
 
-		
+    public void WitchSpecial()
+    {
+        if (self == p1)
+        {
+            moveWitch = true;
 
-		if (Input.GetAxis("Horizontal_p2") == 1 || Input.GetAxis("Horizontal_p2") == -1 || Input.GetButton("Horizontal_p2"))
-		{
-			//Debug.Log("right leftds;lkdfj");
-			p2.transform.position += Input.GetAxis("Horizontal_p2") * transform.right * moveSpeed * Time.deltaTime;
-			//rb.AddForce(move * moveSpeed);
+            rb1.gravityScale = 0;
 
-			if (p2.transform.position.x > 0 && !faceRight)
-			{
-				p2.transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-				faceRight = true;
-			}
-			if (p2.transform.position.x < 0 && faceRight)
-			{
-				p2.transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-				faceRight = false;
-			}
-		}
-		if (Input.GetButton("Jump_p2") && onGround)
-		{
-			rb2.AddForce(Vector2.up * jump);
-		}
-        */
+            flyCooldownInc = 0;
+        }
+
+        if (self == p2)
+        {
+            moveWitch = true;
+
+            rb2.gravityScale = 0;
+
+            flyCooldownInc = 0;
+        }
+    }
+
+    public void PirateSpecial()
+    {
+        Instantiate(explosion, explosionSpawn.position, explosionSpawn.rotation);
+
+        if (self == p1)
+        {
+            rb1.AddForce(moveVector * explosionSpeed);
+        }
+        if (self == p2)
+        {
+            rb2.AddForce(moveVector2 * explosionSpeed);
+        }
+    }
+
+    public void SpySpecial()
+    {
+
     }
 
     private void OnCollisionEnter2D(Collision2D col)

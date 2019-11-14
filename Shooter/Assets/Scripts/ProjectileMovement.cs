@@ -1,78 +1,58 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using Rewired;
+using Rewired;
 
 
 public class ProjectileMovement : MonoBehaviour
 {
-	[SerializeField] float speed;
-	[SerializeField] Rigidbody2D rb;
-	
-	Vector2 direction;
+    [SerializeField] float speed;
+    [SerializeField] Rigidbody2D rb;
 
-    //[SerializeField] int playerID;
+    Vector2 direction;
 
-    //private Player player;
+    [SerializeField] int playerID;
 
+    private Player player;
+    private Player player2;
     public Vector2 aimVector;
 
-    private Controls controls = null;
 
 
     // Start is called before the first frame update
-    private void Awake()
-    {
-        controls = new Controls();
-
-        //GetInput();
-
-    }
     void Start()
     {
-        //player = ReInput.players.GetPlayer(playerID);
+        player = ReInput.players.GetPlayer(playerID);
+        player2 = ReInput.players.GetPlayer(1);
 
         rb = GetComponent<Rigidbody2D>();
 
-        //GetInput();
+        GetInput();
 
         direction = aimVector;
-
-        //rb.velocity = aimVector * speed;
-
 
 
         //Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //direction = (Vector2)((worldMousePos - transform.position));
         //direction.Normalize();
     }
-    private void OnEnable()
-    {
-        controls.Player.Enable();
-    }
-    private void OnDisable()
-    {
-        controls.Player.Disable();
-    }
-
-
 
     // Update is called once per frame
     void Update()
     {
-        //GetInput();
-        //ProcessInput();
-		 
-        rb.velocity = transform.right * speed;
 
-		
-		
+
+        rb.velocity = aimVector * speed;
+
+
+
     }
 
     void GetInput()
     {
-        aimVector = controls.Player.Aim.ReadValue<Vector2>();
-     
+        aimVector.x = player.GetAxis("Aim Horizontal");
+
+        aimVector.y = player.GetAxis("Aim Vertical");
 
     }
     void ProcessInput()

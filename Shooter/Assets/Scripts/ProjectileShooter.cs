@@ -1,90 +1,90 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
 
-public class ProjectileShooter : MonoBehaviour
-{
-    [SerializeField] GameObject projectile1;
-    [SerializeField] GameObject projectile2;
-    [SerializeField] Transform projectileSpawn;
+//public class ProjectileShooter : MonoBehaviour
+//{
+//    [SerializeField] GameObject projectile1;
+//    [SerializeField] GameObject projectile2;
+//    [SerializeField] Transform projectileSpawn;
 
 
-    [SerializeField] float cooldownMax;
-    [SerializeField] float cooldownInc;
+//    [SerializeField] float cooldownMax;
+//    [SerializeField] float cooldownInc;
 
-    Vector2 direction;
+//    Vector2 direction;
 
-    private Controls controls = null;
+//    private Controls controls = null;
 
-    public Vector2 aimVector;
+//    public Vector2 aimVector;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+//    // Start is called before the first frame update
+//    void Start()
+//    {
         
-    }
-    private void Awake()
-    {
-        controls = new Controls();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        //GetInput();
-        //ProcessInput();
+//    }
+//    private void Awake()
+//    {
+//        controls = new Controls();
+//    }
+//    // Update is called once per frame
+//    void Update()
+//    {
+//        //GetInput();
+//        //ProcessInput();
 
-        //Fire();
+//        //Fire();
 
-        cooldownInc++;
+//        cooldownInc++;
 
-    }
+//    }
 
-    private void OnEnable()
-    {
-        controls.Player.Enable();
-    }
-    private void OnDisable()
-    {
-        controls.Player.Disable();
-    }
-
-
+//    private void OnEnable()
+//    {
+//        controls.Player.Enable();
+//    }
+//    private void OnDisable()
+//    {
+//        controls.Player.Disable();
+//    }
 
 
-    public void GetInput()
-    {
-        var movementInput = controls.Player.Aim.ReadValue<Vector2>();
-        aimVector = movementInput;
-    //}
-    //void ProcessInput()
-    //{
-        float joyAngle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg;
-        projectileSpawn.rotation = Quaternion.AngleAxis(joyAngle, Vector3.forward);
 
-    }
 
-    public void Fire()
-    {
+//    public void GetInput()
+//    {
+//        var movementInput = controls.Player.Aim.ReadValue<Vector2>();
+//        aimVector = movementInput;
+//    //}
+//    //void ProcessInput()
+//    //{
+//        float joyAngle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg;
+//        projectileSpawn.rotation = Quaternion.AngleAxis(joyAngle, Vector3.forward);
 
-        if (cooldownInc >= cooldownMax)
-        {
+//    }
+
+//    public void Fire()
+//    {
+
+//        if (cooldownInc >= cooldownMax)
+//        {
             
-            if (controls.Player.ChargeShot.ReadValue<float>() != 0)
-            {
-                Instantiate(projectile1, projectileSpawn.position, projectileSpawn.rotation);
-                cooldownInc = 0;
+//            if (controls.Player.ChargeShot.ReadValue<float>() != 0)
+//            {
+//                Instantiate(projectile1, projectileSpawn.position, projectileSpawn.rotation);
+//                cooldownInc = 0;
 
-                Debug.Log("charge shot");
+//                Debug.Log("charge shot");
 
-            }
-            if (controls.Player.HPShot.ReadValue<float>() != 0)
-            {
-                Instantiate(projectile2, projectileSpawn.position, projectileSpawn.rotation);
-                cooldownInc = 0;
+//            }
+//            if (controls.Player.HPShot.ReadValue<float>() != 0)
+//            {
+//                Instantiate(projectile2, projectileSpawn.position, projectileSpawn.rotation);
+//                cooldownInc = 0;
 
-                Debug.Log("hp shot");
+//                Debug.Log("hp shot");
 
-            }
-        }
-    }
-}
+//            }
+//        }
+//    }
+//}

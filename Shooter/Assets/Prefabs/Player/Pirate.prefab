@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5990530831826106563
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8215345944140459894}
+  m_Layer: 0
+  m_Name: ExplosionSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8215345944140459894
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5990530831826106563}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7644786498335936537}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7644786498335936538
 GameObject:
   m_ObjectHideFlags: 0
@@ -15,7 +45,6 @@ GameObject:
   - component: {fileID: 2024331958060926675}
   - component: {fileID: 7644786498335936535}
   - component: {fileID: 7644786498335936534}
-  - component: {fileID: 5235666867360573566}
   - component: {fileID: 4321108554260642727}
   - component: {fileID: 7591760656972187774}
   m_Layer: 8
@@ -33,10 +62,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7644786498335936538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3590738, y: 10.1088705, z: 0}
+  m_LocalPosition: {x: 11.909841, y: 10.1088705, z: 0}
   m_LocalScale: {x: 5.2, y: 5.2, z: 1}
   m_Children:
   - {fileID: 7644786500090683613}
+  - {fileID: 8215345944140459894}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -114,7 +144,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7644786498335936538}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcb529ad35273d948bb1c09fbc0cfa54, type: 3}
   m_Name: 
@@ -127,11 +157,23 @@ MonoBehaviour:
   p1: {fileID: 7644786498335936538}
   p2: {fileID: 0}
   onGround: 0
-  p1Collider: {fileID: 7644786498335936535}
-  p2Collider: {fileID: 0}
   dodgeCooldownMax: 100
   dodgeCooldownInc: 0
   moveVector2: {x: 0, y: 0, z: 0}
+  character: 0
+  chef: {fileID: 2209128383390554163, guid: 5688f4300db3efc40a196c9c7bbb01e9, type: 3}
+  witch: {fileID: 1087675692521032006, guid: afaee79033a6b0942aff53ab9d1a485f, type: 3}
+  spy: {fileID: 372881819780375730, guid: dbdd25135772e554c98db6c1bf8d86f4, type: 3}
+  pirate: {fileID: 7644786498335936538}
+  self: {fileID: 0}
+  explosionSpeed: 100
+  explosionSpawn: {fileID: 8215345944140459894}
+  explosion: {fileID: 4303591837841832195, guid: e43f6ac52e8b76944b4f73c7ad44bcc1,
+    type: 3}
+  moveWitch: 0
+  flyCooldownMax: 0
+  flyCooldownInc: 0
+  currentGravity: 0
 --- !u!114 &2024331958060926675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +181,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7644786498335936538}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c5a223bf1c1cea49b09727cf57ea78a, type: 3}
   m_Name: 
@@ -193,32 +235,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5235666867360573566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7644786498335936538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e967b6d3918129439cf775e314e1983, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 15
-  jumpHeight: 1000
-  rb: {fileID: 0}
-  rightLeft: {x: 0, y: 0}
-  moveWitch: 0
-  moveChef: 0
-  flyCooldownMax: 0
-  flyCooldownInc: 0
-  currentGravity: 0
-  explosionSpeed: 1000
-  explosionSpawn: {fileID: 7577441168982809420, guid: e43f6ac52e8b76944b4f73c7ad44bcc1,
-    type: 3}
-  explosion: {fileID: 4303591837841832195, guid: e43f6ac52e8b76944b4f73c7ad44bcc1,
-    type: 3}
 --- !u!114 &4321108554260642727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +255,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7644786498335936538}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -256,54 +272,12 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5235666867360573566}
-        m_MethodName: Jump
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 1111957f-15f9-4ec2-ae67-5d107b7477b6
-    m_ActionName: Player/Jump[/Keyboard/space,/DualShock4GamepadHID/buttonSouth]
-  - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: edef1c8b-73da-4849-9e55-d888c2db1c3c
-    m_ActionName: Player/Movement[/DualShock4GamepadHID/dpad/up,/DualShock4GamepadHID/dpad/down,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/right,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e1a66270-ffaf-4298-b0d0-6549bed2bb47
-    m_ActionName: Player/Aim[/DualShock4GamepadHID/rightStick]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f871b5b8-5b72-467b-8fb1-83eede67508c
-    m_ActionName: Player/Charge Shot[/DualShock4GamepadHID/rightTrigger]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a3cb383b-12f7-4203-8ad5-e3a836c039da
-    m_ActionName: Player/HP Shot[/DualShock4GamepadHID/rightShoulder]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5235666867360573566}
-        m_MethodName: PirateSpecial
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: ab4a650b-a3da-4edf-8af0-8ec567ea1155
-    m_ActionName: Player/New action
+    m_ActionId: 6c234ef6-62a1-4e9f-8351-38ac1f15eb8d
+    m_ActionName: MovementAbility/MovementAbility[/DualShock4GamepadHID/leftShoulder,/DualShock4GamepadHID/leftShoulder]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 0e900899-da2f-4d05-9a7f-0d6b02e981b9
+  m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &7644786500090683612
@@ -318,7 +292,6 @@ GameObject:
   - component: {fileID: 7644786500090683610}
   - component: {fileID: 7644786500090683611}
   - component: {fileID: 7644786500090683608}
-  - component: {fileID: 9017746994880477610}
   m_Layer: 8
   m_Name: Projectile Spawn
   m_TagString: Untagged
@@ -333,7 +306,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7644786500090683612}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.033, y: -0.039, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -347,20 +320,57 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7644786500090683612}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dde7e50d15102b4c92eca81cf55ac3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  projectile1: {fileID: 1451804196705862926, guid: eb89e343bf011e24a858b3e2987a2d66,
+  projectile1: {fileID: 5227786746955517387, guid: 397682882532a0b4dac2597b0d6f0c16,
     type: 3}
-  projectile2: {fileID: 2764417330234963691, guid: b75d8bf389c670f43b726f2523bc76cd,
+  projectile2: {fileID: 4549488560859606693, guid: b1253394fd93860478f5c8e38b014122,
     type: 3}
   projectileSpawn: {fileID: 7644786500090683613}
+  projectileSpawn2: {fileID: 0}
   cooldownMax: 10
   coolddownInc: 0
   aimVector: {x: 0, y: 0}
+  aimVector2: {x: 0, y: 0}
+  p1: {fileID: 0}
+  p2: {fileID: 0}
+  self: {fileID: 0}
+  chef: {fileID: 2209128383390554163, guid: 5688f4300db3efc40a196c9c7bbb01e9, type: 3}
+  witch: {fileID: 1087675692521032006, guid: afaee79033a6b0942aff53ab9d1a485f, type: 3}
+  spy: {fileID: 372881819780375730, guid: dbdd25135772e554c98db6c1bf8d86f4, type: 3}
+  pirate: {fileID: 7644786498335936538}
+  chefProjC1: {fileID: 9047469902832145357, guid: 9825001c0783fbb43b14a0195a40be03,
+    type: 3}
+  witchProjC1: {fileID: 5583501331475698645, guid: 401874a3325f68c4b84aac94c8de3603,
+    type: 3}
+  spyProjC1: {fileID: 1011624176607160723, guid: ad940e76860037b4389b77be46954a63,
+    type: 3}
+  pirateProjC1: {fileID: 6117927851665564443, guid: be83d44a2d9494c4faf7a15b9835e1a4,
+    type: 3}
+  chefProjC2: {fileID: 8584622275140833996, guid: 489406a4f634a3c4186b9ba4e7266872,
+    type: 3}
+  witchProjC2: {fileID: 7259718584234083576, guid: 25fe4dd5b013267478f9ce306e2fd4aa,
+    type: 3}
+  spyProjC2: {fileID: 1198354598859013653, guid: b800055fe248adf4aa8d3de9e194d655,
+    type: 3}
+  pirateProjC2: {fileID: 5292168489463723509, guid: 3a3b9f70a4796904a86e2099533452f2,
+    type: 3}
+  chefProjH1: {fileID: 4893234850838965012, guid: 38146140137559543be2a9ec114433a2,
+    type: 3}
+  witchProjH1: {fileID: 0}
+  spyProjH1: {fileID: 0}
+  pirateProjH1: {fileID: 3196747121921783440, guid: 6373a18c529872042950c60fdd0058d9,
+    type: 3}
+  chefProjH2: {fileID: 7268734162606707286, guid: 7af8e77a8d634b74abebda114c4c4dff,
+    type: 3}
+  witchProjH2: {fileID: 0}
+  spyProjH2: {fileID: 0}
+  pirateProjH2: {fileID: 7144463491675482404, guid: 23e9dce210a1b4a4082653efcab9a28d,
+    type: 3}
 --- !u!212 &7644786500090683611
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -431,23 +441,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &9017746994880477610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7644786500090683612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 881bbd7cbc6e76d428a9e841d87e7289, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile1: {fileID: 1451804196705862926, guid: eb89e343bf011e24a858b3e2987a2d66,
-    type: 3}
-  projectile2: {fileID: 4549488560859606693, guid: b1253394fd93860478f5c8e38b014122,
-    type: 3}
-  projectileSpawn: {fileID: 7644786500090683613}
-  cooldownMax: 10
-  cooldownInc: 0
-  aimVector: {x: 0, y: 0}
