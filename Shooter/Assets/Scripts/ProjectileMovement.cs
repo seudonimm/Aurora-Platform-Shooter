@@ -43,7 +43,7 @@ public class ProjectileMovement : MonoBehaviour
     {
 
 
-       // rb.velocity = transform.right * speed;
+        // rb.velocity = transform.right * speed;
 
 
 
@@ -70,6 +70,17 @@ public class ProjectileMovement : MonoBehaviour
         if (col.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
+        }
+
+    }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        //Debug.Log("Player hit");
+        if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall"))
+        {
+            //Debug.Log("destroy projectile");
+
+            Destroy(this.gameObject);
         }
 
     }

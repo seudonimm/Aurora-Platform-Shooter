@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
-
+using UnityEngine.UI;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
@@ -52,6 +52,19 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float moveSpecialCooldownInc;
     [SerializeField] float moveSpecialCooldownMax;
+
+    public PlayerHealth ph1;
+    public PlayerHealth ph2;
+
+    [SerializeField] public float chargeVal = 10;
+    [SerializeField] public float healthVal = 1000;
+    [SerializeField] public float defaultChargeVal = 10;
+    [SerializeField] public float defaultHealthVal = 1000;
+
+    [SerializeField] public TextMesh p1Charge;
+    [SerializeField] TextMesh p1Health;
+    [SerializeField] TextMesh p2Charge;
+    [SerializeField] TextMesh p2Health;
 
 
 
@@ -117,8 +130,27 @@ public class PlayerMovement : MonoBehaviour
         }
 
         self = transform.gameObject;
+        if(self == p1)
+        {
+            gameObject.tag = "Player1";
+            gameObject.layer = 8;
+        }
+        else if (self == p2)
+        {
+            gameObject.tag = "Player2";
+            gameObject.layer = 9;
+        }
 
         currentGravity = rb1.gravityScale;
+
+        ph1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerHealth>();
+        ph2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerHealth>();
+
+        p1Charge = GameObject.FindGameObjectWithTag("p1charge").GetComponent<TextMesh>();
+        p1Health = GameObject.FindGameObjectWithTag("p1hp").GetComponent<TextMesh>();
+        p2Charge = GameObject.FindGameObjectWithTag("p2charge").GetComponent<TextMesh>();
+        p2Health = GameObject.FindGameObjectWithTag("p2hp").GetComponent<TextMesh>();
+
 
     }
 
@@ -376,14 +408,73 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public void PlayerHealth()
+    {
+        if (self == p1)
+        {
+            p1Charge.text = "Charge: " + chargeVal;
+            p1Health.text = "Health: " + healthVal;
+        }
+        else if (self == p2)
+        {
+            p2Charge.text = "Charge: " + chargeVal;
+            p2Health.text = "Health: " + healthVal;
+
+        }
+        if (chargeVal < 0)
+        {
+            chargeVal = 5;
+        }
+
+        if (healthVal <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
+
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Ground"))
         {
             onGround = true;
         }
+        if (self == p1)
+        {
+            //Debug.Log("p1 hit");
+            if (col.gameObject.CompareTag("Charge Shot"))
+            {
+                Debug.Log("1 with charge");
+                ph1.chargeVal -= 10;
+                ph2.chargeVal += 10;
+            }
+            if (col.gameObject.CompareTag("Damage Shot"))
+            {
+                ph1.healthVal -= ph2.chargeVal;
+                ph2.chargeVal = ph2.defaultChargeVal;
+            }
+        }
 
+        if (self == p2)
+        {
+            Debug.Log("p2 hit");
+            if (col.gameObject.CompareTag("Charge Shot"))
+            {
+                Debug.Log("2 with charge");
+                ph2.chargeVal -= 10;
+                ph1.chargeVal += 10;
+            }
+            if (col.gameObject.CompareTag("Damage Shot"))
+            {
+                ph2.healthVal -= ph1.chargeVal;
+                ph1.chargeVal = ph1.defaultChargeVal;
+
+            }
+        }
     }
+
+
 
     private void OnCollisionExit2D(Collision2D col)
     {

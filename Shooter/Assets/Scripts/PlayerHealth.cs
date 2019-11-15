@@ -10,20 +10,22 @@ public class PlayerHealth : MonoBehaviour
 	[SerializeField] public float defaultChargeVal = 10;
 	[SerializeField] public float defaultHealthVal = 1000;
 
-    [SerializeField] Text charge;
-    [SerializeField] Text health;
+    [SerializeField] TextMesh charge;
+    [SerializeField] TextMesh health;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        charge.GetComponent<TextMesh>().text = "Charge: " + chargeVal;
+        health.text = "Health: " + healthVal;
     }
 
     // Update is called once per frame
     void Update()
     {
+
         charge.text = "Charge: " + chargeVal;
         health.text = "Health: " + healthVal;
 

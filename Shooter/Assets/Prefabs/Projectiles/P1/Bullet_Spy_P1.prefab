@@ -10,7 +10,12 @@ PrefabInstance:
     - target: {fileID: 3288487559692545053, guid: 48168ba029735f04598ef3510f0a420a,
         type: 3}
       propertyPath: m_Name
-      value: Bullet_Spy
+      value: Bullet_Spy_P1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006396664653776727, guid: 48168ba029735f04598ef3510f0a420a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9043158926410826152, guid: 48168ba029735f04598ef3510f0a420a,
         type: 3}

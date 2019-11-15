@@ -11,6 +11,10 @@ TagManager:
   - Charge Shot
   - Damage Shot
   - Wall
+  - p1charge
+  - p1hp
+  - p2charge
+  - p2hp
   layers:
   - Default
   - TransparentFX

@@ -15,9 +15,6 @@ GameObject:
   - component: {fileID: 8299252218373124731}
   - component: {fileID: 372881819780375743}
   - component: {fileID: 372881819780375742}
-  - component: {fileID: 2851853464340716758}
-  - component: {fileID: 6110447424678563599}
-  - component: {fileID: 459464757081865430}
   m_Layer: 8
   m_Name: Spy
   m_TagString: Player1
@@ -96,7 +93,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372881819780375730}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fd9da8d1c332a645927ae88a0430604, type: 3}
   m_Name: 
@@ -105,8 +102,8 @@ MonoBehaviour:
   healthVal: 1000
   defaultChargeVal: 0
   defaultHealthVal: 0
-  charge: {fileID: 0}
-  health: {fileID: 0}
+  charge: {fileID: 5127143660597418674, guid: 7e85dedf63e2a2741a89ebe080b8c78e, type: 3}
+  health: {fileID: 5275124197707759775, guid: e646bedc380934748a14352e2a386baf, type: 3}
 --- !u!114 &372881819780375731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +140,18 @@ MonoBehaviour:
   flyCooldownMax: 0
   flyCooldownInc: 0
   currentGravity: 0
+  moveSpecialCooldownInc: 0
+  moveSpecialCooldownMax: 0
+  ph1: {fileID: 0}
+  ph2: {fileID: 0}
+  chargeVal: 10
+  healthVal: 1000
+  defaultChargeVal: 10
+  defaultHealthVal: 1000
+  p1Charge: {fileID: 0}
+  p1Health: {fileID: 0}
+  p2Charge: {fileID: 0}
+  p2Health: {fileID: 0}
 --- !u!114 &8299252218373124731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,63 +213,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2851853464340716758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 372881819780375730}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e967b6d3918129439cf775e314e1983, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6110447424678563599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 372881819780375730}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cf1e4a067221e74fa4d06e111e41a56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerNum: 0
---- !u!114 &459464757081865430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 372881819780375730}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: dee0429feb9206044bb3dd221a50dc3e,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6c234ef6-62a1-4e9f-8351-38ac1f15eb8d
-    m_ActionName: MovementAbility/MovementAbility[/DualShock4GamepadHID/leftShoulder,/DualShock4GamepadHID/leftShoulder]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: 
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &372881821264417908
 GameObject:
   m_ObjectHideFlags: 0

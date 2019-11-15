@@ -195,6 +195,7 @@
       <li><a href="#raildriver-special-features">Using P.I. Engineering Rail Driver special features</a></li>
       <li><a href="#xbox-one-controller-special-features">Using XBox One controller special features on XBox One platform</a></li>
       <li><a href="#ps4-gamepad-special-features">Using PS4 gamepad special features on PS4 platform</a></li>
+      <li><a href="#ps4-aim-special-features">Using PS4 Aim Controller special features on PS4 platform</a></li>
       <li><a href="#asmdef-files">Using asmdef files with Rewired</a></li>
     </ul>
     <p>&nbsp;</p>
@@ -2587,7 +2588,7 @@ class XBoxOneTest {
     }
 }</pre>&nbsp;
 <hr />
-<h3><a name="ps4-gamepad-special-features" id="raildriver-special-features3"></a>Using PS4 gamepad special features on PS4 platform</h3>
+<h3><a name="ps4-gamepad-special-features" id="ps4-gamepad-special-features"></a>Using PS4 gamepad special features on PS4 platform</h3>
 <p>Special controller features of the PS4 gamepad such as vibration, gyro, accelerometer, touchpad, and light color can be accessed via the <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_Platforms_PS4_PS4GamepadExtension.htm">PS4GamepadExtension</a> class available in the <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_Joystick.htm">Joystick</a> class as seen in the example below.  Note that the platform input source must be set to Native and Disable Native Input must be set to false or no special features will be available.</p>
 <p>If you want to use the same code on desktop platforms and the PS4, you can <a href="#dualshock-4-special-features-common-interface">use the common interface instead</a> to access many of the controller's features.</p>
 <p><a href="Examples.html#dualshock-4-special-features">Also see the Dual Shock 4 Special Features example.</a></p>
@@ -2625,6 +2626,49 @@ class PS4Test {
       // Note: Vibration can also be set in a generic way through Joystick.SetVibration</span>
       float vibration = ext.GetVibration(PS4GamepadMotorType.WeakMotor);
       ext.SetVibration(PS4GamepadMotorType.StrongMotor, 1.0f); <span class="comment">// set vibration on a single motor by type</span>
+      ext.SetVibration(1.0f, 1.0f); <span class="comment">// set vibration on both motors simultaneously</span>
+      ext.StopVibration(); <span class="comment">// stop all vibration</span>
+
+      <span class="comment">// Set the light color</span>
+      ext.SetLightColor(new Color(1.0f, 1.0f, 0.0f, 0.5f)); <span class="comment">// alpha is multiplied by rgb to get final value</span>
+
+      <span class="comment">// Reset the light color</span>
+      ext.ResetLight();
+    }
+  }
+}</pre>
+<p>&nbsp;</p>
+<hr />
+<h3><a name="ps4-aim-special-features" id="ps4-aim-special-features"></a>Using PS4 Aim Controller special features on PS4 platform</h3>
+<p>Special controller features of the PS4 Aim Controller such as vibration, gyro, accelerometer, and light color can be accessed via the <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_Platforms_PS4_PS4AimExtension.htm">PS4AimExtension</a> class available in the <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_Joystick.htm">Joystick</a> class as seen in the example below.  Note that the platform input source must be set to Native and Disable Native Input must be set to false or no special features will be available.</p>
+<pre class="code">using Rewired;
+using Rewired.Platforms.PS4;
+
+class PS4Test {
+
+  <span class="comment">// Getting and setting various values on all PS4 Aim Controllers assigned to this Player</span>
+  public void TestPS4(Player player) {
+
+<span class="comment">    // Loop through all Joysticks assigned to this Player</span>
+    foreach(Joystick joystick in player.controllers.Joysticks) {
+
+      <span class="comment">// Get the PS4 Aim Extension from the Joystick</span>
+      var ext = joystick.GetExtension&lt;PS4AimExtension&gt;();
+      if(ext == null) continue; <span class="comment">// this is not a PS4 Aim Controller, skip it</span>
+
+      <span class="comment">// Get the accelerometer value</span>
+      Vector3 accelerometer = ext.GetAccelerometerValue();
+
+      <span class="comment">// Get the gyroscope value</span>
+      Vector3 gyro = ext.GetLastGyroscopeValue();
+
+      <span class="comment">// Get the controller orientation</span>
+      Quaternion orientation = ext.GetOrientation();
+
+      <span class="comment">// Get/Set vibration
+      // Note: Vibration can also be set in a generic way through Joystick.SetVibration</span>
+      float vibration = ext.GetVibration(PS4AimMotorType.WeakMotor);
+      ext.SetVibration(PS4AimMotorType.StrongMotor, 1.0f); <span class="comment">// set vibration on a single motor by type</span>
       ext.SetVibration(1.0f, 1.0f); <span class="comment">// set vibration on both motors simultaneously</span>
       ext.StopVibration(); <span class="comment">// stop all vibration</span>
 

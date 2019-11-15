@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 7644786498335936536}
   - component: {fileID: 436682530179396233}
   - component: {fileID: 7644786498335936539}
-  - component: {fileID: 2024331958060926675}
   - component: {fileID: 7644786498335936535}
   - component: {fileID: 7644786498335936534}
   - component: {fileID: 4321108554260642727}
@@ -62,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7644786498335936538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.526379, y: 10.1088705, z: 0}
+  m_LocalPosition: {x: -63.63901, y: 10.1088705, z: 0}
   m_LocalScale: {x: 5.2, y: 5.2, z: 1}
   m_Children:
   - {fileID: 7644786500090683613}
@@ -126,7 +125,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7644786498335936538}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fd9da8d1c332a645927ae88a0430604, type: 3}
   m_Name: 
@@ -135,8 +134,8 @@ MonoBehaviour:
   healthVal: 1000
   defaultChargeVal: 0
   defaultHealthVal: 0
-  charge: {fileID: 0}
-  health: {fileID: 0}
+  charge: {fileID: 5216737150317864429, guid: 6be7f38d29dd00542880006a54f2f2a3, type: 3}
+  health: {fileID: 4501521401533583416, guid: 80e58ef86abe90d4c8801c6f953344f8, type: 3}
 --- !u!114 &7644786498335936539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,20 +175,16 @@ MonoBehaviour:
   currentGravity: 0
   moveSpecialCooldownInc: 0
   moveSpecialCooldownMax: 500
---- !u!114 &2024331958060926675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7644786498335936538}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c5a223bf1c1cea49b09727cf57ea78a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  p1: {fileID: 0}
-  p2: {fileID: 0}
+  ph1: {fileID: 0}
+  ph2: {fileID: 0}
+  chargeVal: 10
+  healthVal: 1000
+  defaultChargeVal: 10
+  defaultHealthVal: 1000
+  p1Charge: {fileID: 0}
+  p1Health: {fileID: 0}
+  p2Charge: {fileID: 0}
+  p2Health: {fileID: 0}
 --- !u!61 &7644786498335936535
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -363,13 +358,15 @@ MonoBehaviour:
     type: 3}
   chefProjH1: {fileID: 4893234850838965012, guid: 38146140137559543be2a9ec114433a2,
     type: 3}
-  witchProjH1: {fileID: 0}
+  witchProjH1: {fileID: 8786266101009230588, guid: 1f8efbac9e96387498766e9a36080021,
+    type: 3}
   spyProjH1: {fileID: 0}
   pirateProjH1: {fileID: 3196747121921783440, guid: 6373a18c529872042950c60fdd0058d9,
     type: 3}
   chefProjH2: {fileID: 7268734162606707286, guid: 7af8e77a8d634b74abebda114c4c4dff,
     type: 3}
-  witchProjH2: {fileID: 0}
+  witchProjH2: {fileID: 3717844974806480012, guid: 381d415ef56ad904592ca592615b4da8,
+    type: 3}
   spyProjH2: {fileID: 0}
   pirateProjH2: {fileID: 7144463491675482404, guid: 23e9dce210a1b4a4082653efcab9a28d,
     type: 3}

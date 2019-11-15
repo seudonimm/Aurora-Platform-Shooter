@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 8738231635652756269, guid: d5363f575a70a474ab813f549445677b,
         type: 3}
       propertyPath: m_Name
-      value: Bolt_Witch
+      value: Bolt_Witch_P1
       objectReference: {fileID: 0}
     - target: {fileID: 2997321759691435672, guid: d5363f575a70a474ab813f549445677b,
         type: 3}
@@ -66,6 +66,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710360101020084327, guid: d5363f575a70a474ab813f549445677b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5363f575a70a474ab813f549445677b, type: 3}

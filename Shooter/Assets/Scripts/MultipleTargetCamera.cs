@@ -15,9 +15,25 @@ public class MultipleTargetCamera : MonoBehaviour
 
     [SerializeField] Vector2 distanceBtwn;
 
+    private void Start()
+    {   t1 = GameObject.FindGameObjectWithTag("Player1");
 
+        t2 = GameObject.FindGameObjectWithTag("Player2");
+
+        targets.Add(t1.transform);
+        targets.Add(t2.transform);
+
+    }
     private void LateUpdate()
     {
+
+
+        //targets[0] = GameObject.FindGameObjectWithTag("Player1").GetComponent<Transform>();
+
+        //targets[1] = GameObject.FindGameObjectWithTag("Player2").GetComponent<Transform>();
+
+
+
         if (targets.Count == 0)
             return;
         Vector3 centerPoint = GetCenterPoint();
@@ -34,7 +50,9 @@ public class MultipleTargetCamera : MonoBehaviour
 
     Vector3 GetCenterPoint()
     {
-        if(targets.Count == 1)
+
+
+        if (targets.Count == 1)
         {
             return targets[0].position;
         }

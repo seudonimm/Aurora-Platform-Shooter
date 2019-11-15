@@ -80,13 +80,15 @@ MonoBehaviour:
     type: 3}
   chefProjH1: {fileID: 4893234850838965012, guid: 38146140137559543be2a9ec114433a2,
     type: 3}
-  witchProjH1: {fileID: 0}
+  witchProjH1: {fileID: 8786266101009230588, guid: 1f8efbac9e96387498766e9a36080021,
+    type: 3}
   spyProjH1: {fileID: 0}
   pirateProjH1: {fileID: 3196747121921783440, guid: 6373a18c529872042950c60fdd0058d9,
     type: 3}
   chefProjH2: {fileID: 7268734162606707286, guid: 7af8e77a8d634b74abebda114c4c4dff,
     type: 3}
-  witchProjH2: {fileID: 0}
+  witchProjH2: {fileID: 3717844974806480012, guid: 381d415ef56ad904592ca592615b4da8,
+    type: 3}
   spyProjH2: {fileID: 0}
   pirateProjH2: {fileID: 7144463491675482404, guid: 23e9dce210a1b4a4082653efcab9a28d,
     type: 3}
@@ -172,7 +174,6 @@ GameObject:
   - component: {fileID: 1087675692521032004}
   - component: {fileID: 3151995271228896744}
   - component: {fileID: 1087675692521032007}
-  - component: {fileID: 8098886806286967631}
   - component: {fileID: 1087675692521032011}
   - component: {fileID: 1087675692521032010}
   m_Layer: 9
@@ -190,7 +191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087675692521032006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2639303, y: -2.9, z: 0}
+  m_LocalPosition: {x: -7.8362365, y: -2.9, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 474507485}
@@ -253,7 +254,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087675692521032006}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fd9da8d1c332a645927ae88a0430604, type: 3}
   m_Name: 
@@ -262,8 +263,8 @@ MonoBehaviour:
   healthVal: 1000
   defaultChargeVal: 0
   defaultHealthVal: 0
-  charge: {fileID: 0}
-  health: {fileID: 0}
+  charge: {fileID: 7808043762973086703, guid: 92027a837f6690145b75a09a928aed4a, type: 3}
+  health: {fileID: 5147877555790699558, guid: c566508bc6f0e244093d00e2b9bbf250, type: 3}
 --- !u!114 &1087675692521032007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,20 +303,16 @@ MonoBehaviour:
   currentGravity: 0
   moveSpecialCooldownInc: 0
   moveSpecialCooldownMax: 0
---- !u!114 &8098886806286967631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087675692521032006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff7f1f489186d024b9f27734f6d9f5d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  p1: {fileID: 0}
-  p2: {fileID: 0}
+  ph1: {fileID: 0}
+  ph2: {fileID: 0}
+  chargeVal: 10
+  healthVal: 1000
+  defaultChargeVal: 10
+  defaultHealthVal: 1000
+  p1Charge: {fileID: 0}
+  p1Health: {fileID: 0}
+  p2Charge: {fileID: 0}
+  p2Health: {fileID: 0}
 --- !u!61 &1087675692521032011
 BoxCollider2D:
   m_ObjectHideFlags: 0

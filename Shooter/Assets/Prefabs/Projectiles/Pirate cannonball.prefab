@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4549488560859606719}
   m_Layer: 0
   m_Name: Pirate cannonball
-  m_TagString: Projectile
+  m_TagString: Damage Shot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,8 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projSpeed: 10
-  explosionSpawn: {fileID: 7577441168982809420, guid: e43f6ac52e8b76944b4f73c7ad44bcc1,
-    type: 3}
+  explosionSpawn: {fileID: 4549488560859606713}
   explosion: {fileID: 4303591837841832195, guid: e43f6ac52e8b76944b4f73c7ad44bcc1,
     type: 3}
   durability: 0
