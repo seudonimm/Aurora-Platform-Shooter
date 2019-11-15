@@ -62,7 +62,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7644786498335936538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.909841, y: 10.1088705, z: 0}
+  m_LocalPosition: {x: 12.526379, y: 10.1088705, z: 0}
   m_LocalScale: {x: 5.2, y: 5.2, z: 1}
   m_Children:
   - {fileID: 7644786500090683613}
@@ -166,14 +166,16 @@ MonoBehaviour:
   spy: {fileID: 372881819780375730, guid: dbdd25135772e554c98db6c1bf8d86f4, type: 3}
   pirate: {fileID: 7644786498335936538}
   self: {fileID: 0}
-  explosionSpeed: 100
+  explosionSpeed: 1000
   explosionSpawn: {fileID: 8215345944140459894}
   explosion: {fileID: 4303591837841832195, guid: e43f6ac52e8b76944b4f73c7ad44bcc1,
     type: 3}
   moveWitch: 0
-  flyCooldownMax: 0
+  flyCooldownMax: 500
   flyCooldownInc: 0
   currentGravity: 0
+  moveSpecialCooldownInc: 0
+  moveSpecialCooldownMax: 500
 --- !u!114 &2024331958060926675
 MonoBehaviour:
   m_ObjectHideFlags: 0

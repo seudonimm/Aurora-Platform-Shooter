@@ -11,25 +11,26 @@ public class ProjectileMovement : MonoBehaviour
 
     Vector2 direction;
 
-    [SerializeField] int playerID;
+    //[SerializeField] int playerID;
 
-    private Player player;
-    private Player player2;
-    public Vector2 aimVector;
+    //private Player player;
+    //private Player player2;
+    //public Vector2 aimVector;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        player = ReInput.players.GetPlayer(playerID);
-        player2 = ReInput.players.GetPlayer(1);
+        //player = ReInput.players.GetPlayer(playerID);
+        //player2 = ReInput.players.GetPlayer(1);
 
         rb = GetComponent<Rigidbody2D>();
+        rb.velocity = transform.right * speed;
 
-        GetInput();
+        //GetInput();
 
-        direction = aimVector;
+        //direction = aimVector;
 
 
         //Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -42,7 +43,7 @@ public class ProjectileMovement : MonoBehaviour
     {
 
 
-        rb.velocity = aimVector * speed;
+       // rb.velocity = transform.right * speed;
 
 
 
@@ -50,14 +51,14 @@ public class ProjectileMovement : MonoBehaviour
 
     void GetInput()
     {
-        aimVector.x = player.GetAxis("Aim Horizontal");
+        //aimVector.x = player.GetAxis("Aim Horizontal");
 
-        aimVector.y = player.GetAxis("Aim Vertical");
+        //aimVector.y = player.GetAxis("Aim Vertical");
 
     }
     void ProcessInput()
     {
-        float joyAngle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg;
+        //float joyAngle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg;
         //projectileSpawn.rotation = Quaternion.AngleAxis(joyAngle, Vector3.forward);
 
 

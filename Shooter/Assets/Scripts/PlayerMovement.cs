@@ -50,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float flyCooldownInc;
     [SerializeField] float currentGravity;
 
+    [SerializeField] float moveSpecialCooldownInc;
+    [SerializeField] float moveSpecialCooldownMax;
 
 
 
@@ -124,14 +126,18 @@ public class PlayerMovement : MonoBehaviour
 		moveVector.x = player1.GetAxis("Move Horizontal");	
 		
 		moveVector2.x = player2.GetAxis("Move Horizontal");
-		
 
-	}
-			
-		
+        moveVector.y = player1.GetAxis("Move Vertical");
 
-	
-	void ProcessInput2(){
+        moveVector2.y = player2.GetAxis("Move Vertical");
+
+
+    }
+
+
+
+
+    void ProcessInput2(){
 		if(moveVector2.x > 0){
 			p2.transform.position += transform.right * moveSpeed * Time.deltaTime;
 		}
@@ -150,9 +156,13 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (player2.GetButtonDown("Jump") && onGround == true){
-			rb2.AddForce(Vector2.up * jump);
-		}
+        if (player2.GetButtonDown("Jump") && onGround == true)
+        {
+            if (!moveWitch)
+            {
+                rb2.AddForce(Vector2.up * jump);
+            }
+        }
 
         if (player2.GetButtonDown("Dodge"))
         {
@@ -197,9 +207,11 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (player1.GetButtonDown("Jump") && onGround == true){
-			rb1.AddForce(Vector2.up * jump);
-		}
+        if (player1.GetButtonDown("Jump") && onGround == true) {
+            if (!moveWitch) {
+                rb1.AddForce(Vector2.up * jump);
+            }
+        }
 
         if (player1.GetButtonDown("Dodge"))
         {
@@ -234,44 +246,52 @@ public class PlayerMovement : MonoBehaviour
 
         dodgeCooldownInc++;
 
-        if (player1.GetButton("Movement Ability"))
+        moveSpecialCooldownInc++;
+
+
+        if (player1.GetButton("Movement Ability") && moveSpecialCooldownInc >= moveSpecialCooldownMax)
         {
-            if (p1 = chef)
+            if (p1 == chef)
             {
                 ChefSpecial();
             }
-            if (p1 == witch)
+            else if (p1 == witch)
             {
                 WitchSpecial();
             }
-            if (p1 == pirate)
+            else if (p1 == pirate)
             {
                 PirateSpecial();
             }
-            if (p1 == spy)
+            else if (p1 == spy)
             {
                 SpySpecial();
             }
+            moveSpecialCooldownInc = 0;
+
         }
-        if (player2.GetButton("Movement Ability"))
+        if (player2.GetButton("Movement Ability") && moveSpecialCooldownInc >= moveSpecialCooldownMax)
         {
-            if (p2 = chef)
+            if (p2 == chef)
             {
                 ChefSpecial();
             }
-            if (p2 == witch)
+            else if (p2 == witch)
             {
                 WitchSpecial();
             }
-            if (p2 == pirate)
+            else if (p2 == pirate)
             {
                 PirateSpecial();
             }
-            if (p2 == spy)
+            else if (p2 == spy)
             {
                 SpySpecial();
             }
+            moveSpecialCooldownInc = 0;
+
         }
+
 
 
         flyCooldownInc++;
@@ -280,6 +300,7 @@ public class PlayerMovement : MonoBehaviour
         {
             moveWitch = false;
             rb1.gravityScale = currentGravity;
+            rb2.gravityScale = currentGravity;
         }
 
 
