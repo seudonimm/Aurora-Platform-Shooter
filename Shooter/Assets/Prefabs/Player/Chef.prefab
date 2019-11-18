@@ -53,8 +53,10 @@ MonoBehaviour:
     type: 3}
   projectileSpawn: {fileID: 2209128381652756724}
   projectileSpawn2: {fileID: 0}
-  cooldownMax: 10
+  cooldownMax: 50
   coolddownInc: 0
+  cooldownMax2: 200
+  coolddownInc2: 0
   aimVector: {x: 0, y: 0}
   aimVector2: {x: 0, y: 0}
   p1: {fileID: 2209128381652756725}
@@ -206,6 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2209128383390554160}
   - component: {fileID: 2209128383390554161}
+  - component: {fileID: 8047272350647974135}
   - component: {fileID: 2209128383390554162}
   - component: {fileID: 2209128383390554174}
   - component: {fileID: 2209128383390554175}
@@ -280,6 +283,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8047272350647974135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2209128383390554163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd9da8d1c332a645927ae88a0430604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chargeVal: 10
+  healthVal: 1000
+  defaultChargeVal: 10
+  defaultHealthVal: 1000
+  charge: {fileID: 0}
+  health: {fileID: 0}
+  thisPlayer: {fileID: 0}
 --- !u!114 &2209128383390554162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,15 +342,6 @@ MonoBehaviour:
   moveSpecialCooldownMax: 0
   ph1: {fileID: 0}
   ph2: {fileID: 0}
-  chargeVal: 10
-  healthVal: 1000
-  defaultChargeVal: 10
-  defaultHealthVal: 1000
-  p1Charge: {fileID: 305664327579158944, guid: 022983572644b0042a8bfc9d85a407da, type: 3}
-  p1Health: {fileID: 1033350286236487043, guid: 95c2d7418fff69644be2b33a8669f738,
-    type: 3}
-  p2Charge: {fileID: 0}
-  p2Health: {fileID: 0}
 --- !u!61 &2209128383390554174
 BoxCollider2D:
   m_ObjectHideFlags: 0

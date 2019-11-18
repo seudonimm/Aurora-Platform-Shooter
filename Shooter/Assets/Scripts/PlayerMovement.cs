@@ -56,15 +56,15 @@ public class PlayerMovement : MonoBehaviour
     public PlayerHealth ph1;
     public PlayerHealth ph2;
 
-    [SerializeField] public float chargeVal = 10;
-    [SerializeField] public float healthVal = 1000;
-    [SerializeField] public float defaultChargeVal = 10;
-    [SerializeField] public float defaultHealthVal = 1000;
+    //[SerializeField] public float chargeVal = 10;
+    //[SerializeField] public float healthVal = 1000;
+    //[SerializeField] public float defaultChargeVal = 10;
+    //[SerializeField] public float defaultHealthVal = 1000;
 
-    [SerializeField] public TextMesh p1Charge;
-    [SerializeField] TextMesh p1Health;
-    [SerializeField] TextMesh p2Charge;
-    [SerializeField] TextMesh p2Health;
+    //[SerializeField] public TextMesh p1Charge;
+    //[SerializeField] TextMesh p1Health;
+    //[SerializeField] TextMesh p2Charge;
+    //[SerializeField] TextMesh p2Health;
 
 
 
@@ -146,10 +146,10 @@ public class PlayerMovement : MonoBehaviour
         ph1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerHealth>();
         ph2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerHealth>();
 
-        p1Charge = GameObject.FindGameObjectWithTag("p1charge").GetComponent<TextMesh>();
-        p1Health = GameObject.FindGameObjectWithTag("p1hp").GetComponent<TextMesh>();
-        p2Charge = GameObject.FindGameObjectWithTag("p2charge").GetComponent<TextMesh>();
-        p2Health = GameObject.FindGameObjectWithTag("p2hp").GetComponent<TextMesh>();
+        //p1Charge = GameObject.FindGameObjectWithTag("p1charge").GetComponent<TextMesh>();
+        //p1Health = GameObject.FindGameObjectWithTag("p1hp").GetComponent<TextMesh>();
+        //p2Charge = GameObject.FindGameObjectWithTag("p2charge").GetComponent<TextMesh>();
+        //p2Health = GameObject.FindGameObjectWithTag("p2hp").GetComponent<TextMesh>();
 
 
     }
@@ -408,29 +408,29 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    public void PlayerHealth()
-    {
-        if (self == p1)
-        {
-            p1Charge.text = "Charge: " + chargeVal;
-            p1Health.text = "Health: " + healthVal;
-        }
-        else if (self == p2)
-        {
-            p2Charge.text = "Charge: " + chargeVal;
-            p2Health.text = "Health: " + healthVal;
+    //public void PlayerHealth()
+    //{
+    //    if (self == p1)
+    //    {
+    //        p1Charge.text = "Charge: " + chargeVal;
+    //        p1Health.text = "Health: " + healthVal;
+    //    }
+    //    else if (self == p2)
+    //    {
+    //        p2Charge.text = "Charge: " + chargeVal;
+    //        p2Health.text = "Health: " + healthVal;
 
-        }
-        if (chargeVal < 0)
-        {
-            chargeVal = 5;
-        }
+    //    }
+    //    if (chargeVal < 0)
+    //    {
+    //        chargeVal = 5;
+    //    }
 
-        if (healthVal <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
+    //    if (healthVal <= 0)
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
 
 
 

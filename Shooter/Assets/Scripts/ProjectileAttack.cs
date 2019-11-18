@@ -18,6 +18,9 @@ public class ProjectileAttack : MonoBehaviour {
     [SerializeField] float cooldownMax;
     [SerializeField] float coolddownInc;
 
+    [SerializeField] float cooldownMax2;
+    [SerializeField] float coolddownInc2;
+
     string fire = null;
     static float player;
 
@@ -167,20 +170,22 @@ public class ProjectileAttack : MonoBehaviour {
                     Instantiate(projectile1, projectileSpawn.position, projectileSpawn.rotation);
                     coolddownInc = 0;
 
-                }
+                }              
+            }
+            if (coolddownInc2 >= cooldownMax2)
+            {
                 if (player1.GetButton("HP Shot"))
                 {
                     Instantiate(projectile2, projectileSpawn.position, projectileSpawn.rotation);
-                    coolddownInc = 0;
+                    coolddownInc2 = 0;
                 }
             }
-
         }
     }
 
     void Fire2()
     {
-        if (p2 == self)
+        if (p1 == self)
         {
             if (coolddownInc >= cooldownMax)
             {
@@ -190,10 +195,13 @@ public class ProjectileAttack : MonoBehaviour {
                     coolddownInc = 0;
 
                 }
+            }
+            if (coolddownInc2 >= cooldownMax2)
+            {
                 if (player2.GetButton("HP Shot"))
                 {
                     Instantiate(projectile2, projectileSpawn.position, projectileSpawn.rotation);
-                    coolddownInc = 0;
+                    coolddownInc2 = 0;
                 }
             }
         }
@@ -210,6 +218,8 @@ public class ProjectileAttack : MonoBehaviour {
         ProcessInput2();
 
         coolddownInc++;
+        coolddownInc2++;
+
 
     }
 

@@ -61,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7644786498335936538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -46.974216, y: 12.216498, z: 0}
+  m_LocalPosition: {x: -70.896996, y: 12.216498, z: 0}
   m_LocalScale: {x: 5.2, y: 5.2, z: 1}
   m_Children:
   - {fileID: 7644786500090683613}
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7644786498335936538}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fd9da8d1c332a645927ae88a0430604, type: 3}
   m_Name: 
@@ -136,6 +136,7 @@ MonoBehaviour:
   defaultHealthVal: 0
   charge: {fileID: 5216737150317864429, guid: 6be7f38d29dd00542880006a54f2f2a3, type: 3}
   health: {fileID: 4501521401533583416, guid: 80e58ef86abe90d4c8801c6f953344f8, type: 3}
+  thisPlayer: {fileID: 0}
 --- !u!114 &7644786498335936539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,14 +178,6 @@ MonoBehaviour:
   moveSpecialCooldownMax: 500
   ph1: {fileID: 0}
   ph2: {fileID: 0}
-  chargeVal: 10
-  healthVal: 1000
-  defaultChargeVal: 10
-  defaultHealthVal: 1000
-  p1Charge: {fileID: 0}
-  p1Health: {fileID: 0}
-  p2Charge: {fileID: 0}
-  p2Health: {fileID: 0}
 --- !u!61 &7644786498335936535
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -329,8 +322,10 @@ MonoBehaviour:
     type: 3}
   projectileSpawn: {fileID: 7644786500090683613}
   projectileSpawn2: {fileID: 0}
-  cooldownMax: 10
+  cooldownMax: 50
   coolddownInc: 0
+  cooldownMax2: 200
+  coolddownInc2: 0
   aimVector: {x: 0, y: 0}
   aimVector2: {x: 0, y: 0}
   p1: {fileID: 0}

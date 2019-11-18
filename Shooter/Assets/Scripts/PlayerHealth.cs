@@ -13,12 +13,29 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] TextMesh charge;
     [SerializeField] TextMesh health;
 
+    [SerializeField] GameObject thisPlayer;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        charge.GetComponent<TextMesh>().text = "Charge: " + chargeVal;
+
+
+        thisPlayer = this.gameObject;
+
+        if(thisPlayer.CompareTag("Player1"))
+        {
+            charge = GameObject.FindGameObjectWithTag("p1charge").GetComponent<TextMesh>();
+            health = GameObject.FindGameObjectWithTag("p1hp").GetComponent<TextMesh>();
+        }
+        if (thisPlayer.CompareTag("Player2"))
+        {
+            charge = GameObject.FindGameObjectWithTag("p2charge").GetComponent<TextMesh>();
+            health = GameObject.FindGameObjectWithTag("p2hp").GetComponent<TextMesh>();
+        }
+        
+        charge.text = "Charge: " + chargeVal;
         health.text = "Health: " + healthVal;
     }
 

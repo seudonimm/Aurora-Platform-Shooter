@@ -93,7 +93,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372881819780375730}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fd9da8d1c332a645927ae88a0430604, type: 3}
   m_Name: 
@@ -104,6 +104,7 @@ MonoBehaviour:
   defaultHealthVal: 0
   charge: {fileID: 5127143660597418674, guid: 7e85dedf63e2a2741a89ebe080b8c78e, type: 3}
   health: {fileID: 5275124197707759775, guid: e646bedc380934748a14352e2a386baf, type: 3}
+  thisPlayer: {fileID: 0}
 --- !u!114 &372881819780375731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,14 +145,6 @@ MonoBehaviour:
   moveSpecialCooldownMax: 0
   ph1: {fileID: 0}
   ph2: {fileID: 0}
-  chargeVal: 10
-  healthVal: 1000
-  defaultChargeVal: 10
-  defaultHealthVal: 1000
-  p1Charge: {fileID: 0}
-  p1Health: {fileID: 0}
-  p2Charge: {fileID: 0}
-  p2Health: {fileID: 0}
 --- !u!114 &8299252218373124731
 MonoBehaviour:
   m_ObjectHideFlags: 0
