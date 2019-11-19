@@ -311,7 +311,7 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
-      Hash: d7fb10158afe3d9fc447b8ef78b37bb6
+      Hash: fe144765974cdd287a558867b9269bdd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ProjectileAttack
@@ -1337,13 +1337,13 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
-      Hash: dfcfc5be04700df2caa50f30c28590d2
+      Hash: 18a512407de203f0986c67dbe6189c4c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerHealth
   - hash:
       serializedVersion: 2
-      Hash: 551044cd2f8eecac68ff163eac96de3a
+      Hash: 321d6910315a8aa6f0ab00c7314d0c11
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -1520,4 +1520,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/CharacterSelect.unity
   - Assets/Scenes/BattleScene01.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/grock/Documents/GitHub/Aurora-Platform-Shooter/Shooter/ahhhhhh/Shooter.exe
+  playerPath: C:/Users/jusman1/Documents/GitHub/Aurora-Platform-Shooter/Shooter/Build/Shooter.exe
