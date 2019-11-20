@@ -50,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float flyCooldownInc;
     [SerializeField] float currentGravity;
 
+    [SerializeField] float slideSpeed = 1000;
+
     [SerializeField] float moveSpecialCooldownInc;
     [SerializeField] float moveSpecialCooldownMax;
 
@@ -132,13 +134,13 @@ public class PlayerMovement : MonoBehaviour
         self = transform.gameObject;
         if(self == p1)
         {
-            gameObject.tag = "Player1";
-            gameObject.layer = 8;
+            p1.tag = "Player1";
+            p1.layer = 8;
         }
         else if (self == p2)
         {
-            gameObject.tag = "Player2";
-            gameObject.layer = 9;
+            p2.tag = "Player2";
+            p2.layer = 9;
         }
 
         currentGravity = rb1.gravityScale;
@@ -340,7 +342,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void ChefSpecial()
     {
-        float slideSpeed = 1000;
+        
         if (self == p1)
         {
             if (moveVector.x > 0)

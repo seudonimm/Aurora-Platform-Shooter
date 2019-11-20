@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474507484}
-  m_LocalRotation: {x: -0, y: -0, z: 0.94685036, w: 0.32167438}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -178,9 +178,9 @@ GameObject:
   - component: {fileID: 1087675692521032007}
   - component: {fileID: 1087675692521032011}
   - component: {fileID: 1087675692521032010}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Witch
-  m_TagString: Player2
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,7 +193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087675692521032006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4120967, y: -2.9, z: 0}
+  m_LocalPosition: {x: -6.0278006, y: -2.9, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 474507485}
@@ -263,8 +263,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chargeVal: 10
   healthVal: 100
-  defaultChargeVal: 0
-  defaultHealthVal: 0
+  defaultChargeVal: 10
+  defaultHealthVal: 100
   charge: {fileID: 7808043762973086703, guid: 92027a837f6690145b75a09a928aed4a, type: 3}
   health: {fileID: 5147877555790699558, guid: c566508bc6f0e244093d00e2b9bbf250, type: 3}
   thisPlayer: {fileID: 0}
@@ -304,6 +304,7 @@ MonoBehaviour:
   flyCooldownMax: 500
   flyCooldownInc: 0
   currentGravity: 0
+  slideSpeed: 1000
   moveSpecialCooldownInc: 0
   moveSpecialCooldownMax: 0
   ph1: {fileID: 0}

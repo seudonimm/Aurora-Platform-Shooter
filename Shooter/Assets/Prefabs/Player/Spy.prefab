@@ -100,8 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chargeVal: 10
   healthVal: 100
-  defaultChargeVal: 0
-  defaultHealthVal: 0
+  defaultChargeVal: 10
+  defaultHealthVal: 100
   charge: {fileID: 5127143660597418674, guid: 7e85dedf63e2a2741a89ebe080b8c78e, type: 3}
   health: {fileID: 5275124197707759775, guid: e646bedc380934748a14352e2a386baf, type: 3}
   thisPlayer: {fileID: 0}
@@ -141,6 +141,7 @@ MonoBehaviour:
   flyCooldownMax: 0
   flyCooldownInc: 0
   currentGravity: 0
+  slideSpeed: 1000
   moveSpecialCooldownInc: 0
   moveSpecialCooldownMax: 0
   ph1: {fileID: 0}
@@ -260,6 +261,8 @@ MonoBehaviour:
   projectileSpawn2: {fileID: 0}
   cooldownMax: 10
   coolddownInc: 0
+  cooldownMax2: 0
+  coolddownInc2: 0
   aimVector: {x: 0, y: 0}
   aimVector2: {x: 0, y: 0}
   p1: {fileID: 0}

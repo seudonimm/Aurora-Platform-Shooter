@@ -61,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7644786498335936538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -70.896996, y: 12.216498, z: 0}
+  m_LocalPosition: {x: -117.16004, y: 12.216498, z: 0}
   m_LocalScale: {x: 5.2, y: 5.2, z: 1}
   m_Children:
   - {fileID: 7644786500090683613}
@@ -132,8 +132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chargeVal: 10
   healthVal: 100
-  defaultChargeVal: 0
-  defaultHealthVal: 0
+  defaultChargeVal: 10
+  defaultHealthVal: 1000
   charge: {fileID: 5216737150317864429, guid: 6be7f38d29dd00542880006a54f2f2a3, type: 3}
   health: {fileID: 4501521401533583416, guid: 80e58ef86abe90d4c8801c6f953344f8, type: 3}
   thisPlayer: {fileID: 0}
@@ -174,6 +174,7 @@ MonoBehaviour:
   flyCooldownMax: 500
   flyCooldownInc: 0
   currentGravity: 0
+  slideSpeed: 1000
   moveSpecialCooldownInc: 0
   moveSpecialCooldownMax: 500
   ph1: {fileID: 0}

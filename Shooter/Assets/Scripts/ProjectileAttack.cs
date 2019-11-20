@@ -185,7 +185,7 @@ public class ProjectileAttack : MonoBehaviour {
 
     void Fire2()
     {
-        if (p1 == self)
+        if (p2 == self)
         {
             if (coolddownInc >= cooldownMax)
             {

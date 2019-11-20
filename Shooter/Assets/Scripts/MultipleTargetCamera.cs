@@ -46,6 +46,10 @@ public class MultipleTargetCamera : MonoBehaviour
 
         camera.orthographicSize = Mathf.Abs(distanceBtwn.x) * 0.5f;
 
+	if(camera.orthographicSize < 5){
+		camera.orthographicSize = 5;
+	}
+
     }
 
     Vector3 GetCenterPoint()
