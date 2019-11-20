@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        self = transform.gameObject;
+        self = this.gameObject;
         if(self == p1)
         {
             p1.tag = "Player1";
@@ -145,14 +145,20 @@ public class PlayerMovement : MonoBehaviour
 
         currentGravity = rb1.gravityScale;
 
-        ph1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerHealth>();
-        ph2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerHealth>();
+        Invoke("Assign", 0.1f);
 
         //p1Charge = GameObject.FindGameObjectWithTag("p1charge").GetComponent<TextMesh>();
         //p1Health = GameObject.FindGameObjectWithTag("p1hp").GetComponent<TextMesh>();
         //p2Charge = GameObject.FindGameObjectWithTag("p2charge").GetComponent<TextMesh>();
         //p2Health = GameObject.FindGameObjectWithTag("p2hp").GetComponent<TextMesh>();
 
+
+    }
+
+    void Assign()
+    {
+        ph1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerHealth>();
+        ph2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerHealth>();
 
     }
 

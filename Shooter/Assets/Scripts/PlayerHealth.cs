@@ -24,7 +24,14 @@ public class PlayerHealth : MonoBehaviour
 
         thisPlayer = this.gameObject;
 
-        if(thisPlayer.CompareTag("Player1"))
+        Invoke("Assign", 0.2f);
+        
+
+    }
+
+    void Assign()
+    {
+        if (thisPlayer.CompareTag("Player1"))
         {
             charge = GameObject.FindGameObjectWithTag("p1charge").GetComponent<TextMesh>();
             health = GameObject.FindGameObjectWithTag("p1hp").GetComponent<TextMesh>();
@@ -34,11 +41,10 @@ public class PlayerHealth : MonoBehaviour
             charge = GameObject.FindGameObjectWithTag("p2charge").GetComponent<TextMesh>();
             health = GameObject.FindGameObjectWithTag("p2hp").GetComponent<TextMesh>();
         }
-        
         charge.text = "Charge: " + chargeVal;
         health.text = "Health: " + healthVal;
-    }
 
+    }
     // Update is called once per frame
     void Update()
     {

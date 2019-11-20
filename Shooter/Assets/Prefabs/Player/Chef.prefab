@@ -296,9 +296,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chargeVal: 10
-  healthVal: 1000
+  healthVal: 100
   defaultChargeVal: 10
-  defaultHealthVal: 1000
+  defaultHealthVal: 100
   charge: {fileID: 0}
   health: {fileID: 0}
   thisPlayer: {fileID: 0}

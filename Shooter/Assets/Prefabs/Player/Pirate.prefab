@@ -133,7 +133,7 @@ MonoBehaviour:
   chargeVal: 10
   healthVal: 100
   defaultChargeVal: 10
-  defaultHealthVal: 1000
+  defaultHealthVal: 100
   charge: {fileID: 5216737150317864429, guid: 6be7f38d29dd00542880006a54f2f2a3, type: 3}
   health: {fileID: 4501521401533583416, guid: 80e58ef86abe90d4c8801c6f953344f8, type: 3}
   thisPlayer: {fileID: 0}
@@ -404,7 +404,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 36a1fe1417783a146b5105689b58801d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ca1ff9608ab800a408447ece40b051f5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

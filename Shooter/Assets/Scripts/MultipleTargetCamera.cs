@@ -16,13 +16,19 @@ public class MultipleTargetCamera : MonoBehaviour
     [SerializeField] Vector2 distanceBtwn;
 
     private void Start()
-    {   t1 = GameObject.FindGameObjectWithTag("Player1");
+    {
+        Invoke("Assign", 0.2f);
+
+    }
+
+    void Assign()
+    {
+        t1 = GameObject.FindGameObjectWithTag("Player1");
 
         t2 = GameObject.FindGameObjectWithTag("Player2");
 
         targets.Add(t1.transform);
         targets.Add(t2.transform);
-
     }
     private void LateUpdate()
     {
@@ -46,8 +52,8 @@ public class MultipleTargetCamera : MonoBehaviour
 
         camera.orthographicSize = Mathf.Abs(distanceBtwn.x) * 0.5f;
 
-	if(camera.orthographicSize < 5){
-		camera.orthographicSize = 5;
+	if(camera.orthographicSize < 8){
+		camera.orthographicSize = 8;
 	}
 
     }
