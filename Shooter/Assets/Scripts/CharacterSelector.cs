@@ -97,7 +97,7 @@ public class CharacterSelector : MonoBehaviour
 
         if(p1Confirm && p2Confirm)
         {
-            SceneManager.LoadScene("StageSelect");
+            SceneManager.LoadScene("Instructions");
         }
 
     }

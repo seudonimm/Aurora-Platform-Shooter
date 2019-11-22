@@ -265,9 +265,11 @@ MonoBehaviour:
   healthVal: 100
   defaultChargeVal: 10
   defaultHealthVal: 100
-  charge: {fileID: 7808043762973086703, guid: 92027a837f6690145b75a09a928aed4a, type: 3}
-  health: {fileID: 5147877555790699558, guid: c566508bc6f0e244093d00e2b9bbf250, type: 3}
-  thisPlayer: {fileID: 0}
+  charge: {fileID: 102362823683043728, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 3}
+  health: {fileID: 102362823683043728, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 3}
+  winMessage: {fileID: 102362823683043728, guid: 92d60a2e17d9a4bb8bd3801b14fc2926,
+    type: 3}
+  thisPlayer: {fileID: 1293603593108180, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 3}
 --- !u!114 &1087675692521032007
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -59,6 +59,9 @@ public class PlayerMovement : MonoBehaviour
     public PlayerHealth ph1;
     public PlayerHealth ph2;
 
+    SpriteRenderer sr;
+
+
     //[SerializeField] public float chargeVal = 10;
     //[SerializeField] public float healthVal = 1000;
     //[SerializeField] public float defaultChargeVal = 10;
@@ -147,6 +150,9 @@ public class PlayerMovement : MonoBehaviour
         currentGravity = rb1.gravityScale;
 
         Invoke("Assign", 0.1f);
+
+        sr = this.GetComponent<SpriteRenderer>();
+        
 
         //p1Charge = GameObject.FindGameObjectWithTag("p1charge").GetComponent<TextMesh>();
         //p1Health = GameObject.FindGameObjectWithTag("p1hp").GetComponent<TextMesh>();
@@ -349,11 +355,16 @@ public class PlayerMovement : MonoBehaviour
             rb2.gravityScale = currentGravity;
         }
 
-        if(ph1.healthVal == 0 || ph2.healthVal == 0)
-        {
-            Invoke("ToCharacterSelect", 6f);
-        }
+        Invoke("Invoker", 1f);
 
+    }
+
+    void Invoker()
+    {
+        if (ph1.healthVal <= 0 || ph2.healthVal <= 0)
+                {
+                    Invoke("ToCharacterSelect", 6f);
+                }
     }
 
     public void ChefSpecial()
@@ -451,24 +462,46 @@ public class PlayerMovement : MonoBehaviour
     //}
 
 
+    void HitColor()
+    {
+        sr.color = Color.red;
 
+    }
+    void AfterHitColor()
+    {
+        sr.color = Color.white;
+
+
+
+
+    }
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Ground"))
         {
             onGround = true;
         }
+
+
+
         if (self == p1)
         {
+
             //Debug.Log("p1 hit");
             if (col.gameObject.CompareTag("Charge Shot"))
             {
+                HitColor();
+                Invoke("AfterHitColor", .3f);
+
                 Debug.Log("1 with charge");
                 ph1.chargeVal -= 10;
                 ph2.chargeVal += 10;
             }
             if (col.gameObject.CompareTag("Damage Shot"))
             {
+                HitColor();
+                Invoke("AfterHitColor", .3f);
+
                 ph1.healthVal -= ph2.chargeVal;
                 ph2.chargeVal = ph2.defaultChargeVal;
             }
@@ -476,15 +509,22 @@ public class PlayerMovement : MonoBehaviour
 
         if (self == p2)
         {
+
             Debug.Log("p2 hit");
             if (col.gameObject.CompareTag("Charge Shot"))
             {
+                HitColor();
+                Invoke("AfterHitColor", .3f);
+
                 Debug.Log("2 with charge");
                 ph2.chargeVal -= 10;
                 ph1.chargeVal += 10;
             }
             if (col.gameObject.CompareTag("Damage Shot"))
             {
+                HitColor();
+                Invoke("AfterHitColor", .3f);
+
                 ph2.healthVal -= ph1.chargeVal;
                 ph1.chargeVal = ph1.defaultChargeVal;
 

@@ -136,6 +136,7 @@
     <Compile Include="Assets\Scripts\DeleteBox.cs" />
     <Compile Include="Assets\Scripts\Explosion.cs" />
     <Compile Include="Assets\Scripts\FryingPan.cs" />
+    <Compile Include="Assets\Scripts\InstructionsSceneManager.cs" />
     <Compile Include="Assets\Scripts\IState.cs" />
     <Compile Include="Assets\Scripts\MultipleTargetCamera.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
