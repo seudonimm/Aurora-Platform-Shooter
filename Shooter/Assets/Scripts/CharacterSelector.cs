@@ -44,8 +44,8 @@ public class CharacterSelector : MonoBehaviour
         }
         if (player1.GetButton("SelectSpy")) //1
         {
-            p1Selector.transform.position = spySelect.position;
-            CharacterSelect.p1Character = 1;
+            //p1Selector.transform.position = spySelect.position;
+            //CharacterSelect.p1Character = 1;
 
         }
         if (player1.GetButton("SelectPirate")) //2
@@ -97,7 +97,7 @@ public class CharacterSelector : MonoBehaviour
 
         if(p1Confirm && p2Confirm)
         {
-            SceneManager.LoadScene("BattleScene01");
+            SceneManager.LoadScene("StageSelect");
         }
 
     }

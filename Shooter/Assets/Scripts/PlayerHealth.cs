@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] TextMesh charge;
     [SerializeField] TextMesh health;
+    [SerializeField] TextMesh winMessage;
 
     [SerializeField] GameObject thisPlayer;
 
@@ -35,11 +36,14 @@ public class PlayerHealth : MonoBehaviour
         {
             charge = GameObject.FindGameObjectWithTag("p1charge").GetComponent<TextMesh>();
             health = GameObject.FindGameObjectWithTag("p1hp").GetComponent<TextMesh>();
+            winMessage = GameObject.FindGameObjectWithTag("p1win").GetComponent<TextMesh>();
         }
         if (thisPlayer.CompareTag("Player2"))
         {
             charge = GameObject.FindGameObjectWithTag("p2charge").GetComponent<TextMesh>();
             health = GameObject.FindGameObjectWithTag("p2hp").GetComponent<TextMesh>();
+            winMessage = GameObject.FindGameObjectWithTag("p1win").GetComponent<TextMesh>();
+
         }
         charge.text = "Charge: " + chargeVal;
         health.text = "Health: " + healthVal;
@@ -59,7 +63,16 @@ public class PlayerHealth : MonoBehaviour
 
         if(healthVal <= 0)
         {
-            Destroy(gameObject);
+            if (thisPlayer.CompareTag("Player1"))
+            {
+                winMessage.text = "Player 2 Wins";
+            }
+            if (thisPlayer.CompareTag("Player2"))
+            {
+                winMessage.text = "Player 1 Wins";
+            }
+
+            Destroy(this.gameObject);
         }
     }
 }

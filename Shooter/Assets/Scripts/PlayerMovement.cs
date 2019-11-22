@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
@@ -277,6 +278,11 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    void ToCharacterSelect()
+    {
+        SceneManager.LoadScene("CharacterSelect");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -343,6 +349,10 @@ public class PlayerMovement : MonoBehaviour
             rb2.gravityScale = currentGravity;
         }
 
+        if(ph1.healthVal == 0 || ph2.healthVal == 0)
+        {
+            Invoke("ToCharacterSelect", 6f);
+        }
 
     }
 
