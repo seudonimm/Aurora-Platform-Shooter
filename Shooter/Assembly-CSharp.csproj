@@ -151,6 +151,7 @@
     <Compile Include="Assets\Scripts\ProjectileAttack2.cs" />
     <Compile Include="Assets\Scripts\ProjectileMovement.cs" />
     <Compile Include="Assets\Scripts\ProjectileShooter.cs" />
+    <Compile Include="Assets\Scripts\QuitGame.cs" />
     <Compile Include="Assets\Scripts\SpawnExplosion.cs" />
     <Compile Include="Assets\Scripts\StageSelectManager.cs" />
     <Compile Include="Assets\Scripts\StateMachine.cs" />

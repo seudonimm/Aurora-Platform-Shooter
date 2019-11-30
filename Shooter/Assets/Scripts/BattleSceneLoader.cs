@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class BattleSceneLoader : MonoBehaviour
 {
-    [SerializeField] GameObject chef;
-    [SerializeField] GameObject witch;
-    [SerializeField] GameObject spy;
-    [SerializeField] GameObject pirate;
+    [SerializeField] GameObject chefP1;
+    [SerializeField] GameObject witchP1;
+    [SerializeField] GameObject spyP1;
+    [SerializeField] GameObject pirateP1;
+
+    [SerializeField] GameObject chefP2;
+    [SerializeField] GameObject witchP2;
+    [SerializeField] GameObject spyP2;
+    [SerializeField] GameObject pirateP2;
 
     [SerializeField] Transform p1Spawner;
     [SerializeField] Transform p2Spawner;
@@ -21,40 +26,40 @@ public class BattleSceneLoader : MonoBehaviour
         //P1 Character Select
         if (CharacterSelect.p1Character == 0)
         {
-            Instantiate(chef, p1Spawner.position, p1Spawner.rotation);
+            Instantiate(chefP1, p1Spawner.position, p1Spawner.rotation);
         }
         else if (CharacterSelect.p1Character == 1)
         {
-            Instantiate(spy, p1Spawner.position, p1Spawner.rotation);
+            Instantiate(spyP1, p1Spawner.position, p1Spawner.rotation);
         }
         else if (CharacterSelect.p1Character == 2)
         {
-            Instantiate(pirate, p1Spawner.position, p1Spawner.rotation);
+            Instantiate(pirateP1, p1Spawner.position, p1Spawner.rotation);
         }
         else if (CharacterSelect.p1Character == 3)
         {
-            Instantiate(witch, p1Spawner.position, p1Spawner.rotation);
+            Instantiate(witchP1, p1Spawner.position, p1Spawner.rotation);
         }
 
         //P2 Character Select
         if (CharacterSelect.p2Character == 0)
         {
-            Instantiate(chef, p2Spawner.position, p2Spawner.rotation);
+            Instantiate(chefP2, p2Spawner.position, p2Spawner.rotation);
 
         }
         else if (CharacterSelect.p2Character == 1)
         {
-            Instantiate(spy, p2Spawner.position, p2Spawner.rotation);
+            Instantiate(spyP2, p2Spawner.position, p2Spawner.rotation);
 
         }
         else if (CharacterSelect.p2Character == 2)
         {
-            Instantiate(pirate, p2Spawner.position, p2Spawner.rotation);
+            Instantiate(pirateP2, p2Spawner.position, p2Spawner.rotation);
 
         }
         else if (CharacterSelect.p2Character == 3)
         {
-            Instantiate(witch, p2Spawner.position, p2Spawner.rotation);
+            Instantiate(witchP2, p2Spawner.position, p2Spawner.rotation);
 
         }
 

@@ -163,10 +163,16 @@ MonoBehaviour:
   dodgeCooldownInc: 0
   moveVector2: {x: 0, y: 0, z: 0}
   character: 0
-  chef: {fileID: 2209128383390554163, guid: 5688f4300db3efc40a196c9c7bbb01e9, type: 3}
-  witch: {fileID: 1087675692521032006, guid: afaee79033a6b0942aff53ab9d1a485f, type: 3}
-  spy: {fileID: 372881819780375730, guid: dbdd25135772e554c98db6c1bf8d86f4, type: 3}
-  pirate: {fileID: 7644786498335936538}
+  chefP1: {fileID: 4896499320306021826, guid: c559b3bddb70d0e49b5aaa9d1684f6b0, type: 3}
+  witchP1: {fileID: 2216820608770315092, guid: 41427dd04d26fef41b2c29fac052a460, type: 3}
+  spyP1: {fileID: 508355429755951071, guid: 85d1899b1a3e39d4bb8bbf8d779c6d96, type: 3}
+  pirateP1: {fileID: 2068571276213109571, guid: 2dac26bcbced9a64bbe35792bbeceb35,
+    type: 3}
+  chefP2: {fileID: 1524978073631215850, guid: 4423deefcfcb9724eb5d614f7ee361a1, type: 3}
+  witchP2: {fileID: 4832399911796884547, guid: e15135bd458631e43a549472377aa91c, type: 3}
+  spyP2: {fileID: 8173082293571571667, guid: 2d633ed246fd65b478a0579b202b39ca, type: 3}
+  pirateP2: {fileID: 6894526860241087732, guid: d3a642140dbb3a24993585ee98350a83,
+    type: 3}
   self: {fileID: 0}
   explosionSpeed: 1000
   explosionSpawn: {fileID: 8215345944140459894}
@@ -319,9 +325,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  projectile1: {fileID: 5227786746955517387, guid: 397682882532a0b4dac2597b0d6f0c16,
+  projectile1: {fileID: 581812178212043989, guid: 78bd0c6d206774f4994b0e631f0e7305,
     type: 3}
-  projectile2: {fileID: 4549488560859606693, guid: b1253394fd93860478f5c8e38b014122,
+  projectile2: {fileID: 5905080769540936277, guid: 265f39a2830b1ee4ca555e53a329b422,
     type: 3}
   projectileSpawn: {fileID: 7644786500090683613}
   projectileSpawn2: {fileID: 0}
@@ -334,10 +340,16 @@ MonoBehaviour:
   p1: {fileID: 0}
   p2: {fileID: 0}
   self: {fileID: 0}
-  chef: {fileID: 2209128383390554163, guid: 5688f4300db3efc40a196c9c7bbb01e9, type: 3}
-  witch: {fileID: 1087675692521032006, guid: afaee79033a6b0942aff53ab9d1a485f, type: 3}
-  spy: {fileID: 372881819780375730, guid: dbdd25135772e554c98db6c1bf8d86f4, type: 3}
-  pirate: {fileID: 7644786498335936538}
+  chefP1: {fileID: 4896499320306021826, guid: c559b3bddb70d0e49b5aaa9d1684f6b0, type: 3}
+  witchP1: {fileID: 2216820608770315092, guid: 41427dd04d26fef41b2c29fac052a460, type: 3}
+  spyP1: {fileID: 508355429755951071, guid: 85d1899b1a3e39d4bb8bbf8d779c6d96, type: 3}
+  pirateP1: {fileID: 2068571276213109571, guid: 2dac26bcbced9a64bbe35792bbeceb35,
+    type: 3}
+  chefP2: {fileID: 1524978073631215850, guid: 4423deefcfcb9724eb5d614f7ee361a1, type: 3}
+  witchP2: {fileID: 4832399911796884547, guid: e15135bd458631e43a549472377aa91c, type: 3}
+  spyP2: {fileID: 8173082293571571667, guid: 2d633ed246fd65b478a0579b202b39ca, type: 3}
+  pirateP2: {fileID: 6894526860241087732, guid: d3a642140dbb3a24993585ee98350a83,
+    type: 3}
   chefProjC1: {fileID: 9047469902832145357, guid: 9825001c0783fbb43b14a0195a40be03,
     type: 3}
   witchProjC1: {fileID: 5583501331475698645, guid: 401874a3325f68c4b84aac94c8de3603,

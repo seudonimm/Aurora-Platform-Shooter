@@ -35,10 +35,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] int character; // 0 = chef | 1 = spy | 2 = pirate | 3 = witch
 
     //character prefabs
-    [SerializeField] GameObject chef;
-    [SerializeField] GameObject witch;
-    [SerializeField] GameObject spy;
-    [SerializeField] GameObject pirate;
+    [SerializeField] GameObject chefP1;
+    [SerializeField] GameObject witchP1;
+    [SerializeField] GameObject spyP1;
+    [SerializeField] GameObject pirateP1;
+
+    [SerializeField] GameObject chefP2;
+    [SerializeField] GameObject witchP2;
+    [SerializeField] GameObject spyP2;
+    [SerializeField] GameObject pirateP2;
 
     [SerializeField] GameObject self;
 
@@ -87,56 +92,50 @@ public class PlayerMovement : MonoBehaviour
         //P1 Character Select
         if (CharacterSelect.p1Character == 0)
         {
-            p1 = chef;
-            rb1 = chef.GetComponent<Rigidbody2D>();
+            p1 = chefP1;
+            rb1 = chefP1.GetComponent<Rigidbody2D>();
+
         }
         else if (CharacterSelect.p1Character == 1)
         {
-            p1 = spy;
-            rb1 = spy.GetComponent<Rigidbody2D>();
-
+            p1 = spyP1;
+            rb1 = spyP1.GetComponent<Rigidbody2D>();
         }
         else if (CharacterSelect.p1Character == 2)
         {
-            p1 = pirate;
-            rb1 = pirate.GetComponent<Rigidbody2D>();
-
+            p1 = pirateP1;
+            rb1 = pirateP1.GetComponent<Rigidbody2D>();
         }
         else if (CharacterSelect.p1Character == 3)
         {
-            p1 = witch;
-            rb1 = witch.GetComponent<Rigidbody2D>();
-
+            p1 = witchP1;
+            rb1 = witchP1.GetComponent<Rigidbody2D>();
         }
 
         //P2 Character Select
         if (CharacterSelect.p2Character == 0)
         {
-            p2 = chef;
-            rb2 = chef.GetComponent<Rigidbody2D>();
-
+            p2 = chefP2;
+            rb2 = chefP2.GetComponent<Rigidbody2D>();
         }
         else if (CharacterSelect.p2Character == 1)
         {
-            p2 = spy;
-            rb2 = spy.GetComponent<Rigidbody2D>();
-
+            p2 = spyP2;
+            rb2 = spyP2.GetComponent<Rigidbody2D>();
         }
         else if (CharacterSelect.p2Character == 2)
         {
-            p2 = pirate;
-            rb2 = pirate.GetComponent<Rigidbody2D>();
-
+            p2 = pirateP2;
+            rb2 = pirateP2.GetComponent<Rigidbody2D>();
         }
         else if (CharacterSelect.p2Character == 3)
         {
-            p2 = witch;
-            rb2 = witch.GetComponent<Rigidbody2D>();
-
+            p2 = witchP2;
+            rb2 = witchP2.GetComponent<Rigidbody2D>();
         }
 
         self = this.gameObject;
-        if(self == p1)
+        if (self == p1)
         {
             p1.tag = "Player1";
             p1.layer = 8;
@@ -169,6 +168,16 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    void AssignPlayer1()
+    {
+        p1.tag = "Player1";
+        p1.layer = 8;
+    }
+    void AssignPlayer2()
+    {
+        p2.tag = "Player2";
+        p2.layer = 9;
+    }
     void GetInput(){
 		moveVector.x = player1.GetAxis("Move Horizontal");	
 		
@@ -303,19 +312,19 @@ public class PlayerMovement : MonoBehaviour
 
         if (player1.GetButton("Movement Ability") && moveSpecialCooldownInc >= moveSpecialCooldownMax)
         {
-            if (p1 == chef)
+            if (p1 == chefP1)
             {
                 ChefSpecial();
             }
-            else if (p1 == witch)
+            else if (p1 == witchP1)
             {
                 WitchSpecial();
             }
-            else if (p1 == pirate)
+            else if (p1 == pirateP1)
             {
                 PirateSpecial();
             }
-            else if (p1 == spy)
+            else if (p1 == spyP1)
             {
                 SpySpecial();
             }
@@ -324,19 +333,19 @@ public class PlayerMovement : MonoBehaviour
         }
         if (player2.GetButton("Movement Ability") && moveSpecialCooldownInc >= moveSpecialCooldownMax)
         {
-            if (p2 == chef)
+            if (p2 == chefP2)
             {
                 ChefSpecial();
             }
-            else if (p2 == witch)
+            else if (p2 == witchP2)
             {
                 WitchSpecial();
             }
-            else if (p2 == pirate)
+            else if (p2 == pirateP2)
             {
                 PirateSpecial();
             }
-            else if (p2 == spy)
+            else if (p2 == spyP2)
             {
                 SpySpecial();
             }

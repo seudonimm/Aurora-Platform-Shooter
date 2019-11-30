@@ -36,10 +36,16 @@ public class ProjectileAttack : MonoBehaviour {
     [SerializeField] GameObject p2;
     [SerializeField] GameObject self;
 
-    [SerializeField] GameObject chef;
-    [SerializeField] GameObject witch;
-    [SerializeField] GameObject spy;
-    [SerializeField] GameObject pirate;
+    [SerializeField] GameObject chefP1;
+    [SerializeField] GameObject witchP1;
+    [SerializeField] GameObject spyP1;
+    [SerializeField] GameObject pirateP1;
+
+    [SerializeField] GameObject chefP2;
+    [SerializeField] GameObject witchP2;
+    [SerializeField] GameObject spyP2;
+    [SerializeField] GameObject pirateP2;
+
 
 
     [SerializeField] GameObject chefProjC1;
@@ -73,7 +79,7 @@ public class ProjectileAttack : MonoBehaviour {
 
         if (CharacterSelect.p1Character == 0) // 0 = chef | 1 = spy | 2 = pirate | 3 = witch
         {
-            p1 = chef.transform.GetChild(0).gameObject;
+            p1 = chefP1.transform.GetChild(0).gameObject;
             if(p1 == self)
             {
                 projectile1 = chefProjC1;
@@ -82,7 +88,7 @@ public class ProjectileAttack : MonoBehaviour {
         }
         else if (CharacterSelect.p1Character == 1)
         {
-            p1 = spy.transform.GetChild(0).gameObject;
+            p1 = spyP1.transform.GetChild(0).gameObject;
             if (p1 == self)
             {
                 projectile1 = spyProjC1;
@@ -91,7 +97,7 @@ public class ProjectileAttack : MonoBehaviour {
         }
         else if (CharacterSelect.p1Character == 2)
         {
-            p1 = pirate.transform.GetChild(0).gameObject;
+            p1 = pirateP1.transform.GetChild(0).gameObject;
             if (p1 == self)
             {
                 projectile1 = pirateProjC1;
@@ -101,7 +107,7 @@ public class ProjectileAttack : MonoBehaviour {
         }
         else if (CharacterSelect.p1Character == 3)
         {
-            p1 = witch.transform.GetChild(0).gameObject;
+            p1 = witchP1.transform.GetChild(0).gameObject;
             if (p1 == self)
             {
                 projectile1 = witchProjC1;
@@ -113,7 +119,7 @@ public class ProjectileAttack : MonoBehaviour {
         //P2 Character Select
         if (CharacterSelect.p2Character == 0)
         {
-            p2 = chef.transform.GetChild(0).gameObject;
+            p2 = chefP2.transform.GetChild(0).gameObject;
             if (p2 == self)
             {
                 projectile1 = chefProjC2;
@@ -123,7 +129,7 @@ public class ProjectileAttack : MonoBehaviour {
         }
         else if (CharacterSelect.p2Character == 1)
         {
-            p2 = spy.transform.GetChild(0).gameObject;
+            p2 = spyP2.transform.GetChild(0).gameObject;
             if (p2 == self)
             {
                 projectile1 = spyProjC2;
@@ -133,7 +139,7 @@ public class ProjectileAttack : MonoBehaviour {
         }
         else if (CharacterSelect.p2Character == 2)
         {
-            p2 = pirate.transform.GetChild(0).gameObject;
+            p2 = pirateP2.transform.GetChild(0).gameObject;
             if (p2 == self)
             {
                 projectile1 = pirateProjC2;
@@ -143,7 +149,7 @@ public class ProjectileAttack : MonoBehaviour {
         }
         else if (CharacterSelect.p2Character == 3)
         {
-            p2 = witch.transform.GetChild(0).gameObject;
+            p2 = witchP2.transform.GetChild(0).gameObject;
             if (p2 == self)
             {
                 projectile1 = witchProjC2;
