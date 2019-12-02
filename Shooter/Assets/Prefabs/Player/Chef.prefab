@@ -59,13 +59,17 @@ MonoBehaviour:
   coolddownInc2: 0
   aimVector: {x: 0, y: 0}
   aimVector2: {x: 0, y: 0}
-  p1: {fileID: 2209128381652756725}
+  p1: {fileID: 0}
   p2: {fileID: 0}
   self: {fileID: 0}
   chef: {fileID: 2209128383390554163}
   witch: {fileID: 1087675692521032006, guid: afaee79033a6b0942aff53ab9d1a485f, type: 3}
   spy: {fileID: 372881819780375730, guid: dbdd25135772e554c98db6c1bf8d86f4, type: 3}
   pirate: {fileID: 7644786498335936538, guid: 96f6f79296118b04a93cc56dc2d24a2b, type: 3}
+  chef2: {fileID: 123833350454895949, guid: 513dfa22bd88d88498ea357b53bcdcc0, type: 3}
+  witch2: {fileID: 693171170439143119, guid: 32d8898cf6605714e936124da615724f, type: 3}
+  spy2: {fileID: 8969994248510717580, guid: 586c69cbee5e4354f8581bf6a5ea2f93, type: 3}
+  pirate2: {fileID: 5407763449030275864, guid: dbe7283e5373f064bb4b47e110458dda, type: 3}
   chefProjC1: {fileID: 9047469902832145357, guid: 9825001c0783fbb43b14a0195a40be03,
     type: 3}
   witchProjC1: {fileID: 5583501331475698645, guid: 401874a3325f68c4b84aac94c8de3603,
@@ -332,10 +336,10 @@ MonoBehaviour:
   witch: {fileID: 1087675692521032006, guid: afaee79033a6b0942aff53ab9d1a485f, type: 3}
   spy: {fileID: 372881819780375730, guid: dbdd25135772e554c98db6c1bf8d86f4, type: 3}
   pirate: {fileID: 7644786498335936538, guid: 96f6f79296118b04a93cc56dc2d24a2b, type: 3}
-  chef2: {fileID: 8393634355593874331, guid: c48a979967ee20e458893ce8c66adf50, type: 3}
-  witch2: {fileID: 1292647766628924742, guid: 3727b35c63f917c49a0f5d76a0978928, type: 3}
-  spy2: {fileID: 2194707777138511038, guid: a4ffba85402ab604f9cc9dc2375477dd, type: 3}
-  pirate2: {fileID: 8900564608608009786, guid: 9a4b89796b4bb0543b4af7c6b0fa5cb3, type: 3}
+  chef2: {fileID: 123833350454895949, guid: 513dfa22bd88d88498ea357b53bcdcc0, type: 3}
+  witch2: {fileID: 693171170439143119, guid: 32d8898cf6605714e936124da615724f, type: 3}
+  spy2: {fileID: 8969994248510717580, guid: 586c69cbee5e4354f8581bf6a5ea2f93, type: 3}
+  pirate2: {fileID: 5407763449030275864, guid: dbe7283e5373f064bb4b47e110458dda, type: 3}
   self: {fileID: 0}
   explosionSpeed: 0
   explosionSpawn: {fileID: 0}
@@ -349,6 +353,8 @@ MonoBehaviour:
   moveSpecialCooldownMax: 0
   ph1: {fileID: 0}
   ph2: {fileID: 0}
+  p1Num: 0
+  p2Num: 0
 --- !u!61 &2209128383390554174
 BoxCollider2D:
   m_ObjectHideFlags: 0

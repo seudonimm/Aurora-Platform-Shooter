@@ -41,6 +41,11 @@ public class ProjectileAttack : MonoBehaviour {
     [SerializeField] GameObject spy;
     [SerializeField] GameObject pirate;
 
+    [SerializeField] GameObject chef2;
+    [SerializeField] GameObject witch2;
+    [SerializeField] GameObject spy2;
+    [SerializeField] GameObject pirate2;
+
 
     [SerializeField] GameObject chefProjC1;
     [SerializeField] GameObject witchProjC1;
@@ -63,19 +68,27 @@ public class ProjectileAttack : MonoBehaviour {
     [SerializeField] GameObject pirateProjH2;
 
 
-    void Start() {
+    void Start()
+    {
         player1 = ReInput.players.GetPlayer(0);
         player2 = ReInput.players.GetPlayer(1);
 
-        self = transform.gameObject;
+
+        Invoke("AssignP1P2", .1f);
+
+    }
 
 
+    void AssignP1P2()
+    {        
+        self = this.transform.gameObject;
 
         if (CharacterSelect.p1Character == 0) // 0 = chef | 1 = spy | 2 = pirate | 3 = witch
         {
             p1 = chef.transform.GetChild(0).gameObject;
-            if(p1 == self)
+            if (p1 == self)
             {
+
                 projectile1 = chefProjC1;
                 projectile2 = chefProjH1;
             }
@@ -151,6 +164,55 @@ public class ProjectileAttack : MonoBehaviour {
             }
 
         }
+        else if(CharacterSelect.p2Character == 4)
+        {
+            p2 = chef2.transform.GetChild(0).gameObject;
+            if (p2 == self)
+            {
+                projectile1 = chefProjC2;
+                projectile2 = chefProjH2;
+            }
+
+        }
+        else if (CharacterSelect.p2Character == 5)
+        {
+            p2 = spy2.transform.GetChild(0).gameObject;
+            if (p2 == self)
+            {
+                projectile1 = spyProjC2;
+                projectile2 = spyProjH2;
+            }
+
+        }
+        else if (CharacterSelect.p2Character == 6)
+        {
+            p2 = pirate2.transform.GetChild(0).gameObject;
+            if (p2 == self)
+            {
+                projectile1 = pirateProjC2;
+                projectile2 = pirateProjH2;
+            }
+
+        }
+        else if (CharacterSelect.p2Character == 7)
+        {
+            p2 = witch2.transform.GetChild(0).gameObject;
+            if (p2 == self)
+            {
+                projectile1 = witchProjC2;
+                projectile2 = witchProjH2;
+            }
+
+        }
+
+        if (self == p1)
+        {
+            p1.tag = "p1shooter";
+        }
+        else if (self == p2)
+        {
+            p2.tag = "p2shooter";
+        }
 
     }
 
@@ -161,7 +223,7 @@ public class ProjectileAttack : MonoBehaviour {
 
     void Fire()
     {
-        if (p1 == self)
+        if (p1 == self && this.gameObject.CompareTag("p1shooter"))
         {
             if (coolddownInc >= cooldownMax)
             {
@@ -185,7 +247,7 @@ public class ProjectileAttack : MonoBehaviour {
 
     void Fire2()
     {
-        if (p2 == self)
+        if (p2 == self && this.gameObject.CompareTag("p2shooter"))
         {
             if (coolddownInc >= cooldownMax)
             {

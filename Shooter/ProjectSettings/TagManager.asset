@@ -17,6 +17,8 @@ TagManager:
   - p2hp
   - p1win
   - p2win
+  - p1shooter
+  - p2shooter
   layers:
   - Default
   - TransparentFX

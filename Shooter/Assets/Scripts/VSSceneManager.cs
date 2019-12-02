@@ -37,22 +37,22 @@ public class VSSceneManager : MonoBehaviour
         }
 
         //P2 Character Select
-        if (CharacterSelect.p2Character == 0)
+        if (CharacterSelect.p2Character == 0 || CharacterSelect.p2Character == 4)
         {
             Instantiate(chef, p2Spawner.position, p2Spawner.rotation);
 
         }
-        else if (CharacterSelect.p2Character == 1)
+        else if (CharacterSelect.p2Character == 1 || CharacterSelect.p2Character == 5)
         {
             Instantiate(spy, p2Spawner.position, p2Spawner.rotation);
 
         }
-        else if (CharacterSelect.p2Character == 2)
+        else if (CharacterSelect.p2Character == 2 || CharacterSelect.p2Character == 6)
         {
             Instantiate(pirate, p2Spawner.position, p2Spawner.rotation);
 
         }
-        else if (CharacterSelect.p2Character == 3)
+        else if (CharacterSelect.p2Character == 3 || CharacterSelect.p2Character == 7)
         {
             Instantiate(witch, p2Spawner.position, p2Spawner.rotation);
 
