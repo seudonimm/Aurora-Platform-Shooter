@@ -332,6 +332,10 @@ MonoBehaviour:
   witch: {fileID: 1087675692521032006, guid: afaee79033a6b0942aff53ab9d1a485f, type: 3}
   spy: {fileID: 372881819780375730, guid: dbdd25135772e554c98db6c1bf8d86f4, type: 3}
   pirate: {fileID: 7644786498335936538, guid: 96f6f79296118b04a93cc56dc2d24a2b, type: 3}
+  chef2: {fileID: 8393634355593874331, guid: c48a979967ee20e458893ce8c66adf50, type: 3}
+  witch2: {fileID: 1292647766628924742, guid: 3727b35c63f917c49a0f5d76a0978928, type: 3}
+  spy2: {fileID: 2194707777138511038, guid: a4ffba85402ab604f9cc9dc2375477dd, type: 3}
+  pirate2: {fileID: 8900564608608009786, guid: 9a4b89796b4bb0543b4af7c6b0fa5cb3, type: 3}
   self: {fileID: 0}
   explosionSpeed: 0
   explosionSpawn: {fileID: 0}

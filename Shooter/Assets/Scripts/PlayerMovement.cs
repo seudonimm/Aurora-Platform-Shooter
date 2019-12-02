@@ -40,6 +40,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject spy;
     [SerializeField] GameObject pirate;
 
+    [SerializeField] GameObject chef2;
+    [SerializeField] GameObject witch2;
+    [SerializeField] GameObject spy2;
+    [SerializeField] GameObject pirate2;
+
     [SerializeField] GameObject self;
 
     [SerializeField] float explosionSpeed;
@@ -60,6 +65,10 @@ public class PlayerMovement : MonoBehaviour
     public PlayerHealth ph2;
 
     SpriteRenderer sr;
+
+    public int p1Num;
+    public int p2Num;
+    
 
 
     //[SerializeField] public float chargeVal = 10;
@@ -134,6 +143,30 @@ public class PlayerMovement : MonoBehaviour
             rb2 = witch.GetComponent<Rigidbody2D>();
 
         }
+        else if (CharacterSelect.p2Character == 4)
+        {
+            p2 = chef2;
+            rb2 = chef2.GetComponent<Rigidbody2D>();
+
+        }
+        else if (CharacterSelect.p2Character == 5)
+        {
+            p2 = spy2;
+            rb2 = spy2.GetComponent<Rigidbody2D>();
+
+        }
+        else if (CharacterSelect.p2Character == 6)
+        {
+            p2 = pirate2;
+            rb2 = pirate2.GetComponent<Rigidbody2D>();
+
+        }
+        else if (CharacterSelect.p2Character == 7)
+        {
+            p2 = witch2;
+            rb2 = witch2.GetComponent<Rigidbody2D>();
+
+        }
 
         self = this.gameObject;
         if(self == p1)
@@ -152,14 +185,15 @@ public class PlayerMovement : MonoBehaviour
         Invoke("Assign", 0.1f);
 
         sr = this.GetComponent<SpriteRenderer>();
-        
+
 
         //p1Charge = GameObject.FindGameObjectWithTag("p1charge").GetComponent<TextMesh>();
         //p1Health = GameObject.FindGameObjectWithTag("p1hp").GetComponent<TextMesh>();
         //p2Charge = GameObject.FindGameObjectWithTag("p2charge").GetComponent<TextMesh>();
         //p2Health = GameObject.FindGameObjectWithTag("p2hp").GetComponent<TextMesh>();
 
-
+        p1Num = CharacterSelect.p1Character;
+        p2Num = CharacterSelect.p2Character;
     }
 
     void Assign()
@@ -324,19 +358,19 @@ public class PlayerMovement : MonoBehaviour
         }
         if (player2.GetButton("Movement Ability") && moveSpecialCooldownInc >= moveSpecialCooldownMax)
         {
-            if (p2 == chef)
+            if (p2 == chef || p2 == chef2)
             {
                 ChefSpecial();
             }
-            else if (p2 == witch)
+            else if (p2 == witch || p2 == witch2)
             {
                 WitchSpecial();
             }
-            else if (p2 == pirate)
+            else if (p2 == pirate || p2 == pirate2)
             {
                 PirateSpecial();
             }
-            else if (p2 == spy)
+            else if (p2 == spy || p2 == spy2)
             {
                 SpySpecial();
             }

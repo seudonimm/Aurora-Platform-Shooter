@@ -167,6 +167,10 @@ MonoBehaviour:
   witch: {fileID: 1087675692521032006, guid: afaee79033a6b0942aff53ab9d1a485f, type: 3}
   spy: {fileID: 372881819780375730, guid: dbdd25135772e554c98db6c1bf8d86f4, type: 3}
   pirate: {fileID: 7644786498335936538}
+  chef2: {fileID: 123833350454895949, guid: 513dfa22bd88d88498ea357b53bcdcc0, type: 3}
+  witch2: {fileID: 693171170439143119, guid: 32d8898cf6605714e936124da615724f, type: 3}
+  spy2: {fileID: 8969994248510717580, guid: 586c69cbee5e4354f8581bf6a5ea2f93, type: 3}
+  pirate2: {fileID: 5407763449030275864, guid: dbe7283e5373f064bb4b47e110458dda, type: 3}
   self: {fileID: 0}
   explosionSpeed: 1000
   explosionSpawn: {fileID: 8215345944140459894}
@@ -181,6 +185,8 @@ MonoBehaviour:
   moveSpecialCooldownMax: 500
   ph1: {fileID: 0}
   ph2: {fileID: 0}
+  p1Num: 0
+  p2Num: 0
 --- !u!61 &7644786498335936535
 BoxCollider2D:
   m_ObjectHideFlags: 0

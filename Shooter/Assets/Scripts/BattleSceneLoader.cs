@@ -9,6 +9,12 @@ public class BattleSceneLoader : MonoBehaviour
     [SerializeField] GameObject spy;
     [SerializeField] GameObject pirate;
 
+    [SerializeField] GameObject chef2;
+    [SerializeField] GameObject witch2;
+    [SerializeField] GameObject spy2;
+    [SerializeField] GameObject pirate2;
+
+
     [SerializeField] Transform p1Spawner;
     [SerializeField] Transform p2Spawner;
 
@@ -55,6 +61,26 @@ public class BattleSceneLoader : MonoBehaviour
         else if (CharacterSelect.p2Character == 3)
         {
             Instantiate(witch, p2Spawner.position, p2Spawner.rotation);
+
+        }
+        else if (CharacterSelect.p2Character == 4)
+        {
+            Instantiate(chef2, p2Spawner.position, p2Spawner.rotation);
+
+        }
+        else if (CharacterSelect.p2Character == 5)
+        {
+            Instantiate(spy2, p2Spawner.position, p2Spawner.rotation);
+
+        }
+        else if (CharacterSelect.p2Character == 6)
+        {
+            Instantiate(pirate2, p2Spawner.position, p2Spawner.rotation);
+
+        }
+        else if (CharacterSelect.p2Character == 7)
+        {
+            Instantiate(witch2, p2Spawner.position, p2Spawner.rotation);
 
         }
 
