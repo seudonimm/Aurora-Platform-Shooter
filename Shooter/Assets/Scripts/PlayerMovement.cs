@@ -307,8 +307,8 @@ public class PlayerMovement : MonoBehaviour
         {
             //p1Collider.enabled = false;
 
-            Debug.Log(dodgeCooldownInc);
-            Debug.Log(dodgeCooldownMax);
+            //Debug.Log(dodgeCooldownInc);
+            //Debug.Log(dodgeCooldownMax);
 
             Physics2D.IgnoreLayerCollision(8, 11, false);
 
@@ -358,21 +358,37 @@ public class PlayerMovement : MonoBehaviour
         }
         if (player2.GetButton("Movement Ability") && moveSpecialCooldownInc >= moveSpecialCooldownMax)
         {
-            if (p2 == chef || p2 == chef2)
+            if (p2 == chef)
             {
                 ChefSpecial();
             }
-            else if (p2 == witch || p2 == witch2)
+            else if (p2 == witch)
             {
-                WitchSpecial();
+                WitchSpecial2();
             }
-            else if (p2 == pirate || p2 == pirate2)
+            else if (p2 == pirate)
             {
-                PirateSpecial();
+                PirateSpecial2();
             }
-            else if (p2 == spy || p2 == spy2)
+            else if (p2 == spy)
             {
                 SpySpecial();
+            }
+            else if (p2 == chef2)
+            {
+                ChefSpecial2();
+            }
+            else if (p2 == witch2)
+            {
+                WitchSpecial2();
+            }
+            else if (p2 == pirate2)
+            {
+                PirateSpecial2();
+            }
+            else if (p2 == spy2)
+            {
+                SpySpecial2();
             }
             moveSpecialCooldownInc = 0;
 
@@ -416,18 +432,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (self == p2)
-        {
-            if (moveVector2.x > 0)
-            {
-                rb2.AddForce(Vector2.right * slideSpeed);
-            }
-            if (moveVector2.x < 0)
-            {
-                rb2.AddForce(-Vector2.right * slideSpeed);
-            }
-        }
-
         Debug.Log("slide");
     }
 
@@ -440,15 +444,8 @@ public class PlayerMovement : MonoBehaviour
             rb1.gravityScale = 0;
 
             flyCooldownInc = 0;
-        }
+            Debug.Log("1");
 
-        if (self == p2)
-        {
-            moveWitch = true;
-
-            rb2.gravityScale = 0;
-
-            flyCooldownInc = 0;
         }
     }
 
@@ -467,6 +464,55 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void SpySpecial()
+    {
+
+    }
+
+
+    public void ChefSpecial2()
+    {
+
+        if (self == p2)
+        {
+            if (moveVector2.x > 0)
+            {
+                rb2.AddForce(Vector2.right * slideSpeed);
+            }
+            if (moveVector2.x < 0)
+            {
+                rb2.AddForce(-Vector2.right * slideSpeed);
+            }
+        }
+
+        Debug.Log("slide");
+    }
+
+    public void WitchSpecial2()
+    {
+
+        if (self == p2)
+        {
+            moveWitch = true;
+
+            rb2.gravityScale = 0;
+
+            flyCooldownInc = 0;
+            Debug.Log("3");
+        }
+    }
+
+    public void PirateSpecial2()
+    {
+        Instantiate(explosion, explosionSpawn.position, explosionSpawn.rotation);
+
+
+        if (self == p2)
+        {
+            rb2.AddForce(moveVector2 * explosionSpeed);
+        }
+    }
+
+    public void SpySpecial2()
     {
 
     }
