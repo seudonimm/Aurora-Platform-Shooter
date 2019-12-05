@@ -312,17 +312,25 @@ MonoBehaviour:
     type: 3}
   explosion: {fileID: 4303591837841832195, guid: e43f6ac52e8b76944b4f73c7ad44bcc1,
     type: 3}
+  explosionSpawn2: {fileID: 0}
+  explosion2: {fileID: 0}
   moveWitch: 0
   flyCooldownMax: 500
   flyCooldownInc: 0
+  flyCooldownMax2: 500
+  flyCooldownInc2: 0
   currentGravity: 0
-  slideSpeed: 1000
+  slideSpeed: 0
   moveSpecialCooldownInc: 0
-  moveSpecialCooldownMax: 500
+  moveSpecialCooldownMax: 1000
+  moveSpecialCooldownInc2: 0
+  moveSpecialCooldownMax2: 1000
   ph1: {fileID: 0}
   ph2: {fileID: 0}
   p1Num: 0
   p2Num: 0
+  moveText1: {fileID: 0}
+  moveText2: {fileID: 0}
 --- !u!61 &693171170439143106
 BoxCollider2D:
   m_ObjectHideFlags: 0

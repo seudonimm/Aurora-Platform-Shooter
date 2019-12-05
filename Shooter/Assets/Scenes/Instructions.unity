@@ -469,6 +469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 292367074}
   - component: {fileID: 292367073}
+  - component: {fileID: 292367075}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -504,6 +505,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &292367075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292367072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46041b3ded70fb54b81ee00f34cdca39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &588938231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -576,10 +589,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: "In this game each player has 2 attacks, Charge and HP, which correspond
-        to the values on the UI. \nThe charge value, which goes up when you hit your
-        opponent with a Charge Attack, is the amount of \ndamage you will do you your
-        opponents HP value if you hit them with an HP Attack. When your HP value \nreaches
-        zero you lose the game."
+        to the values on \nthe UI. The charge value, which goes up when you hit your
+        opponent with a Charge Attack, \nis the amount of damage you will do you your
+        opponents HP value if you hit\n them with an HP Attack. When your HP value
+        \nreaches zero you lose the game."
       objectReference: {fileID: 0}
     - target: {fileID: 102362823683043728, guid: 92d60a2e17d9a4bb8bd3801b14fc2926,
         type: 3}
@@ -960,7 +973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4915952705314410, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.4
+      value: 4.53
       objectReference: {fileID: 0}
     - target: {fileID: 4915952705314410, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1138,7 +1151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

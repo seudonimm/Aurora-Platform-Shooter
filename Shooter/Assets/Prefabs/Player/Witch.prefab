@@ -197,7 +197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087675692521032006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.1197443, y: -2.9, z: 0}
+  m_LocalPosition: {x: -19.126873, y: -2.9, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 474507485}
@@ -312,17 +312,25 @@ MonoBehaviour:
     type: 3}
   explosion: {fileID: 4303591837841832195, guid: e43f6ac52e8b76944b4f73c7ad44bcc1,
     type: 3}
+  explosionSpawn2: {fileID: 0}
+  explosion2: {fileID: 0}
   moveWitch: 0
   flyCooldownMax: 500
   flyCooldownInc: 0
+  flyCooldownMax2: 500
+  flyCooldownInc2: 0
   currentGravity: 0
-  slideSpeed: 1000
+  slideSpeed: 0
   moveSpecialCooldownInc: 0
-  moveSpecialCooldownMax: 500
+  moveSpecialCooldownMax: 1000
+  moveSpecialCooldownInc2: 0
+  moveSpecialCooldownMax2: 1000
   ph1: {fileID: 0}
   ph2: {fileID: 0}
   p1Num: 0
   p2Num: 0
+  moveText1: {fileID: 0}
+  moveText2: {fileID: 0}
 --- !u!61 &1087675692521032011
 BoxCollider2D:
   m_ObjectHideFlags: 0

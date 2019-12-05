@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1020386451501886712}
   - component: {fileID: 1020386451501886713}
+  - component: {fileID: 5153380821636965042}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -53,3 +54,15 @@ MonoBehaviour:
   pirate2: {fileID: 5407763449030275864, guid: dbe7283e5373f064bb4b47e110458dda, type: 3}
   p1Spawner: {fileID: 0}
   p2Spawner: {fileID: 0}
+--- !u!114 &5153380821636965042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020386451501886714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46041b3ded70fb54b81ee00f34cdca39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

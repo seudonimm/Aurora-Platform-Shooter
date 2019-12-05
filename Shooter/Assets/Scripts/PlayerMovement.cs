@@ -51,15 +51,30 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform explosionSpawn;
     [SerializeField] GameObject explosion;
 
+    
+    [SerializeField] Transform explosionSpawn2;
+    [SerializeField] GameObject explosion2;
+
+
     [SerializeField] bool moveWitch = false;
+    [SerializeField] bool moveWitch2 = false;
+
     [SerializeField] float flyCooldownMax;
     [SerializeField] float flyCooldownInc;
+
+    [SerializeField] float flyCooldownMax2;
+    [SerializeField] float flyCooldownInc2;
+
     [SerializeField] float currentGravity;
 
     [SerializeField] float slideSpeed = 1000;
 
     [SerializeField] float moveSpecialCooldownInc;
     [SerializeField] float moveSpecialCooldownMax;
+
+    [SerializeField] float moveSpecialCooldownInc2;
+    [SerializeField] float moveSpecialCooldownMax2;
+
 
     public PlayerHealth ph1;
     public PlayerHealth ph2;
@@ -68,7 +83,11 @@ public class PlayerMovement : MonoBehaviour
 
     public int p1Num;
     public int p2Num;
-    
+
+    [SerializeField] TextMesh moveText1;
+    [SerializeField] TextMesh moveText2;
+
+
 
 
     //[SerializeField] public float chargeVal = 10;
@@ -109,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
         {
             p1 = pirate;
             rb1 = pirate.GetComponent<Rigidbody2D>();
+            Physics2D.IgnoreLayerCollision(8, 14, true);
 
         }
         else if (CharacterSelect.p1Character == 3)
@@ -135,6 +155,7 @@ public class PlayerMovement : MonoBehaviour
         {
             p2 = pirate;
             rb2 = pirate.GetComponent<Rigidbody2D>();
+            Physics2D.IgnoreLayerCollision(9, 15, true);
 
         }
         else if (CharacterSelect.p2Character == 3)
@@ -159,6 +180,7 @@ public class PlayerMovement : MonoBehaviour
         {
             p2 = pirate2;
             rb2 = pirate2.GetComponent<Rigidbody2D>();
+            Physics2D.IgnoreLayerCollision(9, 15, true);
 
         }
         else if (CharacterSelect.p2Character == 7)
@@ -203,6 +225,31 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    void AbilityTextControl()
+    {
+        moveText1 = GameObject.FindGameObjectWithTag("p1moveText").GetComponent<TextMesh>();
+        moveText2 = GameObject.FindGameObjectWithTag("p2moveText").GetComponent<TextMesh>();
+
+        if(moveSpecialCooldownInc > moveSpecialCooldownMax)
+        {
+            moveText1.text = "Movement Ability: Ready";
+        }
+        else
+        {
+            moveText1.text = "Movement Ability: Not Ready";
+        }
+
+        if (moveSpecialCooldownInc2 > moveSpecialCooldownMax2)
+        {
+            moveText2.text = "Movement Ability: Ready";
+        }
+        else
+        {
+            moveText2.text = "Movement Ability: Not Ready";
+        }
+
+    }
+
     void GetInput(){
 		moveVector.x = player1.GetAxis("Move Horizontal");	
 		
@@ -225,7 +272,7 @@ public class PlayerMovement : MonoBehaviour
 		if(moveVector2.x < 0){
 			p2.transform.position += -transform.right * moveSpeed * Time.deltaTime;
 		}
-        if (moveWitch)
+        if (moveWitch2)
         {
             if (moveVector2.y > 0)
             {
@@ -239,7 +286,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (player2.GetButtonDown("Jump") && onGround == true)
         {
-            if (!moveWitch)
+            if (!moveWitch2)
             {
                 rb2.AddForce(Vector2.up * jump);
             }
@@ -330,9 +377,12 @@ public class PlayerMovement : MonoBehaviour
 		ProcessInput();
 		ProcessInput2();
 
+        AbilityTextControl();
+
         dodgeCooldownInc++;
 
         moveSpecialCooldownInc++;
+        moveSpecialCooldownInc2++;
 
 
         if (player1.GetButton("Movement Ability") && moveSpecialCooldownInc >= moveSpecialCooldownMax)
@@ -344,6 +394,8 @@ public class PlayerMovement : MonoBehaviour
             else if (p1 == witch)
             {
                 WitchSpecial();
+                rb1.gravityScale = 0;
+
             }
             else if (p1 == pirate)
             {
@@ -356,15 +408,19 @@ public class PlayerMovement : MonoBehaviour
             moveSpecialCooldownInc = 0;
 
         }
-        if (player2.GetButton("Movement Ability") && moveSpecialCooldownInc >= moveSpecialCooldownMax)
+        if (player2.GetButton("Movement Ability") && moveSpecialCooldownInc2 >= moveSpecialCooldownMax2)
         {
             if (p2 == chef)
             {
-                ChefSpecial();
+                ChefSpecial2();
             }
             else if (p2 == witch)
             {
                 WitchSpecial2();
+                rb1.gravityScale = 0;
+                moveWitch2 = true;
+
+
             }
             else if (p2 == pirate)
             {
@@ -381,6 +437,10 @@ public class PlayerMovement : MonoBehaviour
             else if (p2 == witch2)
             {
                 WitchSpecial2();
+                rb1.gravityScale = 0;
+                moveWitch2 = true;
+
+
             }
             else if (p2 == pirate2)
             {
@@ -390,18 +450,23 @@ public class PlayerMovement : MonoBehaviour
             {
                 SpySpecial2();
             }
-            moveSpecialCooldownInc = 0;
+            moveSpecialCooldownInc2 = 0;
 
         }
 
 
 
         flyCooldownInc++;
+        flyCooldownInc2++;
 
         if (flyCooldownInc >= flyCooldownMax)
         {
             moveWitch = false;
             rb1.gravityScale = currentGravity;
+        }
+        if (flyCooldownInc2 >= flyCooldownMax2)
+        {
+            moveWitch2 = false;
             rb2.gravityScale = currentGravity;
         }
 
@@ -412,9 +477,9 @@ public class PlayerMovement : MonoBehaviour
     void Invoker()
     {
         if (ph1.healthVal <= 0 || ph2.healthVal <= 0)
-                {
-                    Invoke("ToCharacterSelect", 6f);
-                }
+        {
+            Invoke("ToCharacterSelect", 6f);
+        }
     }
 
     public void ChefSpecial()
@@ -457,10 +522,6 @@ public class PlayerMovement : MonoBehaviour
         {
             rb1.AddForce(moveVector * explosionSpeed);
         }
-        if (self == p2)
-        {
-            rb2.AddForce(moveVector2 * explosionSpeed);
-        }
     }
 
     public void SpySpecial()
@@ -492,18 +553,18 @@ public class PlayerMovement : MonoBehaviour
 
         if (self == p2)
         {
-            moveWitch = true;
+            moveWitch2 = true;
 
             rb2.gravityScale = 0;
 
-            flyCooldownInc = 0;
+            flyCooldownInc2 = 0;
             Debug.Log("3");
         }
     }
 
     public void PirateSpecial2()
     {
-        Instantiate(explosion, explosionSpawn.position, explosionSpawn.rotation);
+        Instantiate(explosion2, explosionSpawn2.position, explosionSpawn2.rotation);
 
 
         if (self == p2)

@@ -142,17 +142,26 @@ MonoBehaviour:
   explosionSpeed: 0
   explosionSpawn: {fileID: 0}
   explosion: {fileID: 0}
+  explosionSpawn2: {fileID: 0}
+  explosion2: {fileID: 0}
   moveWitch: 0
+  moveWitch2: 0
   flyCooldownMax: 0
   flyCooldownInc: 0
+  flyCooldownMax2: 0
+  flyCooldownInc2: 0
   currentGravity: 0
-  slideSpeed: 200
+  slideSpeed: 2500
   moveSpecialCooldownInc: 0
-  moveSpecialCooldownMax: 0
+  moveSpecialCooldownMax: 500
+  moveSpecialCooldownInc2: 0
+  moveSpecialCooldownMax2: 500
   ph1: {fileID: 0}
   ph2: {fileID: 0}
   p1Num: 0
   p2Num: 0
+  moveText1: {fileID: 0}
+  moveText2: {fileID: 0}
 --- !u!61 &123833350454895936
 BoxCollider2D:
   m_ObjectHideFlags: 0

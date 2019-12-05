@@ -19,6 +19,8 @@ TagManager:
   - p2win
   - p1shooter
   - p2shooter
+  - p1moveText
+  - p2moveText
   layers:
   - Default
   - TransparentFX
@@ -34,8 +36,8 @@ TagManager:
   - P2_Projectiles
   - Player
   - Projectiles
-  - 
-  - 
+  - Pirate Explosion
+  - Pirate Explosion2
   - 
   - 
   - 

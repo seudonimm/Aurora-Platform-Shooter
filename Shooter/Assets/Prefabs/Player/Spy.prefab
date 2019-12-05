@@ -145,17 +145,23 @@ MonoBehaviour:
     type: 3}
   explosion: {fileID: 4303591837841832195, guid: e43f6ac52e8b76944b4f73c7ad44bcc1,
     type: 3}
+  explosionSpawn2: {fileID: 0}
+  explosion2: {fileID: 0}
   moveWitch: 0
   flyCooldownMax: 500
   flyCooldownInc: 0
   currentGravity: 0
-  slideSpeed: 1000
+  slideSpeed: 0
   moveSpecialCooldownInc: 0
   moveSpecialCooldownMax: 500
+  moveSpecialCooldownInc2: 0
+  moveSpecialCooldownMax2: 500
   ph1: {fileID: 0}
   ph2: {fileID: 0}
   p1Num: 0
   p2Num: 0
+  moveText1: {fileID: 0}
+  moveText2: {fileID: 0}
 --- !u!114 &8299252218373124731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +288,10 @@ MonoBehaviour:
   witch: {fileID: 1087675692521032006, guid: afaee79033a6b0942aff53ab9d1a485f, type: 3}
   spy: {fileID: 372881819780375730}
   pirate: {fileID: 7644786498335936538, guid: 96f6f79296118b04a93cc56dc2d24a2b, type: 3}
+  chef2: {fileID: 0}
+  witch2: {fileID: 0}
+  spy2: {fileID: 0}
+  pirate2: {fileID: 0}
   chefProjC1: {fileID: 0}
   witchProjC1: {fileID: 0}
   spyProjC1: {fileID: 0}
