@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470222392414863189}
-  m_LocalRotation: {x: -0, y: -0, z: 0.9856807, w: 0.16862263}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 693171170439143118}
   - component: {fileID: 693171170439143106}
   - component: {fileID: 693171170439143107}
+  - component: {fileID: 60446786}
   m_Layer: 8
   m_Name: Witch 1
   m_TagString: Player1
@@ -296,6 +297,7 @@ MonoBehaviour:
   onGround: 0
   dodgeCooldownMax: 100
   dodgeCooldownInc: 0
+  moveVector: {x: 0, y: 0, z: 0}
   moveVector2: {x: 0, y: 0, z: 0}
   character: 0
   chef: {fileID: 2209128383390554163, guid: 5688f4300db3efc40a196c9c7bbb01e9, type: 3}
@@ -315,6 +317,7 @@ MonoBehaviour:
   explosionSpawn2: {fileID: 0}
   explosion2: {fileID: 0}
   moveWitch: 0
+  moveWitch2: 0
   flyCooldownMax: 500
   flyCooldownInc: 0
   flyCooldownMax2: 500
@@ -331,6 +334,7 @@ MonoBehaviour:
   p2Num: 0
   moveText1: {fileID: 0}
   moveText2: {fileID: 0}
+  anim: {fileID: 60446786}
 --- !u!61 &693171170439143106
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -378,3 +382,22 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &60446786
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693171170439143119}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 70ecf9c36c40f7743be7ff210b331737, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

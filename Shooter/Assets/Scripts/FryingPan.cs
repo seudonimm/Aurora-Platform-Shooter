@@ -35,7 +35,7 @@ public class FryingPan : MonoBehaviour
     {
         bounce++;
 
-        if (bounce >= 3)
+        if (bounce >= 5)
         {
             Destroy(this.gameObject);
         }

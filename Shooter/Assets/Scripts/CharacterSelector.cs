@@ -36,7 +36,7 @@ public class CharacterSelector : MonoBehaviour
         p2Selector.transform.position = chefSelect.position;
 
         CharacterSelect.p1Character = 0;
-        CharacterSelect.p2Character = 0;
+        CharacterSelect.p2Character = 4;
 
 
         // p1Selector.transform.position = chefSelect.position;
@@ -56,6 +56,10 @@ public class CharacterSelector : MonoBehaviour
             {
                 p1Selector.transform.position = pirateSelect.position;
                 CharacterSelect.p1Character = 2;
+                if(CharacterSelect.p2Character == 2)
+                {
+                    CharacterSelect.p2Character = 6;
+                }
             }
             //if (player1.GetButtonDown("Left"))
             //{
@@ -70,11 +74,20 @@ public class CharacterSelector : MonoBehaviour
             {
                 p1Selector.transform.position = chefSelect.position;
                 CharacterSelect.p1Character = 0;
+                if (CharacterSelect.p2Character == 0)
+                {
+                    CharacterSelect.p2Character = 4;
+                }
             }
             if (player1.GetButtonDown("Left"))
             {
                 p1Selector.transform.position = witchSelect.position;
                 CharacterSelect.p1Character = 3;
+                if (CharacterSelect.p2Character == 3)
+                {
+                    CharacterSelect.p2Character = 7;
+                }
+
             }
 
         }
@@ -89,6 +102,11 @@ public class CharacterSelector : MonoBehaviour
             {
                 p1Selector.transform.position = pirateSelect.position;
                 CharacterSelect.p1Character = 2;
+                if (CharacterSelect.p2Character == 2)
+                {
+                    CharacterSelect.p2Character = 6;
+                }
+
             }
 
 
@@ -99,11 +117,21 @@ public class CharacterSelector : MonoBehaviour
             {
                 p1Selector.transform.position = witchSelect.position;
                 CharacterSelect.p1Character = 3;
+                if (CharacterSelect.p2Character == 3)
+                {
+                    CharacterSelect.p2Character = 7;
+                }
+
             }
             if (player1.GetButtonDown("Right"))
             {
                 p1Selector.transform.position = chefSelect.position;
                 CharacterSelect.p1Character = 0;
+                if (CharacterSelect.p2Character == 0)
+                {
+                    CharacterSelect.p2Character = 4;
+                }
+
             }
 
         }
@@ -113,7 +141,14 @@ public class CharacterSelector : MonoBehaviour
             if (player2.GetButtonDown("Down"))
             {
                 p2Selector.transform.position = pirateSelect.position;
-                CharacterSelect.p2Character = 2;
+                //if (CharacterSelect.p1Character == 2)
+                //{
+                    CharacterSelect.p2Character = 6;
+                //}
+                //else
+                //{
+                //    CharacterSelect.p2Character = 2;
+                //}
             }
             //if (player2.GetButtonDown("Left"))
             //{
@@ -127,12 +162,26 @@ public class CharacterSelector : MonoBehaviour
             if (player2.GetButtonDown("Up"))
             {
                 p2Selector.transform.position = chefSelect.position;
-                CharacterSelect.p2Character = 0;
+                //if (CharacterSelect.p1Character == 0)
+                //{
+                    CharacterSelect.p2Character = 4;
+                //}
+                //else
+                //{
+                //    CharacterSelect.p2Character = 0;
+                //}
             }
             if (player2.GetButtonDown("Left"))
             {
                 p2Selector.transform.position = witchSelect.position;
-                CharacterSelect.p2Character = 3;
+                //if (CharacterSelect.p1Character == 3)
+                //{
+                    CharacterSelect.p2Character = 7;
+                //}
+                //else
+                //{
+                    //CharacterSelect.p2Character = 3;
+                //}
             }
 
         }
@@ -146,7 +195,14 @@ public class CharacterSelector : MonoBehaviour
             if (player2.GetButtonDown("Right"))
             {
                 p2Selector.transform.position = pirateSelect.position;
-                CharacterSelect.p2Character = 2;
+                //if (CharacterSelect.p1Character == 2)
+                //{
+                    CharacterSelect.p2Character = 6;
+                //}
+                //else
+                //{
+                    //CharacterSelect.p2Character = 2;
+                //}
             }
 
 
@@ -156,12 +212,26 @@ public class CharacterSelector : MonoBehaviour
             if (player2.GetButtonDown("Down"))
             {
                 p2Selector.transform.position = witchSelect.position;
-                CharacterSelect.p2Character = 3;
+                //if (CharacterSelect.p1Character == 3)
+                //{
+                    CharacterSelect.p2Character = 7;
+                //}
+                //else
+                //{
+                    //CharacterSelect.p2Character = 3;
+                //}
             }
             if (player2.GetButtonDown("Right"))
             {
                 p2Selector.transform.position = chefSelect.position;
-                CharacterSelect.p2Character = 0;
+                //if (CharacterSelect.p1Character == 0)
+                //{
+                    CharacterSelect.p2Character = 4;
+                //}
+                //else
+                //{
+                    //CharacterSelect.p2Character = 0;
+                //}
             }
 
         }

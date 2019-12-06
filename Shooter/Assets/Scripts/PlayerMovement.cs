@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] Rigidbody2D rb2;
 	
 	[SerializeField] bool faceRight;
+    [SerializeField] bool faceRight2;
 
     [SerializeField] GameObject p1;
     [SerializeField] GameObject p2;
@@ -29,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
 	
 	private Player player1;
 	private Player player2;
-	private Vector3 moveVector;
+	public Vector3 moveVector;
 	[SerializeField] Vector3 moveVector2;
 
     [SerializeField] int character; // 0 = chef | 1 = spy | 2 = pirate | 3 = witch
@@ -87,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] TextMesh moveText1;
     [SerializeField] TextMesh moveText2;
 
-
+    public Animator anim;
 
 
     //[SerializeField] public float chargeVal = 10;
@@ -111,6 +112,7 @@ public class PlayerMovement : MonoBehaviour
 			
         //rb = GetComponent<Rigidbody2D>();
 		faceRight = true;
+        faceRight2 = true;
 
         //P1 Character Select
         if (CharacterSelect.p1Character == 0)
@@ -268,9 +270,20 @@ public class PlayerMovement : MonoBehaviour
     void ProcessInput2(){
 		if(moveVector2.x > 0){
 			p2.transform.position += transform.right * moveSpeed * Time.deltaTime;
+
+            if (!faceRight2)
+            {
+                p2.transform.Rotate(Vector3.up * 180);
+            }
+            faceRight2 = true;
 		}
 		if(moveVector2.x < 0){
 			p2.transform.position += -transform.right * moveSpeed * Time.deltaTime;
+            if (faceRight2)
+            {
+                p2.transform.Rotate(Vector3.up * 180);
+            }
+            faceRight2 = false;
 		}
         if (moveWitch2)
         {
@@ -283,6 +296,9 @@ public class PlayerMovement : MonoBehaviour
                 p2.transform.position += -transform.up * moveSpeed * Time.deltaTime;
             }
         }
+
+        anim.SetFloat("Speed2", Mathf.Abs(moveVector2.x));
+
 
         if (player2.GetButtonDown("Jump") && onGround == true)
         {
@@ -318,10 +334,24 @@ public class PlayerMovement : MonoBehaviour
     void ProcessInput(){
 		if(moveVector.x > 0){
 			p1.transform.position += transform.right * moveSpeed * Time.deltaTime;
-		}
-		if(moveVector.x < 0){
+            if (!faceRight)
+            {
+                p1.transform.Rotate(Vector3.up * 180);
+
+            }
+            faceRight = true;
+
+        }
+        if (moveVector.x < 0){
 			p1.transform.position += -transform.right * moveSpeed * Time.deltaTime;
-		}
+            if (faceRight)
+            {
+                p1.transform.Rotate(Vector3.up * 180);
+
+            }
+            faceRight = false;
+
+        }
 
         if (moveWitch)
         {
@@ -334,6 +364,9 @@ public class PlayerMovement : MonoBehaviour
                 p1.transform.position += -transform.up * moveSpeed * Time.deltaTime;
             }
         }
+
+            anim.SetFloat("Speed", Mathf.Abs(moveVector.x));
+
 
         if (player1.GetButtonDown("Jump") && onGround == true) {
             if (!moveWitch) {
@@ -454,6 +487,14 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+            anim.SetBool("Fly", moveWitch);
+            anim.SetBool("Fly2", moveWitch2);
+
+        anim.SetFloat("Slide", moveSpecialCooldownInc);
+        anim.SetFloat("Slide2", moveSpecialCooldownInc2);
+
+        anim.SetFloat("Explode", moveSpecialCooldownInc);
+        anim.SetFloat("Explode2", moveSpecialCooldownInc2);
 
 
         flyCooldownInc++;
@@ -463,11 +504,13 @@ public class PlayerMovement : MonoBehaviour
         {
             moveWitch = false;
             rb1.gravityScale = currentGravity;
+
         }
         if (flyCooldownInc2 >= flyCooldownMax2)
         {
             moveWitch2 = false;
             rb2.gravityScale = currentGravity;
+
         }
 
         Invoke("Invoker", 1f);
@@ -510,6 +553,7 @@ public class PlayerMovement : MonoBehaviour
 
             flyCooldownInc = 0;
             Debug.Log("1");
+
 
         }
     }
@@ -559,6 +603,8 @@ public class PlayerMovement : MonoBehaviour
 
             flyCooldownInc2 = 0;
             Debug.Log("3");
+
+
         }
     }
 
