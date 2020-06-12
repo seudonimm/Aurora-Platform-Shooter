@@ -23,7 +23,7 @@ public class ProjectileActions2 : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         //Debug.Log("Player hit");
-        if (col.gameObject.CompareTag("Player1") || col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall"))
+        if (col.gameObject.CompareTag("Player1"))
         {
             //Debug.Log("destroy projectile");
 

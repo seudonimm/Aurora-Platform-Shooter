@@ -1,0 +1,33 @@
+{
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "MovementAbility",
+            "id": "b71a40e5-f56e-42c6-84fa-e2010da0162f",
+            "actions": [
+                {
+                    "name": "MovementAbility",
+                    "type": "Button",
+                    "id": "6c234ef6-62a1-4e9f-8351-38ac1f15eb8d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press"
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d6e99249-3516-492c-9aed-90b3e1d0071b",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MovementAbility",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

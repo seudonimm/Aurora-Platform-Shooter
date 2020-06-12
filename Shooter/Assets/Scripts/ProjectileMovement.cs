@@ -6,28 +6,31 @@ using Rewired;
 
 public class ProjectileMovement : MonoBehaviour
 {
-	[SerializeField] float speed;
-	[SerializeField] Rigidbody2D rb;
-	
-	Vector2 direction;
+    [SerializeField] float speed;
+    [SerializeField] Rigidbody2D rb;
 
-    [SerializeField] int playerID;
+    Vector2 direction;
 
-    private Player player;
-    public Vector2 aimVector;
+    //[SerializeField] int playerID;
+
+    //private Player player;
+    //private Player player2;
+    //public Vector2 aimVector;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        player = ReInput.players.GetPlayer(playerID);
+        //player = ReInput.players.GetPlayer(playerID);
+        //player2 = ReInput.players.GetPlayer(1);
 
         rb = GetComponent<Rigidbody2D>();
+        rb.velocity = transform.right * speed;
 
-        GetInput();
+        //GetInput();
 
-        direction = aimVector;
+        //direction = aimVector;
 
 
         //Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -39,23 +42,23 @@ public class ProjectileMovement : MonoBehaviour
     void Update()
     {
 
-		 
-        rb.velocity = aimVector * speed;
 
-		
-		
+        // rb.velocity = transform.right * speed;
+
+
+
     }
 
     void GetInput()
     {
-        aimVector.x = player.GetAxis("Aim Horizontal");
+        //aimVector.x = player.GetAxis("Aim Horizontal");
 
-        aimVector.y = player.GetAxis("Aim Vertical");
+        //aimVector.y = player.GetAxis("Aim Vertical");
 
     }
     void ProcessInput()
     {
-        float joyAngle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg;
+        //float joyAngle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg;
         //projectileSpawn.rotation = Quaternion.AngleAxis(joyAngle, Vector3.forward);
 
 
@@ -67,6 +70,17 @@ public class ProjectileMovement : MonoBehaviour
         if (col.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
+        }
+
+    }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        //Debug.Log("Player hit");
+        if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Wall"))
+        {
+            //Debug.Log("destroy projectile");
+
+            Destroy(this.gameObject);
         }
 
     }

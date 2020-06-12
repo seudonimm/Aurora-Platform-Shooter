@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
-
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,15 +14,13 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] Rigidbody2D rb2;
 	
 	[SerializeField] bool faceRight;
+    [SerializeField] bool faceRight2;
 
     [SerializeField] GameObject p1;
     [SerializeField] GameObject p2;
 
     [SerializeField] bool onGround;
-	
-	[SerializeField] Collider2D p1Collider;
-	[SerializeField] Collider2D p2Collider;
-	
+		
 	[SerializeField] float dodgeCooldownMax = 100;
 	[SerializeField] float dodgeCooldownInc = 0;
 
@@ -31,13 +30,79 @@ public class PlayerMovement : MonoBehaviour
 	
 	private Player player1;
 	private Player player2;
-	private Vector3 moveVector;
+	public Vector3 moveVector;
 	[SerializeField] Vector3 moveVector2;
-	
+
+    [SerializeField] int character; // 0 = chef | 1 = spy | 2 = pirate | 3 = witch
+
+    //character prefabs
+    [SerializeField] GameObject chef;
+    [SerializeField] GameObject witch;
+    [SerializeField] GameObject spy;
+    [SerializeField] GameObject pirate;
+
+    [SerializeField] GameObject chef2;
+    [SerializeField] GameObject witch2;
+    [SerializeField] GameObject spy2;
+    [SerializeField] GameObject pirate2;
+
+    [SerializeField] GameObject self;
+
+    [SerializeField] float explosionSpeed;
+    [SerializeField] Transform explosionSpawn;
+    [SerializeField] GameObject explosion;
+
+    
+    [SerializeField] Transform explosionSpawn2;
+    [SerializeField] GameObject explosion2;
+
+
+    [SerializeField] bool moveWitch = false;
+    [SerializeField] bool moveWitch2 = false;
+
+    [SerializeField] float flyCooldownMax;
+    [SerializeField] float flyCooldownInc;
+
+    [SerializeField] float flyCooldownMax2;
+    [SerializeField] float flyCooldownInc2;
+
+    [SerializeField] float currentGravity;
+
+    [SerializeField] float slideSpeed = 1000;
+
+    [SerializeField] float moveSpecialCooldownInc;
+    [SerializeField] float moveSpecialCooldownMax;
+
+    [SerializeField] float moveSpecialCooldownInc2;
+    [SerializeField] float moveSpecialCooldownMax2;
+
+
+    public PlayerHealth ph1;
+    public PlayerHealth ph2;
+
+    SpriteRenderer sr;
+
+    public int p1Num;
+    public int p2Num;
+
+    [SerializeField] TextMesh moveText1;
+    [SerializeField] TextMesh moveText2;
+
+    public Animator anim;
+
+
+    //[SerializeField] public float chargeVal = 10;
+    //[SerializeField] public float healthVal = 1000;
+    //[SerializeField] public float defaultChargeVal = 10;
+    //[SerializeField] public float defaultHealthVal = 1000;
+
+    //[SerializeField] public TextMesh p1Charge;
+    //[SerializeField] TextMesh p1Health;
+    //[SerializeField] TextMesh p2Charge;
+    //[SerializeField] TextMesh p2Health;
 
 
 
-	
 
     // Start is called before the first frame update
     void Start()
@@ -47,30 +112,201 @@ public class PlayerMovement : MonoBehaviour
 			
         //rb = GetComponent<Rigidbody2D>();
 		faceRight = true;
+        faceRight2 = true;
+
+        //P1 Character Select
+        if (CharacterSelect.p1Character == 0)
+        {
+            p1 = chef;
+            rb1 = chef.GetComponent<Rigidbody2D>();
+        }
+        else if (CharacterSelect.p1Character == 1)
+        {
+            p1 = spy;
+            rb1 = spy.GetComponent<Rigidbody2D>();
+
+        }
+        else if (CharacterSelect.p1Character == 2)
+        {
+            p1 = pirate;
+            rb1 = pirate.GetComponent<Rigidbody2D>();
+            Physics2D.IgnoreLayerCollision(8, 14, true);
+
+        }
+        else if (CharacterSelect.p1Character == 3)
+        {
+            p1 = witch;
+            rb1 = witch.GetComponent<Rigidbody2D>();
+
+        }
+
+        //P2 Character Select
+        if (CharacterSelect.p2Character == 0)
+        {
+            p2 = chef;
+            rb2 = chef.GetComponent<Rigidbody2D>();
+
+        }
+        else if (CharacterSelect.p2Character == 1)
+        {
+            p2 = spy;
+            rb2 = spy.GetComponent<Rigidbody2D>();
+
+        }
+        else if (CharacterSelect.p2Character == 2)
+        {
+            p2 = pirate;
+            rb2 = pirate.GetComponent<Rigidbody2D>();
+            Physics2D.IgnoreLayerCollision(9, 15, true);
+
+        }
+        else if (CharacterSelect.p2Character == 3)
+        {
+            p2 = witch;
+            rb2 = witch.GetComponent<Rigidbody2D>();
+
+        }
+        else if (CharacterSelect.p2Character == 4)
+        {
+            p2 = chef2;
+            rb2 = chef2.GetComponent<Rigidbody2D>();
+
+        }
+        else if (CharacterSelect.p2Character == 5)
+        {
+            p2 = spy2;
+            rb2 = spy2.GetComponent<Rigidbody2D>();
+
+        }
+        else if (CharacterSelect.p2Character == 6)
+        {
+            p2 = pirate2;
+            rb2 = pirate2.GetComponent<Rigidbody2D>();
+            Physics2D.IgnoreLayerCollision(9, 15, true);
+
+        }
+        else if (CharacterSelect.p2Character == 7)
+        {
+            p2 = witch2;
+            rb2 = witch2.GetComponent<Rigidbody2D>();
+
+        }
+
+        self = this.gameObject;
+        if(self == p1)
+        {
+            p1.tag = "Player1";
+            p1.layer = 8;
+        }
+        else if (self == p2)
+        {
+            p2.tag = "Player2";
+            p2.layer = 9;
+        }
+
+        currentGravity = rb1.gravityScale;
+
+        Invoke("Assign", 0.1f);
+
+        sr = this.GetComponent<SpriteRenderer>();
+
+
+        //p1Charge = GameObject.FindGameObjectWithTag("p1charge").GetComponent<TextMesh>();
+        //p1Health = GameObject.FindGameObjectWithTag("p1hp").GetComponent<TextMesh>();
+        //p2Charge = GameObject.FindGameObjectWithTag("p2charge").GetComponent<TextMesh>();
+        //p2Health = GameObject.FindGameObjectWithTag("p2hp").GetComponent<TextMesh>();
+
+        p1Num = CharacterSelect.p1Character;
+        p2Num = CharacterSelect.p2Character;
     }
-	
-	void GetInput(){
+
+    void Assign()
+    {
+        ph1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerHealth>();
+        ph2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerHealth>();
+
+    }
+
+    void AbilityTextControl()
+    {
+        moveText1 = GameObject.FindGameObjectWithTag("p1moveText").GetComponent<TextMesh>();
+        moveText2 = GameObject.FindGameObjectWithTag("p2moveText").GetComponent<TextMesh>();
+
+        if(moveSpecialCooldownInc > moveSpecialCooldownMax)
+        {
+            moveText1.text = "Movement Ability: Ready";
+        }
+        else
+        {
+            moveText1.text = "Movement Ability: Not Ready";
+        }
+
+        if (moveSpecialCooldownInc2 > moveSpecialCooldownMax2)
+        {
+            moveText2.text = "Movement Ability: Ready";
+        }
+        else
+        {
+            moveText2.text = "Movement Ability: Not Ready";
+        }
+
+    }
+
+    void GetInput(){
 		moveVector.x = player1.GetAxis("Move Horizontal");	
 		
 		moveVector2.x = player2.GetAxis("Move Horizontal");
-		
 
-	}
-			
-		
+        moveVector.y = player1.GetAxis("Move Vertical");
 
-	
-	void ProcessInput2(){
+        moveVector2.y = player2.GetAxis("Move Vertical");
+
+
+    }
+
+
+
+
+    void ProcessInput2(){
 		if(moveVector2.x > 0){
 			p2.transform.position += transform.right * moveSpeed * Time.deltaTime;
+
+            if (!faceRight2)
+            {
+                p2.transform.Rotate(Vector3.up * 180);
+            }
+            faceRight2 = true;
 		}
 		if(moveVector2.x < 0){
 			p2.transform.position += -transform.right * moveSpeed * Time.deltaTime;
+            if (faceRight2)
+            {
+                p2.transform.Rotate(Vector3.up * 180);
+            }
+            faceRight2 = false;
 		}
-		
-		if(player2.GetButtonDown("Jump") && onGround == true){
-			rb2.AddForce(Vector2.up * jump);
-		}
+        if (moveWitch2)
+        {
+            if (moveVector2.y > 0)
+            {
+                p2.transform.position += transform.up * moveSpeed * Time.deltaTime;
+            }
+            if (moveVector2.y < 0)
+            {
+                p2.transform.position += -transform.up * moveSpeed * Time.deltaTime;
+            }
+        }
+
+        anim.SetFloat("Speed2", Mathf.Abs(moveVector2.x));
+
+
+        if (player2.GetButtonDown("Jump") && onGround == true)
+        {
+            if (!moveWitch2)
+            {
+                rb2.AddForce(Vector2.up * jump);
+            }
+        }
 
         if (player2.GetButtonDown("Dodge"))
         {
@@ -92,23 +328,51 @@ public class PlayerMovement : MonoBehaviour
                 dodgeCooldownInc = 0;
             }
         }
-
-
-
-
     }
 
 
     void ProcessInput(){
 		if(moveVector.x > 0){
 			p1.transform.position += transform.right * moveSpeed * Time.deltaTime;
-		}
-		if(moveVector.x < 0){
+            if (!faceRight)
+            {
+                p1.transform.Rotate(Vector3.up * 180);
+
+            }
+            faceRight = true;
+
+        }
+        if (moveVector.x < 0){
 			p1.transform.position += -transform.right * moveSpeed * Time.deltaTime;
-		}
-		if(player1.GetButtonDown("Jump") && onGround == true){
-			rb1.AddForce(Vector2.up * jump);
-		}
+            if (faceRight)
+            {
+                p1.transform.Rotate(Vector3.up * 180);
+
+            }
+            faceRight = false;
+
+        }
+
+        if (moveWitch)
+        {
+            if (moveVector.y > 0)
+            {
+                p1.transform.position += transform.up * moveSpeed * Time.deltaTime;
+            }
+            if (moveVector.y < 0)
+            {
+                p1.transform.position += -transform.up * moveSpeed * Time.deltaTime;
+            }
+        }
+
+            anim.SetFloat("Speed", Mathf.Abs(moveVector.x));
+
+
+        if (player1.GetButtonDown("Jump") && onGround == true) {
+            if (!moveWitch) {
+                rb1.AddForce(Vector2.up * jump);
+            }
+        }
 
         if (player1.GetButtonDown("Dodge"))
         {
@@ -123,8 +387,8 @@ public class PlayerMovement : MonoBehaviour
         {
             //p1Collider.enabled = false;
 
-            Debug.Log(dodgeCooldownInc);
-            Debug.Log(dodgeCooldownMax);
+            //Debug.Log(dodgeCooldownInc);
+            //Debug.Log(dodgeCooldownMax);
 
             Physics2D.IgnoreLayerCollision(8, 11, false);
 
@@ -134,6 +398,11 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    void ToCharacterSelect()
+    {
+        SceneManager.LoadScene("CharacterSelect");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -141,84 +410,258 @@ public class PlayerMovement : MonoBehaviour
 		ProcessInput();
 		ProcessInput2();
 
+        AbilityTextControl();
+
         dodgeCooldownInc++;
 
-        /*
-         
-		
-        //player = PlayerState.player;
-
-        //player2 = PlayerState2.player;
+        moveSpecialCooldownInc++;
+        moveSpecialCooldownInc2++;
 
 
-		//float moveHorizontal = Input.GetAxis("Horizontal");
-		//Vector2 move = new Vector2(moveHorizontal, 0);
-		if (Input.GetButton("Horizontal_p1"))
-		{
-			Debug.Log("aHHHHHHHHHHHHHH");
-			p1.transform.position += Input.GetAxis("Horizontal_p1") * transform.right * moveSpeed * Time.deltaTime;
-			//rb.AddForce(move * moveSpeed);
+        if (player1.GetButton("Movement Ability") && moveSpecialCooldownInc >= moveSpecialCooldownMax)
+        {
+            if (p1 == chef)
+            {
+                ChefSpecial();
+            }
+            else if (p1 == witch)
+            {
+                WitchSpecial();
+                rb1.gravityScale = 0;
 
-			if (p1.transform.position.x > 0 && !faceRight)
-			{
-				p1.transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-				faceRight = true;
-			}
-			if (p1.transform.position.x < 0 && faceRight)
-			{
-				p1.transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-				faceRight = false;
-			}
-		}
-		if (Input.GetButton("Jump_p1") && onGround)
-		{
-			rb1.AddForce(Vector2.up * jump);
-		}
-		if(Input.GetButton("Dodge")){
-			//p1Collider.enabled = false;
-			
-			Physics2D.IgnoreLayerCollision(8, 11, true);
-			
-			Debug.Log("Dodging");
-		}
-		
-		if(dodgeCooldownInc > dodgeCooldownMax ){
-			//p1Collider.enabled = false;
-			
-			Debug.Log(dodgeCooldownInc);
-			Debug.Log(dodgeCooldownMax);
+            }
+            else if (p1 == pirate)
+            {
+                PirateSpecial();
+            }
+            else if (p1 == spy)
+            {
+                SpySpecial();
+            }
+            moveSpecialCooldownInc = 0;
 
-			Physics2D.IgnoreLayerCollision(8, 11, false);
+        }
+        if (player2.GetButton("Movement Ability") && moveSpecialCooldownInc2 >= moveSpecialCooldownMax2)
+        {
+            if (p2 == chef)
+            {
+                ChefSpecial2();
+            }
+            else if (p2 == witch)
+            {
+                WitchSpecial2();
+                rb1.gravityScale = 0;
+                moveWitch2 = true;
 
-			dodgeCooldownInc = 0;
-		}
 
-		
+            }
+            else if (p2 == pirate)
+            {
+                PirateSpecial2();
+            }
+            else if (p2 == spy)
+            {
+                SpySpecial();
+            }
+            else if (p2 == chef2)
+            {
+                ChefSpecial2();
+            }
+            else if (p2 == witch2)
+            {
+                WitchSpecial2();
+                rb1.gravityScale = 0;
+                moveWitch2 = true;
 
-		if (Input.GetAxis("Horizontal_p2") == 1 || Input.GetAxis("Horizontal_p2") == -1 || Input.GetButton("Horizontal_p2"))
-		{
-			//Debug.Log("right leftds;lkdfj");
-			p2.transform.position += Input.GetAxis("Horizontal_p2") * transform.right * moveSpeed * Time.deltaTime;
-			//rb.AddForce(move * moveSpeed);
 
-			if (p2.transform.position.x > 0 && !faceRight)
-			{
-				p2.transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-				faceRight = true;
-			}
-			if (p2.transform.position.x < 0 && faceRight)
-			{
-				p2.transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-				faceRight = false;
-			}
-		}
-		if (Input.GetButton("Jump_p2") && onGround)
-		{
-			rb2.AddForce(Vector2.up * jump);
-		}
-        */
+            }
+            else if (p2 == pirate2)
+            {
+                PirateSpecial2();
+            }
+            else if (p2 == spy2)
+            {
+                SpySpecial2();
+            }
+            moveSpecialCooldownInc2 = 0;
+
+        }
+
+            anim.SetBool("Fly", moveWitch);
+            anim.SetBool("Fly2", moveWitch2);
+
+        anim.SetFloat("Slide", moveSpecialCooldownInc);
+        anim.SetFloat("Slide2", moveSpecialCooldownInc2);
+
+        anim.SetFloat("Explode", moveSpecialCooldownInc);
+        anim.SetFloat("Explode2", moveSpecialCooldownInc2);
+
+
+        flyCooldownInc++;
+        flyCooldownInc2++;
+
+        if (flyCooldownInc >= flyCooldownMax)
+        {
+            moveWitch = false;
+            rb1.gravityScale = currentGravity;
+
+        }
+        if (flyCooldownInc2 >= flyCooldownMax2)
+        {
+            moveWitch2 = false;
+            rb2.gravityScale = currentGravity;
+
+        }
+
+        Invoke("Invoker", 1f);
+
     }
 
+    void Invoker()
+    {
+        if (ph1.healthVal <= 0 || ph2.healthVal <= 0)
+        {
+            Invoke("ToCharacterSelect", 6f);
+        }
+    }
+
+    public void ChefSpecial()
+    {
+        
+        if (self == p1)
+        {
+            if (moveVector.x > 0)
+            {
+                rb1.AddForce(Vector2.right * slideSpeed);
+            }
+            if (moveVector.x < 0)
+            {
+                rb1.AddForce(-Vector2.right * slideSpeed);
+            }
+        }
+
+        Debug.Log("slide");
+    }
+
+    public void WitchSpecial()
+    {
+        if (self == p1)
+        {
+            moveWitch = true;
+
+            rb1.gravityScale = 0;
+
+            flyCooldownInc = 0;
+            Debug.Log("1");
+
+
+        }
+    }
+
+    public void PirateSpecial()
+    {
+        Instantiate(explosion, explosionSpawn.position, explosionSpawn.rotation);
+
+        if (self == p1)
+        {
+            rb1.AddForce(moveVector * explosionSpeed);
+        }
+    }
+
+    public void SpySpecial()
+    {
+
+    }
+
+
+    public void ChefSpecial2()
+    {
+
+        if (self == p2)
+        {
+            if (moveVector2.x > 0)
+            {
+                rb2.AddForce(Vector2.right * slideSpeed);
+            }
+            if (moveVector2.x < 0)
+            {
+                rb2.AddForce(-Vector2.right * slideSpeed);
+            }
+        }
+
+        Debug.Log("slide");
+    }
+
+    public void WitchSpecial2()
+    {
+
+        if (self == p2)
+        {
+            moveWitch2 = true;
+
+            rb2.gravityScale = 0;
+
+            flyCooldownInc2 = 0;
+            Debug.Log("3");
+
+
+        }
+    }
+
+    public void PirateSpecial2()
+    {
+        Instantiate(explosion2, explosionSpawn2.position, explosionSpawn2.rotation);
+
+
+        if (self == p2)
+        {
+            rb2.AddForce(moveVector2 * explosionSpeed);
+        }
+    }
+
+    public void SpySpecial2()
+    {
+
+    }
+
+    //public void PlayerHealth()
+    //{
+    //    if (self == p1)
+    //    {
+    //        p1Charge.text = "Charge: " + chargeVal;
+    //        p1Health.text = "Health: " + healthVal;
+    //    }
+    //    else if (self == p2)
+    //    {
+    //        p2Charge.text = "Charge: " + chargeVal;
+    //        p2Health.text = "Health: " + healthVal;
+
+    //    }
+    //    if (chargeVal < 0)
+    //    {
+    //        chargeVal = 5;
+    //    }
+
+    //    if (healthVal <= 0)
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
+
+
+    void HitColor()
+    {
+        sr.color = Color.red;
+
+    }
+    void AfterHitColor()
+    {
+        sr.color = Color.white;
+
+
+
+
+    }
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Ground"))
@@ -226,7 +669,57 @@ public class PlayerMovement : MonoBehaviour
             onGround = true;
         }
 
+
+
+        if (self == p1)
+        {
+
+            //Debug.Log("p1 hit");
+            if (col.gameObject.CompareTag("Charge Shot"))
+            {
+                HitColor();
+                Invoke("AfterHitColor", .3f);
+
+                Debug.Log("1 with charge");
+                ph1.chargeVal -= 10;
+                ph2.chargeVal += 10;
+            }
+            if (col.gameObject.CompareTag("Damage Shot"))
+            {
+                HitColor();
+                Invoke("AfterHitColor", .3f);
+
+                ph1.healthVal -= ph2.chargeVal;
+                ph2.chargeVal = ph2.defaultChargeVal;
+            }
+        }
+
+        if (self == p2)
+        {
+
+            Debug.Log("p2 hit");
+            if (col.gameObject.CompareTag("Charge Shot"))
+            {
+                HitColor();
+                Invoke("AfterHitColor", .3f);
+
+                Debug.Log("2 with charge");
+                ph2.chargeVal -= 10;
+                ph1.chargeVal += 10;
+            }
+            if (col.gameObject.CompareTag("Damage Shot"))
+            {
+                HitColor();
+                Invoke("AfterHitColor", .3f);
+
+                ph2.healthVal -= ph1.chargeVal;
+                ph1.chargeVal = ph1.defaultChargeVal;
+
+            }
+        }
     }
+
+
 
     private void OnCollisionExit2D(Collision2D col)
     {

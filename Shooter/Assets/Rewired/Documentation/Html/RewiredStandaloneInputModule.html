@@ -287,6 +287,10 @@
         <td>Allows touch input to be used to select elements.</td>
       </tr>
       <tr>
+        <td>Deselect If Background Clicked</td>
+        <td>Deselects the current selection on mouse/touch click when the pointer is not over a selectable object.</td>
+      </tr>
+      <tr>
         <td>Force Module Active</td>
         <td>Forces the module to always be active.</td>
       </tr>
@@ -317,6 +321,7 @@
   <li>Create a pointer GameObject and drive it from the Player Mouse's screen position.</li>
   <li>Add the Player Mouse in the Rewired Standalone Input Module inspector (or add it through scripting at runtime).</li>
   <li>Make sure the Player that owns the Player Mouse is allowed to control the UI. (<a href="#inspector-options">See inspector options</a> for setting the Players that can control the UI.)</li>
+  <li><em><a href="HowTos.html#enabling-disabling-controller-maps">Make sure you disable UI navigation Actions</a> in all Players that control a software pointer. If you have both UI navigation Actions controlling the UI and are moving a mouse pointer around with the same controls, the UI will be completely uncontrollable as the two control systems fight each other.</em></li>
 </ul>
 <p><strong>Using multiple Player Mouse pointers:</strong></p>
 <p>You can use multiple Player Mice to drive multiple mouse pointers that can all interact with the UI.* (<a href="#player-mouse-mutli-player-ui-limitations">See important limitations.</a>) Simply create multiple Player Mice, set them up for each Player, and assign them to Player Mice field in the inspector.</p>
@@ -325,7 +330,7 @@
   <li><a href="Examples.html#player-mouse-unity-ui">Player Mouse Unity UI</a></li>
 </ul>
 <p><strong>Player Pointer Event Data</strong>:</p>
-<p>The Rewired Standalone Input Module will send a PlayerPointerEventData object to all mouse pointer event handlers (Buttons, your scripts that implement the pointer event handler interfaces, etc.) If the handler script is written to support it, you can get Player, button index, and even source Player Mouseinformation from each event. See the <a href="Examples.html#player-mouse-unity-ui">Player Mouse Unity UI</a> example for a demonstration.</p>
+<p>The Rewired Standalone Input Module will send a PlayerPointerEventData object to all mouse pointer event handlers (Buttons, your scripts that implement the pointer event handler interfaces, etc.) If the handler script is written to support it, you can get Player, button index, and even source Player Mouse information from each event. See the <a href="Examples.html#player-mouse-unity-ui">Player Mouse Unity UI</a> example for a demonstration.</p>
 <p>
   <a name="player-mouse-mutli-player-ui-limitations" id="player-mouse-mutli-player-ui-limitations"></a><strong>*Important Limitations / Issues:</strong></p>
 <p>Unity's UI controls were not written to support interaction from multiple sources at the same time. Generally, UI controls work when being interacted with by multiple pointers, but there are some issues/artifacts:</p>

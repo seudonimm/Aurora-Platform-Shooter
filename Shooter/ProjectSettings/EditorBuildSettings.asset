@@ -6,6 +6,32 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/CharacterSelect.unity
+    guid: 6c070761ba36ae641a0d1141ef576b3d
+  - enabled: 1
+    path: Assets/Scenes/BattleScene01.unity
+    guid: 338f7e1529e69ba44a4aca19cd47af28
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/BattleScene02.unity
+    guid: 71d30347a6b6f514092e81f5f8937d3c
+  - enabled: 1
+    path: Assets/Scenes/BattleScene03.unity
+    guid: 68b1c15ce287c9b4fa777489eefa7890
+  - enabled: 1
+    path: Assets/Scenes/Instructions.unity
+    guid: dc0fc824ab28d3c42a84d3f31060a582
+  - enabled: 1
+    path: Assets/Scenes/StageSelect.unity
+    guid: 9e89c6f284dd28b48b492805e227dd59
+  - enabled: 1
+    path: Assets/Scenes/VS Screen.unity
+    guid: b47be05f9321f2040b8a4b7c4787d016
+  - enabled: 1
+    path: Assets/Scenes/BattleScene04.unity
+    guid: 1114c741964f2544f9233d2a0e27b9ab
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 5689e278024a61f4c8f44fadbde3525d,
+      type: 2}

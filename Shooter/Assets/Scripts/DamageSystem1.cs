@@ -44,5 +44,22 @@ public class DamageSystem1 : MonoBehaviour
                 p2.chargeVal = p2.defaultChargeVal;
             }
         }
+
+        if (player2 == 2)
+        {
+            Debug.Log("p2 hit");
+            if (col.gameObject.CompareTag("Charge Shot"))
+            {
+                Debug.Log("2 with charge");
+                p2.chargeVal -= 10;
+                p1.chargeVal += 10;
+            }
+            if (col.gameObject.CompareTag("Damage Shot"))
+            {
+                p2.healthVal -= p1.chargeVal;
+                p1.chargeVal = p1.defaultChargeVal;
+
+            }
+        }
     }
 }

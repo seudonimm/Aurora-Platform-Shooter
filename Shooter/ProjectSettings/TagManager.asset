@@ -11,6 +11,16 @@ TagManager:
   - Charge Shot
   - Damage Shot
   - Wall
+  - p1charge
+  - p1hp
+  - p2charge
+  - p2hp
+  - p1win
+  - p2win
+  - p1shooter
+  - p2shooter
+  - p1moveText
+  - p2moveText
   layers:
   - Default
   - TransparentFX
@@ -24,10 +34,10 @@ TagManager:
   - Player2
   - P1_Projectiles
   - P2_Projectiles
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Projectiles
+  - Pirate Explosion
+  - Pirate Explosion2
   - 
   - 
   - 

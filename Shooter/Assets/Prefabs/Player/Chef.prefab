@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2209128381652756723}
   - component: {fileID: 2209128381652756722}
   - component: {fileID: 2209128381652756721}
+  - component: {fileID: 1643871782}
   m_Layer: 8
   m_Name: Projectile Spawn
   m_TagString: Untagged
@@ -26,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2209128381652756725}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.452, y: 0.001, z: 0}
-  m_LocalScale: {x: 1, y: 0.1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.033, y: -0.039, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2209128383390554160}
   m_RootOrder: 0
@@ -46,14 +47,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  projectile1: {fileID: 1451804196705862926, guid: eb89e343bf011e24a858b3e2987a2d66,
+  projectile1: {fileID: 581812178212043989, guid: 78bd0c6d206774f4994b0e631f0e7305,
     type: 3}
-  projectile2: {fileID: 2764417330234963691, guid: b75d8bf389c670f43b726f2523bc76cd,
+  projectile2: {fileID: 5905080769540936277, guid: 265f39a2830b1ee4ca555e53a329b422,
     type: 3}
   projectileSpawn: {fileID: 2209128381652756724}
-  rb: {fileID: 0}
-  cooldownMax: 0
+  projectileSpawn2: {fileID: 0}
+  cooldownMax: 50
   coolddownInc: 0
+  cooldownMax2: 200
+  coolddownInc2: 0
+  aimVector: {x: 0, y: 0}
+  aimVector2: {x: 0, y: 0}
+  p1: {fileID: 0}
+  p2: {fileID: 0}
+  self: {fileID: 0}
+  chef: {fileID: 2209128383390554163}
+  witch: {fileID: 1087675692521032006, guid: afaee79033a6b0942aff53ab9d1a485f, type: 3}
+  spy: {fileID: 372881819780375730, guid: dbdd25135772e554c98db6c1bf8d86f4, type: 3}
+  pirate: {fileID: 7644786498335936538, guid: 96f6f79296118b04a93cc56dc2d24a2b, type: 3}
+  chef2: {fileID: 123833350454895949, guid: 513dfa22bd88d88498ea357b53bcdcc0, type: 3}
+  witch2: {fileID: 693171170439143119, guid: 32d8898cf6605714e936124da615724f, type: 3}
+  spy2: {fileID: 8969994248510717580, guid: 586c69cbee5e4354f8581bf6a5ea2f93, type: 3}
+  pirate2: {fileID: 5407763449030275864, guid: dbe7283e5373f064bb4b47e110458dda, type: 3}
+  chefProjC1: {fileID: 9047469902832145357, guid: 9825001c0783fbb43b14a0195a40be03,
+    type: 3}
+  witchProjC1: {fileID: 5583501331475698645, guid: 401874a3325f68c4b84aac94c8de3603,
+    type: 3}
+  spyProjC1: {fileID: 1011624176607160723, guid: ad940e76860037b4389b77be46954a63,
+    type: 3}
+  pirateProjC1: {fileID: 6117927851665564443, guid: be83d44a2d9494c4faf7a15b9835e1a4,
+    type: 3}
+  chefProjC2: {fileID: 8584622275140833996, guid: 489406a4f634a3c4186b9ba4e7266872,
+    type: 3}
+  witchProjC2: {fileID: 7259718584234083576, guid: 25fe4dd5b013267478f9ce306e2fd4aa,
+    type: 3}
+  spyProjC2: {fileID: 1198354598859013653, guid: b800055fe248adf4aa8d3de9e194d655,
+    type: 3}
+  pirateProjC2: {fileID: 5292168489463723509, guid: 3a3b9f70a4796904a86e2099533452f2,
+    type: 3}
+  chefProjH1: {fileID: 4893234850838965012, guid: 38146140137559543be2a9ec114433a2,
+    type: 3}
+  witchProjH1: {fileID: 8786266101009230588, guid: 1f8efbac9e96387498766e9a36080021,
+    type: 3}
+  spyProjH1: {fileID: 0}
+  pirateProjH1: {fileID: 3196747121921783440, guid: 6373a18c529872042950c60fdd0058d9,
+    type: 3}
+  chefProjH2: {fileID: 7268734162606707286, guid: 7af8e77a8d634b74abebda114c4c4dff,
+    type: 3}
+  witchProjH2: {fileID: 3717844974806480012, guid: 381d415ef56ad904592ca592615b4da8,
+    type: 3}
+  spyProjH2: {fileID: 0}
+  pirateProjH2: {fileID: 7144463491675482404, guid: 23e9dce210a1b4a4082653efcab9a28d,
+    type: 3}
 --- !u!212 &2209128381652756722
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -79,6 +125,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -91,7 +138,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 90d3686ed5691354e874775c307ca283, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 36a1fe1417783a146b5105689b58801d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -123,6 +170,38 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1643871782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2209128381652756725}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: dee0429feb9206044bb3dd221a50dc3e,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6c234ef6-62a1-4e9f-8351-38ac1f15eb8d
+    m_ActionName: MovementAbility/MovementAbility[/DualShock4GamepadHID/leftShoulder,/DualShock4GamepadHID/leftShoulder]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &2209128383390554163
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,12 +212,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2209128383390554160}
   - component: {fileID: 2209128383390554161}
-  - component: {fileID: 8264301222447037088}
+  - component: {fileID: 8047272350647974135}
   - component: {fileID: 2209128383390554162}
-  - component: {fileID: 7541283548881178362}
   - component: {fileID: 2209128383390554174}
   - component: {fileID: 2209128383390554175}
-  - component: {fileID: 5712942620928734094}
+  - component: {fileID: 551100963}
   m_Layer: 8
   m_Name: Chef
   m_TagString: Player1
@@ -154,7 +232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2209128383390554163}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.39, y: -2.85, z: 0}
+  m_LocalPosition: {x: 28.142328, y: -2.85, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 2209128381652756724}
@@ -186,6 +264,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -209,7 +288,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8264301222447037088
+--- !u!114 &8047272350647974135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,11 +301,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chargeVal: 10
-  healthVal: 1000
-  defaultChargeVal: 0
-  defaultHealthVal: 0
-  charge: {fileID: 0}
-  health: {fileID: 0}
+  healthVal: 100
+  defaultChargeVal: 10
+  defaultHealthVal: 100
+  charge: {fileID: 102362823683043728, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 3}
+  health: {fileID: 102362823683043728, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 3}
+  winMessage: {fileID: 102362823683043728, guid: 92d60a2e17d9a4bb8bd3801b14fc2926,
+    type: 3}
+  thisPlayer: {fileID: 1293603593108180, guid: 92d60a2e17d9a4bb8bd3801b14fc2926, type: 3}
 --- !u!114 &2209128383390554162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,36 +322,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  jump: 1000
+  jump: 2500
   rb1: {fileID: 2209128383390554175}
   rb2: {fileID: 0}
   faceRight: 0
   p1: {fileID: 2209128383390554163}
   p2: {fileID: 0}
   onGround: 0
-  p1Collider: {fileID: 2209128383390554174}
-  p2Collider: {fileID: 0}
+  dodgeCooldownMax: 100
+  dodgeCooldownInc: 0
+  moveVector: {x: 0, y: 0, z: 0}
   moveVector2: {x: 0, y: 0, z: 0}
-  shotSpeed: 0
-  projectile1: {fileID: 0}
-  projectile2: {fileID: 0}
-  projectileSpawn: {fileID: 0}
-  cooldownMax: 0
-  coolddownInc: 0
---- !u!114 &7541283548881178362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2209128383390554163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c5a223bf1c1cea49b09727cf57ea78a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  p1: {fileID: 0}
-  p2: {fileID: 0}
+  character: 0
+  chef: {fileID: 2209128383390554163}
+  witch: {fileID: 1087675692521032006, guid: afaee79033a6b0942aff53ab9d1a485f, type: 3}
+  spy: {fileID: 372881819780375730, guid: dbdd25135772e554c98db6c1bf8d86f4, type: 3}
+  pirate: {fileID: 7644786498335936538, guid: 96f6f79296118b04a93cc56dc2d24a2b, type: 3}
+  chef2: {fileID: 123833350454895949, guid: 513dfa22bd88d88498ea357b53bcdcc0, type: 3}
+  witch2: {fileID: 693171170439143119, guid: 32d8898cf6605714e936124da615724f, type: 3}
+  spy2: {fileID: 8969994248510717580, guid: 586c69cbee5e4354f8581bf6a5ea2f93, type: 3}
+  pirate2: {fileID: 5407763449030275864, guid: dbe7283e5373f064bb4b47e110458dda, type: 3}
+  self: {fileID: 0}
+  explosionSpeed: 0
+  explosionSpawn: {fileID: 0}
+  explosion: {fileID: 0}
+  explosionSpawn2: {fileID: 0}
+  explosion2: {fileID: 0}
+  moveWitch: 0
+  moveWitch2: 0
+  flyCooldownMax: 0
+  flyCooldownInc: 0
+  flyCooldownMax2: 0
+  flyCooldownInc2: 0
+  currentGravity: 0
+  slideSpeed: 2500
+  moveSpecialCooldownInc: 0
+  moveSpecialCooldownMax: 500
+  moveSpecialCooldownInc2: 0
+  moveSpecialCooldownMax2: 500
+  ph1: {fileID: 0}
+  ph2: {fileID: 0}
+  p1Num: 0
+  p2Num: 0
+  moveText1: {fileID: 0}
+  moveText2: {fileID: 0}
+  anim: {fileID: 551100963}
 --- !u!61 &2209128383390554174
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -311,22 +408,28 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5712942620928734094
-MonoBehaviour:
+--- !u!95 &551100963
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2209128383390554163}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cf1e4a067221e74fa4d06e111e41a56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerNum: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e0ec1ce10c30bb14b9a306e64d93ee59, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

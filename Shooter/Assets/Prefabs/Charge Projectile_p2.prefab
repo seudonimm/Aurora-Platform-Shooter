@@ -60,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -96,8 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  rb: {fileID: 0}
-  playerID: 1
+  rb: {fileID: 8754903681290842669}
+  playerID: 0
   aimVector: {x: 0, y: 0}
 --- !u!114 &1892127015064880009
 MonoBehaviour:
